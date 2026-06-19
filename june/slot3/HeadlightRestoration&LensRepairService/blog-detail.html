@@ -25,7 +25,7 @@
     .article-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 24px; color: var(--color-text-primary); }
     .article-meta { display: flex; align-items: center; justify-content: center; gap: 24px; font-size: 0.95rem; color: var(--color-text-secondary); flex-wrap: wrap; }
     .article-author-info { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--color-text-primary); }
-    .article-hero-img { width: 100%; height: 300px; border-radius: var(--border-radius-lg); object-fit: cover; margin: 40px 0 60px; background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary)); }
+    .article-hero-img { width: 100%; max-width: 760px; margin: 40px auto 60px; display: block; border-radius: var(--border-radius-lg); object-fit: cover; }
     
     .article-content { max-width: 760px; margin: 0 auto; font-size: 1.125rem; line-height: 1.8; color: var(--color-text-secondary); }
     .article-content p { margin-bottom: 24px; }
@@ -152,7 +152,7 @@
     </section>
 
     <div class="container" style="padding: 40px 0 80px;">
-      <div class="article-hero-img reveal reveal-delay-1" style="background:url('assets/images/hero-services.png') center/cover no-repeat;"></div>
+      <img src="assets/images/Severe%20Oxidation%20Removal%20before.png" alt="Yellowed headlights showing oxidation damage" class="article-hero-img reveal reveal-delay-1" />
 
       <article class="article-content reveal">
         <p>It happens slowly. So slowly, in fact, that most drivers don't even realize it's happening. Your headlights, once crystal clear and capable of piercing the darkest nights, gradually succumb to the elements. They turn cloudy, yellow, and dim.</p>
