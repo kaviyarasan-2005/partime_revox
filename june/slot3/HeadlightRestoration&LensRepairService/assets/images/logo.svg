@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A3A5C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5a8c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D4A843;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#D4A843;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Headlight lens shape -->
+  <path d="M8 20 Q8 12 16 10 L40 10 Q48 10 48 18 L48 46 Q48 54 40 54 L16 54 Q8 54 8 46 Z" 
+        fill="url(#lensGrad)" stroke="#D4A843" stroke-width="2"/>
+  
+  <!-- Inner lens detail -->
+  <ellipse cx="28" cy="32" rx="12" ry="14" fill="none" stroke="#D4A843" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Light beam -->
+  <path d="M48 22 L62 16 L62 48 L48 42 Z" fill="url(#beamGrad)" opacity="0.4"/>
+  
+  <!-- Restoration sparkle effects -->
+  <g fill="#D4A843">
+    <path d="M52 14 L53 10 L54 14 L58 15 L54 16 L53 20 L52 16 L48 15 Z" opacity="0.9"/>
+    <path d="M58 8 L58.5 6 L59 8 L61 8.5 L59 9 L58.5 11 L58 9 L56 8.5 Z" opacity="0.7"/>
+    <path d="M46 6 L46.5 4 L47 6 L49 6.5 L47 7 L46.5 9 L46 7 L44 6.5 Z" opacity="0.6"/>
+  </g>
+  
+  <!-- Shine line on lens -->
+  <path d="M14 18 Q22 15 36 18" stroke="#D4A843" stroke-width="2" fill="none" opacity="0.7"/>
+</svg>
