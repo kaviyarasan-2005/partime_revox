@@ -136,6 +136,16 @@
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/animations.js"></script>
+  <script>
+    document.getElementById('rtl-toggle').addEventListener('click', function() {
+      const html = document.documentElement;
+      const current = html.getAttribute('dir');
+      const next = current === 'rtl' ? 'ltr' : 'rtl';
+      html.setAttribute('dir', next);
+      this.textContent = next === 'rtl' ? 'LTR' : 'RTL';
+      localStorage.setItem('dir', next);
+    });
+  </script>
 
 </body>
 </html>

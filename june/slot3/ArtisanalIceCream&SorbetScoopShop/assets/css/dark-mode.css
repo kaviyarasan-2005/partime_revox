@@ -173,6 +173,17 @@
     background-color: rgba(0, 0, 0, 0.65) !important;
   }
 
+  /* Outline buttons - improve contrast */
+  .btn-outline-primary {
+    color: #c9a0dc;
+    border-color: #9a5bb0;
+  }
+  .btn-outline-primary:hover {
+    background-color: rgba(154, 91, 176, 0.12);
+    color: #dbb8e8;
+    border-color: #c9a0dc;
+  }
+
   /* Hero text contrast - override inline styles */
   .hero .hero-title,
   .hero-title {

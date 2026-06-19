@@ -32,6 +32,8 @@
         <img src="assets/images/logo.svg" alt="LUME Logo" height="32" />
         <span class="dash-logo-text">LUME</span>
       </a>
+      <button class="dash-btn-icon" id="sidebar-toggle" style="width:32px;height:32px;border:none;"
+        aria-label="Toggle Sidebar"><i class="fa-solid fa-bars-staggered"></i></button>
     </div>
 
     <nav class="dash-sidebar-nav">
@@ -78,9 +80,8 @@
     <!-- HEADER -->
     <header class="dash-header">
       <div class="dash-header-left">
-        <button class="dash-hamburger" id="mobile-menu-btn" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="dash-btn-icon" id="mobile-menu-btn" style="display:none;"><i
+            class="fa-solid fa-bars"></i></button>
         <h1 class="dash-title">Good morning, John</h1>
       </div>
       <div class="dash-header-right">
@@ -282,30 +283,34 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const sidebar = document.getElementById('dash-sidebar');
-      const menuBtn = document.getElementById('mobile-menu-btn');
+      const toggleBtn = document.getElementById('sidebar-toggle');
+      const mobileBtn = document.getElementById('mobile-menu-btn');
       const overlay = document.getElementById('mobile-overlay');
 
       const isRTL = () => document.documentElement.dir === 'rtl';
 
       const checkMobile = () => {
         if (window.innerWidth <= 1024) {
-          sidebar.classList.remove('collapsed');
           sidebar.style.transform = isRTL() ? 'translateX(100%)' : 'translateX(-100%)';
+          mobileBtn.style.display = 'flex';
+          toggleBtn.style.display = 'none';
         } else {
           sidebar.style.transform = '';
+          mobileBtn.style.display = 'none';
+          toggleBtn.style.display = 'flex';
         }
       };
 
       window.addEventListener('resize', checkMobile);
       checkMobile();
 
-      menuBtn.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-          sidebar.style.transform = 'translateX(0)';
-          overlay.style.display = 'block';
-        } else {
-          sidebar.classList.toggle('collapsed');
-        }
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+      });
+
+      mobileBtn.addEventListener('click', () => {
+        sidebar.style.transform = 'translateX(0)';
+        overlay.style.display = 'block';
       });
 
       overlay.addEventListener('click', () => {

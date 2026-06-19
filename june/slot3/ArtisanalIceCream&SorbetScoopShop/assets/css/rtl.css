@@ -17,17 +17,39 @@
   text-align: right;
 
   /* ---- Navbar ---- */
-  .navbar-inner { flex-direction: row-reverse; }
-  .navbar-nav { flex-direction: row-reverse; }
-  .navbar-right { flex-direction: row-reverse; }
-  .navbar-toggles { flex-direction: row-reverse; }
+  .navbar-inner {
+    flex-direction: row-reverse;
+  }
 
-  .nav-dropdown { left: auto; right: 0; }
-  .nav-dropdown-toggle { flex-direction: row-reverse; }
+  .navbar-nav {
+    flex-direction: row-reverse;
+  }
+
+  .navbar-right {
+    flex-direction: row-reverse;
+  }
+
+  .navbar-toggles {
+    flex-direction: row-reverse;
+  }
+
+  .nav-dropdown {
+    left: auto;
+    right: 0;
+  }
+
+  .nav-dropdown-toggle {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Logo ---- */
-  .navbar-logo { flex-direction: row-reverse; }
-  .footer-logo { flex-direction: row-reverse; }
+  .navbar-logo {
+    flex-direction: row-reverse;
+  }
+
+  .footer-logo {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Cart dropdown RTL ---- */
   .cart-dropdown {
@@ -37,28 +59,60 @@
 
   /* ---- Hero ---- */
   .hero-centered .hero-title,
-  .hero-centered .hero-subtitle { text-align: center; }
+  .hero-centered .hero-subtitle {
+    text-align: center;
+  }
 
   .hero-title:not(.hero-centered .hero-title),
-  .hero-subtitle:not(.hero-centered .hero-subtitle) { text-align: right; }
+  .hero-subtitle:not(.hero-centered .hero-subtitle) {
+    text-align: right;
+  }
 
   /* ---- Stats Bar ---- */
-  .stat-item { border-inline-end: none; border-inline-start: 1px solid rgba(245, 230, 200, 0.2); }
-  .stat-item:first-child { border-inline-start: none; }
+  .stat-item {
+    border-inline-end: none;
+    border-inline-start: 1px solid rgba(245, 230, 200, 0.2);
+  }
+
+  .stat-item:first-child {
+    border-inline-start: none;
+  }
 
   /* ---- Process Steps ---- */
-  .process-step { flex-direction: row-reverse; text-align: right; }
+  .process-step {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
   /* ---- Timeline ---- */
-  .timeline { padding-inline-start: 0; padding-inline-end: 32px; }
-  .timeline::before { inset-inline-start: auto; inset-inline-end: 12px; }
-  .timeline-item::before { inset-inline-start: auto; inset-inline-end: -24px; }
+  .timeline-item { text-align: right; }
 
   /* ---- Footer ---- */
-  .footer-grid { direction: rtl; }
-  .footer-social { flex-direction: row-reverse; }
-  .footer-links { align-items: flex-end; }
-  .footer-legal-links { flex-direction: row-reverse; }
+  .footer-grid {
+    direction: rtl;
+  }
+
+  .footer-social {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .footer-links {
+    justify-content: flex-end;
+  }
+
+  .footer-legal-links {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .footer-logo {
+    justify-content: flex-end;
+  }
+
+  .footer-info-item {
+    justify-content: flex-end;
+  }
 
   /* ---- Form ---- */
   .form-input-icon {
@@ -67,11 +121,16 @@
     left: auto;
     right: 14px;
   }
-  .form-input {
-    padding-inline-start: 16px;
-    padding-inline-end: 42px;
+
+  .form-input,
+  .form-textarea {
+    text-align: start;
+    padding-inline-start: 42px;
+    padding-inline-end: 16px;
   }
+
   .form-select {
+    text-align: start;
     background-position: left 14px center;
     padding-inline-start: 36px;
     padding-inline-end: 16px;
@@ -85,77 +144,162 @@
     text-align: right;
   }
 
-  .benefit-item { flex-direction: row-reverse; text-align: right; }
-  .faq-card { flex-direction: row-reverse; text-align: right; }
-  .process-step-content { text-align: right; }
+  .benefit-item {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .faq-card {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .process-step-content {
+    text-align: right;
+  }
 
   /* ---- Blog Featured ---- */
-  .blog-featured { direction: rtl; }
-  .blog-featured-body { text-align: right; }
+  .blog-featured {
+    direction: rtl;
+  }
+
+  .blog-featured-body {
+    text-align: right;
+  }
 
   /* ---- Author Bio ---- */
-  .author-bio-card { flex-direction: row-reverse; text-align: right; }
+  .author-bio-card {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
   /* ---- Breadcrumb ---- */
-  .breadcrumb { flex-direction: row-reverse; }
-  .breadcrumb i { transform: rotate(180deg); }
+  .breadcrumb {
+    flex-direction: row-reverse;
+  }
+
+  .breadcrumb i {
+    transform: rotate(180deg);
+  }
 
   /* ---- Testimonial ---- */
-  .testimonial-author { flex-direction: row-reverse; }
-  .testimonial-card { text-align: right; }
-  .testimonial-stars { flex-direction: row-reverse; justify-content: flex-end; }
+  .testimonial-author {
+    flex-direction: row-reverse;
+  }
+
+  .testimonial-card {
+    text-align: right;
+  }
+
+  .testimonial-stars {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 
   /* ---- Step items ---- */
-  .step-item { flex-direction: row-reverse; text-align: right; }
+  .step-item {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
   /* ---- Comment ---- */
-  .comment-item { flex-direction: row-reverse; }
-  .comment-meta { flex-direction: row-reverse; }
-  .comment-text { text-align: right; }
+  .comment-item {
+    flex-direction: row-reverse;
+  }
+
+  .comment-meta {
+    flex-direction: row-reverse;
+  }
+
+  .comment-text {
+    text-align: right;
+  }
 
   /* ---- Package includes ---- */
-  .package-include-item { flex-direction: row-reverse; }
+  .package-include-item {
+    flex-direction: row-reverse;
+  }
 
   /* ---- CTA content ---- */
-  .cta-info-item { flex-direction: row-reverse; }
-  .cta-info-items { flex-direction: row-reverse; }
+  .cta-info-item {
+    flex-direction: row-reverse;
+  }
+
+  .cta-info-items {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Footer info items ---- */
-  .footer-info-item { flex-direction: row-reverse; text-align: right; }
+  .footer-info-item {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
   /* ---- Team Card ---- */
-  .team-fav-flavor { flex-direction: row-reverse; }
+  .team-fav-flavor {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Social Buttons ---- */
-  .social-buttons { flex-direction: row-reverse; }
-  .social-btn { flex-direction: row-reverse; }
+  .social-buttons {
+    flex-direction: row-reverse;
+  }
+
+  .social-btn {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Newsletter ---- */
-  .newsletter-form { flex-direction: row-reverse; }
+  .newsletter-form {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Blog read more ---- */
-  .blog-read-more { flex-direction: row-reverse; }
-  .blog-read-more i { transform: rotate(180deg); }
+  .blog-read-more {
+    flex-direction: row-reverse;
+  }
+
+  .blog-read-more i {
+    transform: rotate(180deg);
+  }
 
   /* ---- Buttons with icons ---- */
-  .btn i.fa-arrow-right { transform: rotate(180deg); }
-  .btn i.fa-arrow-left { transform: rotate(180deg); }
-  .btn i.fa-chevron-right { transform: rotate(180deg); }
+  .btn i.fa-arrow-right {
+    transform: rotate(180deg);
+  }
+
+  .btn i.fa-arrow-left {
+    transform: rotate(180deg);
+  }
+
+  .btn i.fa-chevron-right {
+    transform: rotate(180deg);
+  }
 
   /* ---- Mixer Options ---- */
-  .mixer-grid { direction: rtl; }
+  .mixer-grid {
+    direction: rtl;
+  }
 
   /* ---- Flavor Carousel ---- */
-  .flavor-carousel { flex-direction: row-reverse; }
+  .flavor-carousel {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Tags ---- */
-  .tags-cloud { flex-direction: row-reverse; }
+  .tags-cloud {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Hero CTA Group ---- */
-  .hero-cta-group:not(.hero-centered .hero-cta-group) { flex-direction: row-reverse; }
+  .hero-cta-group:not(.hero-centered .hero-cta-group) {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Section header subtitle ---- */
-  .section-header .subtitle { text-align: center; }
+  .section-header .subtitle {
+    text-align: center;
+  }
 
   /* ---- Pull quote ---- */
   .pull-quote {
@@ -165,8 +309,13 @@
   }
 
   /* ---- Loyalty ---- */
-  .loyalty-card-header { flex-direction: row-reverse; }
-  .loyalty-footer { flex-direction: row-reverse; }
+  .loyalty-card-header {
+    flex-direction: row-reverse;
+  }
+
+  .loyalty-footer {
+    flex-direction: row-reverse;
+  }
 
   /* ---- Navbar dropdown RTL alignment ---- */
   .nav-item-dropdown .nav-dropdown {

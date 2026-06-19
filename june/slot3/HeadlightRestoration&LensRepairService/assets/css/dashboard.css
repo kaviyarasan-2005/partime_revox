@@ -272,8 +272,9 @@ html {
   width: 100%;
   background-color: var(--dash-bg);
   border: 1px solid var(--dash-border);
-  padding: 10px 16px;
+  padding: 10px 16px 10px 44px;
   padding-inline-start: 44px;
+  padding-inline-end: 16px;
   border-radius: 999px;
   font-family: inherit;
   font-size: 0.875rem;
@@ -306,9 +307,7 @@ html {
 
 .dash-badge {
   position: absolute;
-  top: -2px;
-  inset-inline-end: -2px;
-  inset-inline-start: auto;
+  top: -2px; right: -2px;
   background-color: var(--dash-danger);
   color: #fff;
   font-size: 0.65rem;
@@ -317,37 +316,6 @@ html {
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   border: 2px solid var(--dash-card-bg);
-}
-
-/* ---- Hamburger Button ---- */
-.dash-hamburger {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--dash-border);
-  background-color: var(--dash-card-bg);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0;
-}
-
-.dash-hamburger span {
-  display: block;
-  width: 18px; height: 2px;
-  background-color: var(--dash-text-muted);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.dash-hamburger:hover {
-  background-color: var(--dash-bg);
-  border-color: var(--dash-primary);
-}
-
-.dash-hamburger:hover span {
-  background-color: var(--dash-primary);
 }
 
 /* ---- Content Wrapper ---- */
@@ -740,9 +708,7 @@ html {
 }
 
 [dir="rtl"] .dash-sidebar.collapsed ~ .dash-main {
-  margin-left: 0;
   margin-right: var(--dash-sidebar-collapsed);
-  width: calc(100% - var(--dash-sidebar-collapsed));
 }
 
 @media (max-width: 1024px) {

@@ -11,16 +11,7 @@
 }
 
 /* ---- Navbar RTL ---- */
-[dir="rtl"] .navbar-logo {
-  order: 3;
-}
-
-[dir="rtl"] .navbar-nav {
-  order: 2;
-}
-
-[dir="rtl"] .navbar-controls {
-  order: 1;
+[dir="rtl"] .navbar-inner {
   flex-direction: row-reverse;
 }
 
@@ -65,22 +56,6 @@
   flex-direction: row-reverse;
 }
 
-[dir="rtl"] .timeline-content {
-  text-align: right;
-}
-
-[dir="rtl"] .timeline-content h4 {
-  text-align: right;
-}
-
-[dir="rtl"] .timeline-content p {
-  text-align: right;
-}
-
-[dir="rtl"] .timeline-time {
-  text-align: right;
-}
-
 /* ---- Before/After RTL ---- */
 [dir="rtl"] .ba-after {
   clip-path: inset(0 0 0 50%);
@@ -105,22 +80,12 @@
 
 [dir="rtl"] .input-password-wrap .form-input {
   padding-inline-start: 48px;
-  padding-inline-end: 48px;
+  padding-inline-end: 16px;
 }
 
-[dir="rtl"] .input-password-wrap .password-toggle {
-  inset-inline-end: 16px;
-  inset-inline-start: auto;
-}
-
-[dir="rtl"] .auth-options a {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-[dir="rtl"] .auth-footer {
-  direction: ltr;
-  unicode-bidi: isolate;
+[dir="rtl"] .password-toggle {
+  inset-inline-end: auto;
+  inset-inline-start: 12px;
 }
 
 /* ---- Accordion RTL ---- */
@@ -134,6 +99,10 @@
 }
 
 /* ---- Footer RTL ---- */
+[dir="rtl"] .footer-contact-item {
+  flex-direction: row-reverse;
+}
+
 [dir="rtl"] .footer-bottom {
   flex-direction: row-reverse;
 }
@@ -232,129 +201,4 @@
 
 [dir="rtl"] .hamburger.active .hamburger-line:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -5px);
-}
-
-/* ---- Arrow icons RTL ---- */
-[dir="rtl"] .fa-arrow-right,
-[dir="rtl"] .fa-arrow-right-to-bracket,
-[dir="rtl"] .fa-arrow-left {
-  transform: scaleX(-1);
-}
-
-[dir="rtl"] .card-arrow,
-[dir="rtl"] .blog-card-arrow {
-  transform: scaleX(-1);
-}
-
-/* ---- Chevron icons in lists RTL ---- */
-[dir="rtl"] .footer-link .fa-chevron-right,
-[dir="rtl"] .fa-chevron-right {
-  transform: scaleX(-1);
-}
-
-/* ---- Footer RTL (reference-matched) ----
-   Let direction: rtl reverse grid columns naturally.
-   Brand moves right, Contact moves left — same as reference site. */
-[dir="rtl"] .footer-grid > * {
-  text-align: right;
-}
-
-[dir="rtl"] .footer-desc {
-  text-align: right;
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-[dir="rtl"] .footer-contact-item {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-[dir="rtl"] .footer-contact-text {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-[dir="rtl"] .footer-contact-text a {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-[dir="rtl"] .footer-links {
-  align-items: stretch;
-}
-
-[dir="rtl"] .footer-link {
-  width: 100%;
-  justify-content: flex-end;
-}
-
-[dir="rtl"] .footer-col-title {
-  text-align: right;
-}
-
-[dir="rtl"] .footer-copyright {
-  direction: ltr;
-  unicode-bidi: isolate;
-  text-align: center;
-  width: 100%;
-}
-
-/* ---- Process steps RTL ---- */
-[dir="rtl"] .process-step {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-
-[dir="rtl"] .process-step-num {
-  margin-inline-end: 0;
-  margin-inline-start: 20px;
-}
-
-/* ---- Timeline steps RTL ---- */
-[dir="rtl"] .timeline-item-content {
-  text-align: right;
-}
-
-/* ---- Content split RTL (timeline section) ---- */
-[dir="rtl"] .content-split:not(.reverse) {
-  direction: rtl;
-}
-
-[dir="rtl"] .content-split:not(.reverse) > * {
-  direction: ltr;
-}
-
-/* ---- Service card arrows RTL ---- */
-[dir="rtl"] .service-card .fa-arrow-right,
-[dir="rtl"] .blog-card .fa-arrow-right {
-  transform: scaleX(-1);
-}
-
-/* ---- Card body with arrow RTL ---- */
-[dir="rtl"] .card-body-flex {
-  flex-direction: row-reverse;
-}
-
-/* ---- Blog card footer RTL ---- */
-[dir="rtl"] .blog-card-footer {
-  flex-direction: row-reverse;
-}
-
-/* ---- Back arrow in auth RTL ---- */
-[dir="rtl"] .back-to-home .fa-arrow-left {
-  transform: scaleX(-1);
-}
-
-/* ---- Auth card top border RTL ---- */
-[dir="rtl"] .auth-card::before {
-  left: 0;
-  right: 0;
-}
-
-/* ---- Fixed toggle buttons position RTL ---- */
-[dir="rtl"] .auth-page > div[style*="fixed"] {
-  right: auto;
-  left: 24px;
 }

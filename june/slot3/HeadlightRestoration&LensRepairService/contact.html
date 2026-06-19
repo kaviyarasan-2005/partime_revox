@@ -219,8 +219,9 @@
         <p>Currently serving 50+ metropolitan areas across the United States. Enter your zip to check coverage.</p>
       </header>
       <div class="reveal">
-        <div class="map-container" style="border-radius:var(--border-radius-md);overflow:hidden;height:450px;border:1px solid var(--border-color);" aria-label="Service coverage map">
-          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-97.85,30.18,-97.65,30.35&layer=mapnik&marker=30.2672,-97.7431" style="width:100%;height:100%;border:none;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LUME Service Coverage Map"></iframe>
+        <div class="map-placeholder" aria-label="Service coverage map">
+          <i class="fa-solid fa-map-location-dot" style="font-size:48px;color:var(--color-primary);opacity:.4;" aria-hidden="true"></i>
+          <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);">Interactive map — service coverage nationwide</p>
         </div>
         <div class="area-search" style="margin-top:24px;" role="search" aria-label="Check service area">
           <input type="text" class="form-input" placeholder="Enter your ZIP code..." aria-label="ZIP code" id="zip-input" maxlength="10" style="max-width:300px;" />
@@ -334,7 +335,7 @@
       <!-- Brand -->
       <div>
         <a href="index.html" class="footer-logo" aria-label="LUME Homepage">
-          <img src="assets/images/logo.svg" alt="LUME Logo" height="40" />
+          <img src="assets/images/logo.svg" alt="LUME Logo" height="32" />
           <span class="footer-logo-text">LUME</span>
         </a>
         <p class="footer-desc">Professional mobile headlight restoration and lens repair services. Crystal clear vision, delivered to your door with a 2-year UV warranty.</p>

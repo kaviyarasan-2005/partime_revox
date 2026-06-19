@@ -1120,9 +1120,10 @@ p {
 
 .footer-logo-text {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
 }
 
 .footer-desc {
@@ -1722,10 +1723,13 @@ p {
   .container { padding-inline: 32px; }
   .navbar-inner { padding-inline: 32px; }
   .footer-grid { gap: 36px; }
+
+  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Tablet: 640px–1023px */
-@media (max-width: 1023px) {
+/* Tablet: 640px–1024px */
+@media (max-width: 1024px) {
   :root { --section-padding: 64px; --navbar-height: 64px; }
 
   .container { padding-inline: 24px; }

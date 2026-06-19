@@ -319,49 +319,15 @@
 /* ---- Footer adjustments ---- */
 [data-theme="dark"] .footer {
   background: #0A1520;
-  color: var(--color-text-light);
-}
-
-[data-theme="dark"] .footer-logo-text {
-  color: #FFFFFF;
-}
-
-[data-theme="dark"] .footer-desc {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-[data-theme="dark"] .footer-grid {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .footer-social-btn {
-  color: rgba(255, 255, 255, 0.65);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .footer-link {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-[data-theme="dark"] .footer-contact-text {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-[data-theme="dark"] .footer-contact-text a {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-[data-theme="dark"] .footer-copyright {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-[data-theme="dark"] .footer-legal a {
-  color: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme="dark"] .footer-bottom {
   border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .footer-social-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.07);
 }
 
 /* ---- Chart colors adjusted via JS charts.js ---- */

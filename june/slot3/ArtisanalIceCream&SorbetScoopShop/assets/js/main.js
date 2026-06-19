@@ -59,6 +59,16 @@
       const dropdown = item.querySelector('.nav-dropdown');
       if (!toggle || !dropdown) return;
 
+      // Click to toggle
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(function (el) {
+          el.classList.remove('open');
+        });
+        if (!wasOpen) item.classList.add('open');
+      });
+
       // Keyboard support
       toggle.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
