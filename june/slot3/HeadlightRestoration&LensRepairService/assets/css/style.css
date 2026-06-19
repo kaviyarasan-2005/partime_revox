@@ -1534,7 +1534,6 @@ p {
   gap: 48px;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--footer-border);
-  justify-content: flex-end;
 }
 
 .footer-logo {
@@ -1609,7 +1608,6 @@ p {
   transition: color var(--transition-base);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 6px;
 }
 
@@ -1620,7 +1618,6 @@ p {
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
   gap: 12px;
   margin-bottom: 12px;
 }
