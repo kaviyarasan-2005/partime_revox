@@ -724,7 +724,7 @@ html {
   }
 }
 
-[dir="rtl"] .dash-header {
+/* [dir="rtl"] .dash-header {
   flex-direction: row-reverse;
 }
 
@@ -734,7 +734,7 @@ html {
 
 [dir="rtl"] .dash-header-right {
   flex-direction: row-reverse;
-}
+} */
 
 [dir="rtl"] .dash-nav-item.active i {
   transform: translateX(-2px);
@@ -752,11 +752,11 @@ html {
   text-align: right;
 }
 
-/* Mobile: lock top bar in LTR layout */
-@media (max-width: 1024px) {
+/* Mobile: lock top bar in LTR layout - Commented out to allow natural flipping */
+/* @media (max-width: 1024px) {
   [dir="rtl"] .dash-header,
   [dir="rtl"] .dash-header-left,
   [dir="rtl"] .dash-header-right {
     flex-direction: row;
   }
-}
+} */

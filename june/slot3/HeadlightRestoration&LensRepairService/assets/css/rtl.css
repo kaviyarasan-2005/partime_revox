@@ -11,9 +11,6 @@
 }
 
 /* ---- Navbar RTL ---- */
-[dir="rtl"] .navbar-inner {
-  flex-direction: row-reverse;
-}
 
 [dir="rtl"] .nav-dropdown-menu {
   inset-inline-start: auto;
@@ -80,7 +77,12 @@
 
 [dir="rtl"] .input-password-wrap .form-input {
   padding-inline-start: 48px;
-  padding-inline-end: 16px;
+  padding-inline-end: 44px;
+}
+
+[dir="rtl"] .input-password-wrap > i {
+  inset-inline-start: auto;
+  inset-inline-end: 16px;
 }
 
 [dir="rtl"] .password-toggle {
