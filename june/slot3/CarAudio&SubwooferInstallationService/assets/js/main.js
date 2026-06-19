@@ -884,6 +884,77 @@ const BookingForm = {
   }
 };
 
+/* ── Dashboard Sidebar (mobile + desktop toggle) ─────────── */
+const DashboardSidebar = {
+  overlay: null,
+
+  init() {
+    const btn = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const layout  = document.querySelector('.dashboard-layout');
+    if (!btn || !sidebar || !layout) return;
+
+    // Replace the inline onclick so we control behaviour fully
+    btn.removeAttribute('onclick');
+    btn.addEventListener('click', () => this.toggle());
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeMobile();
+    });
+  },
+
+  isMobile() {
+    return window.innerWidth <= 1024;
+  },
+
+  toggle() {
+    if (this.isMobile()) {
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar?.classList.contains('open')) {
+        this.closeMobile();
+      } else {
+        this.openMobile();
+      }
+    } else {
+      // Desktop: collapse/expand
+      const layout = document.querySelector('.dashboard-layout');
+      layout?.classList.toggle('sidebar-collapsed');
+    }
+  },
+
+  openMobile() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Create backdrop
+    if (!this.overlay) {
+      this.overlay = document.createElement('div');
+      this.overlay.style.cssText = [
+        'position:fixed', 'inset:0', 'z-index:var(--z-sticky,40)',
+        'background:rgba(0,0,0,0.45)', 'backdrop-filter:blur(2px)',
+        'transition:opacity 0.25s'
+      ].join(';');
+      this.overlay.addEventListener('click', () => this.closeMobile());
+      document.body.appendChild(this.overlay);
+      requestAnimationFrame(() => { this.overlay.style.opacity = '1'; });
+    }
+  },
+
+  closeMobile() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar?.classList.remove('open');
+    document.body.style.overflow = '';
+    if (this.overlay) {
+      this.overlay.style.opacity = '0';
+      setTimeout(() => {
+        this.overlay?.remove();
+        this.overlay = null;
+      }, 250);
+    }
+  }
+};
+
 /* ── Saved Favorites ──────────────────────────────────────── */
 const Favorites = {
   KEY: 'caraudio-favorites',
@@ -984,6 +1055,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Favorites.init();
   AudioCalculator.init();
   AudioVisualizer.init();
+  DashboardSidebar.init();
 
   // Wire theme toggle
   document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
@@ -1018,4 +1090,5 @@ window.CarAudio = {
   ToastManager,
   ModalManager,
   Favorites,
+  DashboardSidebar,
 };
