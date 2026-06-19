@@ -35,7 +35,7 @@
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
   --bg-navbar: rgba(248, 249, 250, 0.92);
-  --bg-footer: #0D1B2A;
+  --bg-footer: #F8F9FA;
   --bg-input: #FFFFFF;
   --bg-overlay: rgba(26, 58, 92, 0.7);
 
@@ -1473,7 +1473,7 @@ p {
    ============================================================ */
 .footer {
   background: var(--bg-footer);
-  color: var(--color-text-light);
+  color: var(--color-text-primary);
   padding-top: 64px;
 }
 
@@ -1482,7 +1482,7 @@ p {
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
   gap: 48px;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .footer-logo {
@@ -1494,15 +1494,16 @@ p {
 }
 
 .footer-logo-text {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-primary);
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .footer-desc {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 24px;
 }
@@ -1520,9 +1521,9 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.65);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base);
   text-decoration: none;
 }
@@ -1551,7 +1552,7 @@ p {
 
 .footer-link {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
   display: flex;
@@ -1580,12 +1581,12 @@ p {
 
 .footer-contact-text {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
 .footer-contact-text a {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
 }
@@ -1605,7 +1606,7 @@ p {
 
 .footer-copyright {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted);
 }
 
 .footer-legal {
@@ -1615,7 +1616,7 @@ p {
 
 .footer-legal a {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition-base);
 }
