@@ -22,8 +22,8 @@
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo" aria-label="BAND Home">
         <svg class="logo-svg" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="17" cy="20" r="13" stroke="#E17055" stroke-width="4" fill="none"/>
-          <circle cx="33" cy="20" r="13" stroke="#2D3436" stroke-width="4" fill="none"/>
+          <circle cx="17" cy="20" r="13" stroke="var(--logo-ring-primary)" stroke-width="4" fill="none"/>
+          <circle cx="33" cy="20" r="13" stroke-width="4" fill="none"/>
         </svg>
         <span class="logo-text">BAND</span>
       </a>
@@ -117,7 +117,7 @@
         <h2 id="filter-heading" class="sr-only">Filter &amp; Sort Products</h2>
         <div class="filter-bar reveal">
           <div class="filter-group">
-            <span class="filter-label"><i class="fa-solid fa-sliders"></i> Style:</span>
+            <span class="filter-label"><i class="fa-solid fa-sliders"></i> <span dir="ltr">Style:</span></span>
             <button class="filter-pill active" id="filter-all">All</button>
             <button class="filter-pill" id="filter-classic">Classic</button>
             <button class="filter-pill" id="filter-beveled">Beveled</button>
@@ -125,13 +125,13 @@
             <button class="filter-pill" id="filter-stackable">Stackable</button>
           </div>
           <div class="filter-group">
-            <span class="filter-label"><i class="fa-solid fa-venus-mars"></i> For:</span>
+            <span class="filter-label"><i class="fa-solid fa-venus-mars"></i> <span dir="ltr">For:</span></span>
             <button class="filter-pill active" id="filter-unisex">Unisex</button>
             <button class="filter-pill" id="filter-mens">Men's</button>
             <button class="filter-pill" id="filter-womens">Women's</button>
           </div>
           <div class="filter-group" style="margin-inline-start:auto;">
-            <span class="filter-label"><i class="fa-solid fa-arrow-up-wide-short"></i> Sort:</span>
+            <span class="filter-label"><i class="fa-solid fa-arrow-up-wide-short"></i> <span dir="ltr">Sort:</span></span>
             <select class="form-select" style="padding:8px 12px 8px 12px;min-width:160px;" id="sort-select" aria-label="Sort products">
               <option>Featured</option>
               <option>Price: Low to High</option>
@@ -147,7 +147,7 @@
     <!-- PRODUCT GRID -->
     <section class="section" style="padding-top:0;" aria-labelledby="products-heading">
       <div class="container">
-        <div class="section-header reveal" style="text-align:start;margin-bottom:32px;">
+        <div class="section-header reveal" style="text-align:center;margin-bottom:32px;">
           <h2 id="products-heading">All Rings</h2>
           <p>Showing 12 products</p>
         </div>
@@ -531,7 +531,7 @@
           </div>
           <div class="col-text">
             <span class="label text-orange" style="display:block;margin-bottom:12px;"><i class="fa-solid fa-ruler"></i> Find Your Size</span>
-            <h2 id="size-cta-heading">Not Sure About Your Size?</h2>
+            <h2 id="size-cta-heading">Not Sure About Your Size<span dir="ltr">?</span></h2>
             <p>Getting the right fit is everything. Use one of our three easy sizing methods to find your perfect BAND size before you order.</p>
             <div style="display:flex;gap:16px;flex-direction:column;margin-top:8px;">
               <div class="feature-card" style="flex-direction:row;align-items:center;">
@@ -606,8 +606,8 @@
         <div class="footer-brand">
           <a href="index.html" class="navbar-logo" aria-label="BAND Home">
             <svg class="logo-svg" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="17" cy="20" r="13" stroke="#E17055" stroke-width="4" fill="none"/>
-              <circle cx="33" cy="20" r="13" stroke="#F5F6FA" stroke-width="4" fill="none"/>
+              <circle cx="17" cy="20" r="13" stroke="var(--logo-ring-primary)" stroke-width="4" fill="none"/>
+              <circle cx="33" cy="20" r="13" stroke-width="4" fill="none"/>
             </svg>
             <span class="logo-text">BAND</span>
           </a>

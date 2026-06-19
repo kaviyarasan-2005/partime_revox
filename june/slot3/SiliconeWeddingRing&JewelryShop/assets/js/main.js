@@ -62,7 +62,10 @@ const RTLManager = {
   },
 
   apply(dir) {
+    document.documentElement.classList.add('no-transition');
     document.documentElement.setAttribute('dir', dir);
+    document.documentElement.offsetHeight;
+    document.documentElement.classList.remove('no-transition');
   },
 
   updateToggleText(dir) {
