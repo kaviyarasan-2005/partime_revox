@@ -837,6 +837,18 @@
   border-top: 1px solid var(--border-color);
 }
 
+.team-card-social .social-link {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.team-card-social .social-link:hover {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: #fff;
+}
+
 /* ============================================================
    DASHBOARD SIDEBAR & LAYOUT
    ============================================================ */
