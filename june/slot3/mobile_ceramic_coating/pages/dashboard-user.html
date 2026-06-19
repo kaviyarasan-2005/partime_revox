@@ -180,12 +180,28 @@
       backdrop-filter: blur(2px);
     }
 
-    @media (max-width: 1024px) {
-      .dashboard-main {
+    .dashboard-main {
       margin-left: 260px;
       min-height: 100vh;
       padding: 3px var(--sp-6) var(--sp-6);
     }
+    
+    [dir="rtl"] .dashboard-main {
+      margin-left: 0;
+      margin-right: 260px;
+    }
+
+    @media (max-width: 1024px) {
+      .dashboard-main {
+        margin-left: 0;
+        padding: 3px var(--sp-3) var(--sp-3);
+      }
+      .dashboard-content-box {
+        padding: var(--sp-4);
+      }
+      [dir="rtl"] .dashboard-main {
+        margin-right: 0;
+      }
       .dashboard-sidebar {
         left: -300px;
         width: 280px;
@@ -211,11 +227,6 @@
       .sidebar-overlay.active {
         display: block;
       }
-    }
-  
-    [dir="rtl"] .dashboard-main {
-      margin-left: 0;
-      margin-right: 260px;
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
