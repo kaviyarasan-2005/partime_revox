@@ -158,6 +158,35 @@
   color: var(--color-primary);
 }
 
+.navbar__dropdown-link.is-active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  position: relative;
+}
+
+.navbar__dropdown-link.is-active::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  background: var(--color-primary);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* Parent toggle gets active treatment when a child page is current */
+.navbar__dropdown-toggle.has-active-child {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  font-weight: 700;
+}
+
+.navbar__dropdown-toggle.has-active-child .navbar__chevron {
+  color: var(--color-primary);
+}
+
 /* ── Controls (RTL, Theme) ── */
 .navbar__controls {
   display: flex;
