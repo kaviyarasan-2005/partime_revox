@@ -47,6 +47,12 @@
       overflow-y: auto;
       z-index: 50;
     }
+    [dir="rtl"] .dashboard-sidebar {
+      left: auto;
+      right: 0;
+      border-right: none;
+      border-left: 1px solid var(--border-color);
+    }
     .sidebar-user-info {
       padding-bottom: var(--sp-4);
       margin-bottom: var(--sp-4);
@@ -198,6 +204,7 @@
       }
       .dashboard-content-box {
         padding: var(--sp-4);
+        margin-top: 6px;
       }
       [dir="rtl"] .dashboard-main {
         margin-right: 0;
@@ -260,7 +267,7 @@
 
       <button class="sidebar-link active" data-panel="panel-tracking">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17v-5M15 17V9M12 17v-3"/></svg>
-        Paint Protection Tracker
+        Paint Tracking
       </button>
 
       
@@ -289,14 +296,21 @@
     
     <div class="dashboard-main">
       <!-- DASHBOARD TOP BAR -->
-<header class="dashboard-top-bar hide-on-desktop" style="display: flex; align-items: center; justify-content: space-between; padding: var(--sp-3) 0 0; z-index: 100;">
+<header class="dashboard-top-bar" style="display: flex; align-items: center; justify-content: space-between; padding: var(--sp-3) 0 0; z-index: 100;">
   <div class="left-controls" style="display: flex; align-items: center; gap: var(--sp-3);">
     <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
     </button>
-    
   </div>
-  
+  <div style="display: flex; align-items: center; gap: var(--sp-2);">
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle Theme" style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:8px; cursor:pointer; color:var(--text-primary);">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    <button class="rtl-toggle" id="rtlToggle" aria-label="Switch to RTL mode" title="Toggle RTL/LTR" style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:8px 12px; cursor:pointer; color:var(--text-primary); font-weight:600; font-size:var(--text-sm);">
+      <span>RTL</span>
+    </button>
+  </div>
 </header>
       <!-- CONTENT PANELS -->
       <section class="dashboard-content-box" role="main" aria-label="Dashboard Panels">
@@ -348,22 +362,11 @@
         </div>
       </div>
 
-      <!-- PANEL 1: PAINT PROTECTION TRACKER -->
+      <!-- PANEL 1: PAINT TRACKING -->
       <div id="panel-tracking" class="dashboard-panel">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--sp-6); flex-wrap: wrap; gap: var(--sp-4);">
-          <div>
-            <h2 style="margin-bottom: var(--sp-2);">Paint Protection Tracking</h2>
-            <p style="color:var(--text-muted); margin: 0;">Live statistics for your registered vehicle: <strong>2023 Porsche 911 GT3 (Chalk Gray)</strong></p>
-          </div>
-          <div class="right-controls" style="display: flex; align-items: center; gap: var(--sp-2);">
-    <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle Theme" style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:8px; cursor:pointer; color:var(--text-primary);">
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-  </button>
-    <button class="rtl-toggle" id="rtlToggle" aria-label="Switch to RTL mode" title="Toggle RTL/LTR" style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:8px 12px; cursor:pointer; color:var(--text-primary); font-weight:600; font-size:var(--text-sm);">
-    <span>RTL</span>
-  </button>
-  </div>
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="margin-bottom: var(--sp-2);">Paint Tracking</h2>
+          <p style="color:var(--text-muted); margin: 0;">Live statistics for your registered vehicle: <strong>2023 Porsche 911 GT3 (Chalk Gray)</strong></p>
         </div>
 
         <!-- Curing Status -->

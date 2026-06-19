@@ -172,6 +172,13 @@
         (page === 'contact' && currentPath === 'contact.html')
       ) {
         link.classList.add('is-active');
+
+        /* If the active link is inside a dropdown, also highlight the parent toggle */
+        var parentDropdown = link.closest('.navbar__item--dropdown');
+        if (parentDropdown) {
+          var toggleBtn = parentDropdown.querySelector('.navbar__dropdown-toggle');
+          if (toggleBtn) toggleBtn.classList.add('has-active-child');
+        }
       }
     });
 

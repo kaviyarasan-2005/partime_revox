@@ -71,18 +71,18 @@
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const item     = header.parentElement;
-        const isOpen   = item.classList.contains('open');
+        const isActive = item.classList.contains('active');
 
         // Close siblings
         const siblings = item.parentElement.querySelectorAll('.accordion-item');
         siblings.forEach(s => {
-          s.classList.remove('open');
+          s.classList.remove('active');
           const h = s.querySelector('.accordion-header');
           if (h) h.setAttribute('aria-expanded', 'false');
         });
 
-        if (!isOpen) {
-          item.classList.add('open');
+        if (!isActive) {
+          item.classList.add('active');
           header.setAttribute('aria-expanded', 'true');
         }
       });

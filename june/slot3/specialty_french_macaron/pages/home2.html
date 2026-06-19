@@ -187,12 +187,53 @@
             </div>
           </div>
 
-          <div class="map-placeholder animate-on-scroll delay-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <p class="map-placeholder-title">Interactive Shipping Map</p>
-            <p>Google Maps API — shipping coverage visualization</p>
-            <a href="../pages/contact.html" class="btn btn-primary btn-sm" style="margin-top:8px">Check Delivery</a>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+          
+          <div class="map-container animate-on-scroll delay-1" style="border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-md); position: relative; min-height: 400px; background: #e5e3df; width: 100%;">
+            <div id="shipping-map" style="width: 100%; height: 100%; position: absolute; inset: 0; z-index: 1;"></div>
+            <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.95); padding: 16px; border-radius: var(--r-lg); box-shadow: var(--shadow-sm); z-index: 1000; max-width: 260px;">
+              <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); margin-bottom: 4px; color: var(--text-primary);">Interactive Shipping Map</h3>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); margin-bottom: 12px; line-height: 1.4;">View our nationwide shipping coverage and estimated delivery times.</p>
+              <a href="../pages/contact.html" class="btn btn-primary btn-sm" style="width: 100%;">Check Delivery</a>
+            </div>
           </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const mapElement = document.getElementById("shipping-map");
+              if (mapElement) {
+                // Initialize map focused on the US
+                const map = L.map('shipping-map', {
+                  zoomControl: false
+                }).setView([39.8283, -98.5795], 4);
+                
+                // Add zoom control to top right
+                L.control.zoom({ position: 'topright' }).addTo(map);
+
+                // Add CartoDB Positron tiles for a clean, light aesthetic
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                  subdomains: 'abcd',
+                  maxZoom: 20
+                }).addTo(map);
+                
+                // Highlight example coverage zones (NY & LA)
+                L.circle([40.7128, -74.0060], {
+                  color: '#C9506B',
+                  fillColor: '#C9506B',
+                  fillOpacity: 0.15,
+                  radius: 400000
+                }).addTo(map);
+                
+                L.circle([34.0522, -118.2437], {
+                  color: '#C9506B',
+                  fillColor: '#C9506B',
+                  fillOpacity: 0.15,
+                  radius: 500000
+                }).addTo(map);
+              }
+            });
+          </script>
         </div>
       </div>
     </section>

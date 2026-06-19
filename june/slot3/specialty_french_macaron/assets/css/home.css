@@ -329,7 +329,7 @@
 
 .flavor-notes {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: var(--sp-4);
   font-style: italic;
   font-family: var(--font-accent);
