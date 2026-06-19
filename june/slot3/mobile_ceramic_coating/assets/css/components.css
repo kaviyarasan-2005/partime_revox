@@ -852,6 +852,11 @@
   z-index: 1;
 }
 
+@media (max-width: 639px) {
+  .cta-banner { padding: var(--sp-7) var(--sp-5); }
+  .cta-banner-actions { flex-direction: column; }
+}
+
 /* ============================================================
    STATS SECTION
    ============================================================ */
