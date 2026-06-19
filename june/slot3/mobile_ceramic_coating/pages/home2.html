@@ -19,6 +19,10 @@
     .hero-modern { background: var(--bg-primary); }
     .hero-modern .hero-split-content { padding: var(--sp-9) var(--sp-8) var(--sp-9) 0; }
     [dir="rtl"] .hero-modern .hero-split-content { padding: var(--sp-9) 0 var(--sp-9) var(--sp-8); }
+    @media (max-width: 1024px) {
+      .hero-modern .hero-split-content { padding: var(--sp-7) var(--sp-5) !important; }
+      [dir="rtl"] .hero-modern .hero-split-content { padding: var(--sp-7) var(--sp-5) !important; }
+    }
     .gloss-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 20px;
@@ -174,7 +178,7 @@
       <div><strong>Live Tracking</strong> — Dashboard with real-time curing status</div>
     </div>
 
-    <div class="flex gap-4 mt-6">
+    <div class="flex gap-4 mt-6" style="flex-wrap: wrap;">
       <a href="contact.html" class="btn btn-primary btn-lg btn-rounded">Get Free Quote</a>
       <a href="pricing.html" class="btn btn-ghost btn-lg btn-rounded">Compare Packages</a>
     </div>
@@ -316,7 +320,7 @@
       <h2 id="cta2-heading">Book Your Free Consultation Today</h2>
       <p>Our experts will assess your vehicle, recommend the ideal package, and provide a free paint thickness reading — no obligation.</p>
       <div class="cta-banner-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg btn-rounded">Schedule Free Consultation</a>
+        <a href="contact.html" class="btn btn-primary btn-lg btn-rounded">Schedule</a>
         <a href="about.html" class="btn btn-outline btn-lg btn-rounded" style="color:rgba(248,250,252,0.85);border-color:rgba(248,250,252,0.25);">Learn About Us</a>
       </div>
     </div>

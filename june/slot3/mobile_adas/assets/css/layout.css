@@ -1135,6 +1135,7 @@
     transform: translateX(-100%) !important;
     visibility: hidden;
   }
+  html[dir="rtl"] .dashboard-sidebar,
   [dir="rtl"] .dashboard-sidebar {
     left: auto !important;
     right: 0 !important;
@@ -1145,7 +1146,10 @@
     transform: translateX(0) !important;
     visibility: visible;
   }
+  html[dir="rtl"] .dashboard-sidebar.open,
   [dir="rtl"] .dashboard-sidebar.open {
+    left: auto !important;
+    right: 0 !important;
     transform: translateX(0) !important;
     visibility: visible;
   }
