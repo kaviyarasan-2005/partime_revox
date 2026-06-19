@@ -107,7 +107,7 @@
         <label class="form-label" for="password">Password</label>
         <div class="input-password-wrap">
           <i class="fa-solid fa-lock" style="position:absolute;top:50%;transform:translateY(-50%);inset-inline-start:16px;color:var(--color-text-muted);z-index:1;"></i>
-          <input type="password" id="password" class="form-input" placeholder="Enter your password" style="padding-inline-start:44px;padding-inline-end:44px;" required autocomplete="current-password" />
+          <input type="password" id="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password" />
           <button type="button" class="password-toggle" aria-label="Toggle password visibility"><i class="fa-solid fa-eye"></i></button>
         </div>
       </div>
@@ -144,16 +144,6 @@
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/animations.js"></script>
-  <script>
-    document.getElementById('rtl-toggle').addEventListener('click', function() {
-      const html = document.documentElement;
-      const current = html.getAttribute('dir');
-      const next = current === 'rtl' ? 'ltr' : 'rtl';
-      html.setAttribute('dir', next);
-      this.textContent = next === 'rtl' ? 'LTR' : 'RTL';
-      localStorage.setItem('dir', next);
-    });
-  </script>
 
 </body>
 </html>

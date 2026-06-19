@@ -17,39 +17,13 @@
   text-align: right;
 
   /* ---- Navbar ---- */
-  .navbar-inner {
-    flex-direction: row-reverse;
-  }
-
-  .navbar-nav {
-    flex-direction: row-reverse;
-  }
-
-  .navbar-right {
-    flex-direction: row-reverse;
-  }
-
-  .navbar-toggles {
-    flex-direction: row-reverse;
-  }
-
   .nav-dropdown {
     left: auto;
     right: 0;
   }
 
-  .nav-dropdown-toggle {
-    flex-direction: row-reverse;
-  }
 
-  /* ---- Logo ---- */
-  .navbar-logo {
-    flex-direction: row-reverse;
-  }
-
-  .footer-logo {
-    flex-direction: row-reverse;
-  }
+  /* .footer-logo layout is naturally flipped under dir="rtl" */
 
   /* ---- Cart dropdown RTL ---- */
   .cart-dropdown {
@@ -80,7 +54,6 @@
 
   /* ---- Process Steps ---- */
   .process-step {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
@@ -92,27 +65,7 @@
     direction: rtl;
   }
 
-  .footer-social {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
-
-  .footer-links {
-    justify-content: flex-end;
-  }
-
-  .footer-legal-links {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
-
-  .footer-logo {
-    justify-content: flex-end;
-  }
-
-  .footer-info-item {
-    justify-content: flex-end;
-  }
+  /* Footer elements naturally align and order in RTL flow */
 
   /* ---- Form ---- */
   .form-input-icon {
@@ -145,12 +98,10 @@
   }
 
   .benefit-item {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
   .faq-card {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
@@ -169,95 +120,43 @@
 
   /* ---- Author Bio ---- */
   .author-bio-card {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
   /* ---- Breadcrumb ---- */
-  .breadcrumb {
-    flex-direction: row-reverse;
-  }
 
   .breadcrumb i {
     transform: rotate(180deg);
   }
 
   /* ---- Testimonial ---- */
-  .testimonial-author {
-    flex-direction: row-reverse;
-  }
+  /* .testimonial-author naturally flips */
 
   .testimonial-card {
     text-align: right;
   }
 
-  .testimonial-stars {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
+  /* .testimonial-stars naturally align to start (right) */
 
   /* ---- Step items ---- */
   .step-item {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
-  /* ---- Comment ---- */
-  .comment-item {
-    flex-direction: row-reverse;
-  }
-
-  .comment-meta {
-    flex-direction: row-reverse;
-  }
+  /* Comment elements naturally flip */
 
   .comment-text {
     text-align: right;
   }
 
-  /* ---- Package includes ---- */
-  .package-include-item {
-    flex-direction: row-reverse;
-  }
+  /* ---- Package includes & CTA content naturally flip ---- */
 
-  /* ---- CTA content ---- */
-  .cta-info-item {
-    flex-direction: row-reverse;
-  }
-
-  .cta-info-items {
-    flex-direction: row-reverse;
-  }
-
-  /* ---- Footer info items ---- */
   .footer-info-item {
-    flex-direction: row-reverse;
     text-align: right;
   }
 
-  /* ---- Team Card ---- */
-  .team-fav-flavor {
-    flex-direction: row-reverse;
-  }
-
   /* ---- Social Buttons ---- */
-  .social-buttons {
-    flex-direction: row-reverse;
-  }
-
-  .social-btn {
-    flex-direction: row-reverse;
-  }
-
-  /* ---- Newsletter ---- */
-  .newsletter-form {
-    flex-direction: row-reverse;
-  }
-
-  /* ---- Blog read more ---- */
-  .blog-read-more {
-    flex-direction: row-reverse;
-  }
+  /* Social buttons, newsletter, and blog links naturally flip */
 
   .blog-read-more i {
     transform: rotate(180deg);
@@ -281,20 +180,7 @@
     direction: rtl;
   }
 
-  /* ---- Flavor Carousel ---- */
-  .flavor-carousel {
-    flex-direction: row-reverse;
-  }
-
-  /* ---- Tags ---- */
-  .tags-cloud {
-    flex-direction: row-reverse;
-  }
-
-  /* ---- Hero CTA Group ---- */
-  .hero-cta-group:not(.hero-centered .hero-cta-group) {
-    flex-direction: row-reverse;
-  }
+  /* Flavor carousel, tags cloud, and hero CTA groups naturally flip */
 
   /* ---- Section header subtitle ---- */
   .section-header .subtitle {
@@ -309,13 +195,7 @@
   }
 
   /* ---- Loyalty ---- */
-  .loyalty-card-header {
-    flex-direction: row-reverse;
-  }
-
-  .loyalty-footer {
-    flex-direction: row-reverse;
-  }
+  /* Loyalty elements naturally flip */
 
   /* ---- Navbar dropdown RTL alignment ---- */
   .nav-item-dropdown .nav-dropdown {
