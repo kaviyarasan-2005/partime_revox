@@ -87,12 +87,20 @@
       <h2 id="pricing-heading">Choose Your Protection Level</h2>
       <p>All packages include free mobile service delivery, paint thickness readings, and digital warranty documentation.</p>
     </div>
+    
+    <div class="flex-center fade-up delay-1" style="margin-bottom:var(--sp-7);">
+      <div class="tab-nav">
+        <button class="tab-btn active" id="btn-monthly">Monthly</button>
+        <button class="tab-btn" id="btn-annual">Annually <span class="badge badge-success" style="margin-left:4px; font-size:10px; padding:2px 6px;">Save 15%</span></button>
+      </div>
+    </div>
+
     <div class="grid grid-3 fade-up delay-1">
       <!-- Silver Shield -->
       <div class="tier-card">
         <div class="tier-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg></div>
         <div class="tier-name">Silver Shield</div>
-        <div class="tier-price"><span class="currency">$</span><span class="amount">499</span><span class="period">one-time</span></div>
+        <div class="tier-price"><span class="currency">$</span><span class="amount" data-monthly="49" data-annual="499">49</span><span class="period">/mo</span></div>
         <p class="tier-desc">Essential ceramic protection with great gloss and chemical resistance for everyday vehicles.</p>
         <ul class="tier-features">
           <li class="tier-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>1-Year Ceramic Coating</li>
@@ -106,7 +114,7 @@
         </ul>
         <!-- Stripe/PayPal placeholder -->
         <div style="margin-bottom:var(--sp-4);">
-          <button class="btn btn-outline w-full" data-stripe-product="silver" aria-label="Purchase Silver Shield package">Purchase Now</button>
+          <button class="btn btn-primary w-full" data-stripe-product="silver" aria-label="Purchase Silver Shield package">Purchase Now</button>
           <p style="font-size:var(--text-xs);color:var(--text-muted);text-align:center;margin-top:8px;">Secure checkout via Stripe</p>
         </div>
         <a href="contact.html" class="btn btn-ghost w-full btn-sm">Get Free Quote First</a>
@@ -117,7 +125,7 @@
         <span class="tier-badge">Most Popular</span>
         <div class="tier-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <div class="tier-name">Gold Gloss</div>
-        <div class="tier-price"><span class="currency">$</span><span class="amount">899</span><span class="period">one-time</span></div>
+        <div class="tier-price"><span class="currency">$</span><span class="amount" data-monthly="89" data-annual="899">89</span><span class="period">/mo</span></div>
         <p class="tier-desc">The perfect balance of protection and value. Professional-grade ceramic with paint correction.</p>
         <ul class="tier-features">
           <li class="tier-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>3-Year Ceramic Coating</li>
@@ -140,7 +148,7 @@
       <div class="tier-card">
         <div class="tier-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 18 3 22 12 12 22 2 12"/></svg></div>
         <div class="tier-name">Diamond Armor</div>
-        <div class="tier-price"><span class="currency">$</span><span class="amount">1,599</span><span class="period">one-time</span></div>
+        <div class="tier-price"><span class="currency">$</span><span class="amount" data-monthly="159" data-annual="1,599">159</span><span class="period">/mo</span></div>
         <p class="tier-desc">The ultimate paint protection system. Ceramic + full PPF coverage with lifetime warranty.</p>
         <ul class="tier-features">
           <li class="tier-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>10-Year Ceramic Coating</li>
@@ -153,7 +161,7 @@
           <li class="tier-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Account Manager</li>
         </ul>
         <div style="margin-bottom:var(--sp-4);">
-          <button class="btn btn-dark w-full" data-stripe-product="diamond" aria-label="Purchase Diamond Armor package">Purchase Now</button>
+          <button class="btn btn-primary w-full" data-stripe-product="diamond" aria-label="Purchase Diamond Armor package">Purchase Now</button>
           <p style="font-size:var(--text-xs);color:var(--text-muted);text-align:center;margin-top:8px;">Secure checkout via Stripe</p>
         </div>
         <a href="contact.html" class="btn btn-ghost w-full btn-sm">Get Free Quote First</a>
@@ -382,6 +390,30 @@
 </footer>
 
 <div class="toast-container" role="region" aria-live="polite"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnMonthly = document.getElementById('btn-monthly');
+    const btnAnnual = document.getElementById('btn-annual');
+    const amounts = document.querySelectorAll('.tier-price .amount');
+    const periods = document.querySelectorAll('.tier-price .period');
+
+    if (btnMonthly && btnAnnual) {
+      btnMonthly.addEventListener('click', () => {
+        btnMonthly.classList.add('active');
+        btnAnnual.classList.remove('active');
+        amounts.forEach(el => el.textContent = el.getAttribute('data-monthly'));
+        periods.forEach(el => el.textContent = '/mo');
+      });
+
+      btnAnnual.addEventListener('click', () => {
+        btnAnnual.classList.add('active');
+        btnMonthly.classList.remove('active');
+        amounts.forEach(el => el.textContent = el.getAttribute('data-annual'));
+        periods.forEach(el => el.textContent = '/yr');
+      });
+    }
+  });
+</script>
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/main.js"></script>
