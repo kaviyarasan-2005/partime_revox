@@ -44,13 +44,12 @@
 }
 
 /* ---- Timeline RTL ---- */
-[dir="rtl"] .timeline::before {
-  inset-inline-start: auto;
-  inset-inline-end: 24px;
+[dir="rtl"] .timeline-content {
+  text-align: right;
 }
 
-[dir="rtl"] .timeline-item {
-  flex-direction: row-reverse;
+[dir="rtl"] .timeline-time {
+  text-align: right;
 }
 
 /* ---- Before/After RTL ---- */
@@ -80,16 +79,6 @@
   padding-inline-end: 44px;
 }
 
-[dir="rtl"] .input-password-wrap > i {
-  inset-inline-start: auto;
-  inset-inline-end: 16px;
-}
-
-[dir="rtl"] .password-toggle {
-  inset-inline-end: auto;
-  inset-inline-start: 12px;
-}
-
 /* ---- Accordion RTL ---- */
 [dir="rtl"] .accordion-trigger {
   text-align: right;
@@ -101,8 +90,17 @@
 }
 
 /* ---- Footer RTL ---- */
+[dir="rtl"] .footer-grid {
+  justify-content: flex-end;
+}
+
 [dir="rtl"] .footer-contact-item {
   flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .footer-link {
+  justify-content: flex-end;
 }
 
 [dir="rtl"] .footer-bottom {

@@ -52,6 +52,7 @@
     .social-auth-btn:hover { background: var(--bg-secondary); }
     .auth-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: var(--font-size-sm); }
     .input-password-wrap { position: relative; }
+    .auth-input-icon { position: absolute; top: 50%; transform: translateY(-50%); inset-inline-start: 16px; color: var(--color-text-muted); z-index: 1; pointer-events: none; }
     .password-toggle {
       position: absolute; top: 50%; inset-inline-end: 16px; transform: translateY(-50%);
       background: none; border: none; color: var(--color-text-muted); cursor: pointer; padding: 0;
@@ -98,7 +99,7 @@
       <div class="form-group">
         <label class="form-label" for="email">Email Address</label>
         <div style="position:relative;">
-          <i class="fa-solid fa-envelope" style="position:absolute;top:50%;transform:translateY(-50%);inset-inline-start:16px;color:var(--color-text-muted);"></i>
+          <i class="fa-solid fa-envelope auth-input-icon" aria-hidden="true"></i>
           <input type="email" id="email" class="form-input" placeholder="name@example.com" style="padding-inline-start:44px;" required autocomplete="email" />
         </div>
       </div>
@@ -106,7 +107,7 @@
       <div class="form-group">
         <label class="form-label" for="password">Password</label>
         <div class="input-password-wrap">
-          <i class="fa-solid fa-lock" style="position:absolute;top:50%;transform:translateY(-50%);inset-inline-start:16px;color:var(--color-text-muted);z-index:1;"></i>
+          <i class="fa-solid fa-lock auth-input-icon" aria-hidden="true"></i>
           <input type="password" id="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password" />
           <button type="button" class="password-toggle" aria-label="Toggle password visibility"><i class="fa-solid fa-eye"></i></button>
         </div>
@@ -117,7 +118,7 @@
           <input type="checkbox" id="remember" />
           <span>Remember me</span>
         </label>
-        <a href="forgot-password.html" style="color:var(--color-primary);font-weight:500;text-decoration:none;">Forgot password?</a>
+        <a href="forgot-password.html" style="color:var(--color-primary);font-weight:500;text-decoration:none;"><span dir="ltr">Forgot password?</span></a>
       </div>
 
       <button type="submit" class="btn btn-primary btn-full">Sign In <i class="fa-solid fa-arrow-right-to-bracket" style="margin-inline-start:8px;"></i></button>
