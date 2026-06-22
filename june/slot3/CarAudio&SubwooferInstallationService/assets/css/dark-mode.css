@@ -159,6 +159,13 @@
 
 /* Filter bar */
 [data-theme="dark"] .filter-btn { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-blue);
+}
 
 /* Mobile nav */
 [data-theme="dark"] .mobile-nav { background: var(--color-surface); }
