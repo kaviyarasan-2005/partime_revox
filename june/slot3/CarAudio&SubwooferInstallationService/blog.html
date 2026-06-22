@@ -128,7 +128,7 @@
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: var(--radius-xl, 16px);
-      padding: 0 var(--space-5) 0 calc(var(--space-4) + 28px);
+      padding: 0 96px 0 calc(var(--space-4) + 28px);
       font-size: var(--text-base);
       color: #fff;
       outline: none;
@@ -160,6 +160,22 @@
       transition: background var(--transition-fast), transform var(--transition-fast);
     }
     .blog-search-btn:hover { background: var(--blue-500, #2563eb); transform: translateY(-50%) scale(1.03); }
+
+    /* RTL Search Bar Overrides */
+    [dir="rtl"] .blog-search-icon {
+      left: auto;
+      right: var(--space-4);
+    }
+    [dir="rtl"] .blog-search-input {
+      padding: 0 calc(var(--space-4) + 28px) 0 96px;
+    }
+    [dir="rtl"] .blog-search-btn {
+      right: auto;
+      left: 6px;
+    }
+    [dir="rtl"] .blog-search-btn:hover {
+      transform: translateY(-50%) scale(1.03);
+    }
 
     /* ── Hero EQ Bars ──────────────────────────────── */
     .hero-eq-bars {
@@ -222,7 +238,7 @@
     .filter-pill.active {
       background: var(--color-primary);
       border-color: var(--color-primary);
-      color: #fff;
+      color: var(--color-text-inverse, #fff);
       box-shadow: 0 4px 16px rgba(59,142,255,0.35);
     }
     .filter-count {

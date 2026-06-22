@@ -181,7 +181,8 @@
 
 /* ── Breadcrumb ───────────────────────────────────────────── */
 [dir="rtl"] .breadcrumb {
-  flex-direction: row-reverse;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
 }
 
 /* ── Stats ────────────────────────────────────────────────── */
