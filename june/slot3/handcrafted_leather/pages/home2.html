@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,154 +13,147 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
-    /* ── Magazine Hero ── */
-    .mag-hero {
-      min-height: 100vh;
-      padding-top: var(--navbar-height);
+    /* ── Editorial Asymmetric Hero ── */
+    .asym-hero {
+      padding-top: calc(var(--navbar-height) + var(--space-8));
+      padding-bottom: var(--space-16);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      overflow: hidden;
+      gap: var(--space-8);
+      align-items: center;
+      min-height: 90vh;
       background: var(--color-bg);
     }
-
-    .mag-hero__text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: var(--space-16) var(--space-12) var(--space-16) var(--container-padding);
+    
+    .asym-hero__text {
       padding-inline-start: max(var(--container-padding), calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
+      padding-inline-end: var(--space-8);
     }
 
-    .mag-hero__issue {
+    .asym-hero__label {
       font-size: var(--font-size-xs);
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-accent);
+      color: var(--antique-gold);
       font-weight: 700;
-      margin-bottom: var(--space-5);
-    }
-
-    .mag-hero__title {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
       margin-bottom: var(--space-6);
+      display: inline-block;
+      border-bottom: 1px solid var(--antique-gold);
+      padding-bottom: var(--space-2);
     }
 
-    .mag-hero__title .block { display: block; }
-    .mag-hero__title .light { font-weight: 400; font-style: italic; color: var(--color-text-secondary); }
-
-    .mag-hero__excerpt {
-      font-size: var(--font-size-lg);
-      line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: var(--space-10);
-    }
-
-    .mag-hero__meta {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      font-size: var(--font-size-xs);
+    .asym-hero__title {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-6);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-text-muted);
-      font-weight: 600;
     }
 
-    .mag-hero__meta-sep { color: var(--color-accent); }
+    .asym-hero__title .serif { font-family: "Playfair Display", serif; text-transform: none; font-style: italic; font-weight: 400; color: var(--color-text-secondary); display: block; margin-top: 10px; }
 
-    .mag-hero__image-col {
+    .asym-hero__desc {
+      font-size: var(--font-size-lg);
+      line-height: 1.6;
+      max-width: 440px;
+      margin-bottom: var(--space-8);
+      color: var(--color-text-secondary);
+    }
+
+    .asym-hero__images {
       position: relative;
-      overflow: hidden;
+      height: 100%;
+      min-height: 600px;
     }
 
-    .mag-hero__image-col img {
+    .asym-hero__img-primary, .asym-hero__img-secondary {
       position: absolute;
-      inset: 0;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .asym-hero__img-primary {
+      top: 10%;
+      right: 10%;
+      width: 65%;
+      height: 80%;
+      z-index: 2;
+    }
+
+    .asym-hero__img-secondary {
+      bottom: 5%;
+      left: 5%;
+      width: 45%;
+      height: 50%;
+      z-index: 3;
+      border: 8px solid var(--color-bg);
+    }
+
+    @media (max-width: 900px) {
+      .asym-hero { grid-template-columns: 1fr; min-height: auto; padding-top: calc(var(--navbar-height) + var(--space-4)); }
+      .asym-hero__text { padding-inline-start: var(--container-padding); padding-inline-end: var(--container-padding); }
+      .asym-hero__images { min-height: 500px; margin-top: var(--space-8); }
+      .asym-hero__img-primary { width: 80%; right: 5%; }
+      .asym-hero__img-secondary { left: 0; bottom: -20px; }
+    }
+
+    /* ── Horizontal Marquee Showcase ── */
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      padding-block: var(--space-12);
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: var(--space-6);
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .marquee-item {
+      position: relative;
+      width: 320px;
+      height: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .marquee-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 10s ease;
+      transition: transform var(--transition-slow);
     }
 
-    .mag-hero__image-col:hover img { transform: scale(1.04); }
-
-    .mag-hero__image-overlay {
+    .marquee-item:hover img { transform: scale(1.05); }
+    
+    .marquee-item__label {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, var(--color-bg) 0%, transparent 30%);
-    }
-
-    .mag-hero__caption {
-      position: absolute;
-      bottom: var(--space-6);
-      inset-inline-end: var(--space-6);
-      background: var(--forest-green-dark);
-      color: var(--warm-ivory);
-      padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-lg);
-      font-size: var(--font-size-xs);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: var(--space-6) var(--space-4) var(--space-4);
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      color: #fff;
+      font-size: var(--font-size-md);
       font-weight: 600;
+      letter-spacing: 0.05em;
     }
 
-    @media (max-width: 900px) {
-      .mag-hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .mag-hero__text { padding: var(--space-12) var(--space-6); text-align: center; align-items: center; }
-        .mag-hero__text .flex { justify-content: center; }
-        .mag-hero__meta { justify-content: center; }
-      .mag-hero__image-col { height: 50vw; min-height: 280px; position: relative; }
-    }
-
-    /* ── Collection Masonry ── */
-    .masonry {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(3, 220px);
-      gap: var(--space-4);
-    }
-
-    .masonry__item { position: relative; overflow: hidden; border-radius: var(--radius-xl); }
-    .masonry__item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
-    .masonry__item:hover img { transform: scale(1.06); }
-
-    .masonry__item-1 { grid-column: 1/5; grid-row: 1/3; }
-    .masonry__item-2 { grid-column: 5/9; grid-row: 1/2; }
-    .masonry__item-3 { grid-column: 9/13; grid-row: 1/3; }
-    .masonry__item-4 { grid-column: 5/7; grid-row: 2/4; }
-    .masonry__item-5 { grid-column: 7/9; grid-row: 2/3; }
-    .masonry__item-6 { grid-column: 1/5; grid-row: 3/4; }
-    .masonry__item-7 { grid-column: 7/13; grid-row: 3/4; }
-
-    .masonry__label {
-      position: absolute;
-      bottom: var(--space-4);
-      inset-inline-start: var(--space-4);
-      background: rgba(30,61,52,0.85);
-      color: var(--warm-ivory);
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      font-size: var(--font-size-xs);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      backdrop-filter: blur(8px);
-    }
-
-    @media (max-width: 900px) {
-      .masonry { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-      .masonry__item { grid-column: auto !important; grid-row: auto !important; height: 200px; }
-    }
-
-    /* ── Story full-width ── */
+    /* ── Story Section with Overlay Stats ── */
     .story-section {
       position: relative;
-      height: 560px;
+      height: 700px;
       overflow: hidden;
     }
 
@@ -175,19 +168,7 @@
     .story-section__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(30,61,52,0.92) 0%, rgba(30,61,52,0.55) 60%, rgba(30,61,52,0.1) 100%);
-    }
-
-    [data-theme="dark"] .story-section__overlay {
-      background: linear-gradient(90deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.65) 60%, rgba(10,10,10,0.1) 100%);
-    }
-
-    [dir="rtl"] .story-section__overlay {
-      background: linear-gradient(270deg, rgba(30,61,52,0.92) 0%, rgba(30,61,52,0.55) 60%, rgba(30,61,52,0.1) 100%);
-    }
-
-    [data-theme="dark"][dir="rtl"] .story-section__overlay {
-      background: linear-gradient(270deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.65) 60%, rgba(10,10,10,0.1) 100%);
+      background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 100%);
     }
 
     .story-section__content {
@@ -195,128 +176,101 @@
       z-index: 1;
       height: 100%;
       display: flex;
-      align-items: center;
-    }
-
-    .story-section__inner {
-      max-width: 560px;
-      margin-inline: auto;
-      text-align: center;
-      display: flex;
       flex-direction: column;
-      align-items: center;
-    }
-    .story-section__inner .flex {
       justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-8);
     }
 
-    .story-section__eyebrow {
-      font-size: var(--font-size-xs);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--antique-gold);
-      font-weight: 700;
-      margin-bottom: var(--space-4);
-    }
-
+    .story-section__inner { max-width: 700px; margin-bottom: var(--space-12); }
+    
     .story-section__title {
       color: #fff;
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: var(--space-5);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: var(--space-6);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
     .story-section__text {
-      color: rgba(248,245,238,0.8);
-      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      font-size: var(--font-size-lg);
+      line-height: 1.8;
+    }
+
+    .overlay-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+      width: 100%;
+      max-width: 1000px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: var(--space-8);
+    }
+
+    .overlay-stat { text-align: center; }
+    .overlay-stat__num { font-size: 3rem; font-weight: 300; color: var(--antique-gold); margin-bottom: var(--space-2); }
+    .overlay-stat__label { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.1em; color: #fff; }
+
+    @media (max-width: 768px) {
+      .overlay-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+      .story-section { height: auto; padding-block: var(--space-16); }
+    }
+
+    /* ── Editorial Spotlight ── */
+    .editorial-spotlight {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+      padding-block: var(--space-16);
+    }
+
+    .editorial-spotlight__image {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .editorial-spotlight__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .editorial-spotlight__tag {
+      color: var(--antique-gold);
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+    }
+
+    .editorial-spotlight__title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: var(--space-6);
+      line-height: 1.1;
+    }
+
+    .editorial-spotlight__text {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
       margin-bottom: var(--space-8);
     }
 
-    @media (max-width: 640px) { .story-section { height: 480px; } }
-
-    /* Stats row */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--color-border);
+    @media (max-width: 900px) {
+      .editorial-spotlight { grid-template-columns: 1fr; gap: var(--space-8); }
+      .editorial-spotlight__image { height: 400px; }
     }
 
-    .stats-row .stat-card { background: var(--color-surface); }
-
-    @media (max-width: 768px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 400px) { .stats-row { grid-template-columns: 1fr; } }
-
-    /* Blog cards */
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); align-items: stretch; }
-    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } }
-
-    /* Services scroll */
-    .services-scroll {
-      display: flex;
-      gap: var(--space-6);
-      overflow-x: auto;
-      padding-bottom: var(--space-4);
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: var(--color-primary) var(--color-border);
-    }
-
-    .services-scroll::-webkit-scrollbar { height: 4px; }
-    .services-scroll::-webkit-scrollbar-track { background: var(--color-border); border-radius: 2px; }
-    .services-scroll::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 2px; }
-
-    .scroll-service-card {
-      flex-shrink: 0;
-      width: 280px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: all var(--transition-base);
-    }
-
-    .scroll-service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-accent);
-    }
-
-    .scroll-service-card__img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .scroll-service-card__body { padding: var(--space-5); }
-    .scroll-service-card__title { font-size: var(--font-size-lg); margin-bottom: var(--space-2); }
-    .scroll-service-card__text { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); }
-
-    /* Gallery grid */
-    .insta-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: var(--space-2);
-    }
-
+    /* Instagram / Gallery Grid Minimal Update */
+    .insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; }
+    .insta-item { aspect-ratio: 1; overflow: hidden; cursor: pointer; }
+    .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow), filter 0.3s; filter: grayscale(50%); }
+    .insta-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
     @media (max-width: 900px) { .insta-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 480px) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
-
-    .insta-item {
-      aspect-ratio: 1;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      cursor: pointer;
-    }
-
-    .insta-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-slow);
-    }
-
-    .insta-item:hover img { transform: scale(1.08); }
   </style>
   <script src="../assets/js/theme.js"></script>
 </head>
@@ -374,254 +328,100 @@
 
 <main id="main-content">
 
-  <!-- Magazine Hero -->
-  <section class="mag-hero" aria-label="Magazine style hero">
-    <div class="mag-hero__text animate-fade-in">
-      <p class="mag-hero__issue">Volume XII — Summer 2026</p>
-      <h1 class="mag-hero__title">
-        <span class="block">Journals That</span>
-        <span class="block light">Tell Your Story</span>
-        <span class="block">For a Lifetime</span>
+  <!-- Editorial Asymmetric Hero -->
+  <section class="asym-hero" aria-label="Editorial style hero">
+    <div class="asym-hero__text animate-fade-in">
+      <span class="asym-hero__label">Lookbook 2026</span>
+      <h1 class="asym-hero__title">
+        The Art of <span class="serif">Quiet Luxury</span>
       </h1>
-      <p class="mag-hero__excerpt">Each piece we bind is a promise — that your thoughts, sketches, and memories will be held safe in leather that grows more beautiful with every year.</p>
-      <div class="flex gap-4 flex-wrap" style="margin-bottom:var(--space-8);">
-        <a href="service.html" class="btn btn-primary btn-lg">Explore Collections</a>
-        <a href="contact.html" class="btn btn-outline btn-lg">Commission Bespoke</a>
-      </div>
-      <div class="mag-hero__meta">
-        <span>Est. 2008</span>
-        <span class="mag-hero__meta-sep" aria-hidden="true">—</span>
-        <span>London Studio</span>
-        <span class="mag-hero__meta-sep" aria-hidden="true">—</span>
-        <span>Worldwide Shipping</span>
+      <p class="asym-hero__desc">Explore our definitive collection of artisan-bound journals, where traditional craftsmanship meets minimalist, modern design.</p>
+      <div class="flex gap-4">
+        <a href="service.html" class="btn btn-gold btn-lg">Explore the Collection</a>
       </div>
     </div>
-    <div class="mag-hero__image-col">
-      <img src="../assets/images/artist-sketchbook-open.png" alt="Open leather-bound sketchbook with watercolor illustration" id="magHeroImg" />
-      <div class="mag-hero__image-overlay" aria-hidden="true"></div>
-      <div class="mag-hero__caption" aria-label="Artisan leather sketchbook">Artisan Sketchbook Series</div>
+    <div class="asym-hero__images">
+      <img src="../assets/images/hero-leather-journal.png" alt="Elegant leather journal" class="asym-hero__img-primary" />
+      <img src="../assets/images/artisan-hands-stitching.png" alt="Artisan hands stitching leather" class="asym-hero__img-secondary" />
     </div>
   </section>
 
-  <!-- Masonry Collection -->
-  <section class="section section--alt" aria-labelledby="collection-heading">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="section-label">The Collection</span>
-        <h2 id="collection-heading">Each Journal, One of a Kind</h2>
-        <p class="section-subtitle">Our collections span travel companions, artist folios, wedding guestbooks, and corporate editions.</p>
-      </header>
-      <div class="masonry reveal" id="masonryGrid">
-        <div class="masonry__item masonry__item-1">
-          <img src="../assets/images/collection-leather-journals.png" alt="Stack of handcrafted leather journals in earth tones" loading="lazy" id="mas1Img" />
-          <span class="masonry__label">Heritage Collection</span>
-        </div>
-        <div class="masonry__item masonry__item-2">
-          <img src="../assets/images/artist-sketchbook-open.png" alt="Artist sketchbook open flat on a wooden desk" loading="lazy" id="mas2Img" />
-          <span class="masonry__label">Artist Folios</span>
-        </div>
-        <div class="masonry__item masonry__item-3">
-          <img src="../assets/images/hero-leather-journal.png" alt="Elegant leather journal with gold foil lettering" loading="lazy" id="mas3Img" />
-          <span class="masonry__label">Bespoke Edition</span>
-        </div>
-        <div class="masonry__item masonry__item-4">
-          <img src="../assets/images/leather-workshop-interior.png" alt="Leather binding tools and materials on a workbench" loading="lazy" id="mas4Img" />
-          <span class="masonry__label">The Craft</span>
-        </div>
-        <div class="masonry__item masonry__item-5">
-          <img src="../assets/images/artisan-hands-stitching.png" alt="Hands stitching leather journal binding" loading="lazy" id="mas5Img" />
-          <span class="masonry__label">Hand-Stitched</span>
-        </div>
-        <div class="masonry__item masonry__item-6">
-          <img src="../assets/images/corporate-embossed-journals.png" alt="Corporate leather notebooks with embossed company logo" loading="lazy" id="mas6Img" />
-          <span class="masonry__label">Corporate Range</span>
-        </div>
-        <div class="masonry__item masonry__item-7">
-          <img src="../assets/images/masonry-gift.png" alt="Leather journal with pressed flower bookmark and pen" loading="lazy" id="mas7Img" />
-          <span class="masonry__label">Gift Collection</span>
-        </div>
+  <!-- Horizontal Marquee Showcase -->
+  <section aria-labelledby="marquee-heading">
+    <h2 id="marquee-heading" class="sr-only">Our Collections Gallery</h2>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Duplicate items for seamless loop -->
+        <div class="marquee-item"><img src="../assets/images/collection-leather-journals.png" alt="Heritage Collection" /><div class="marquee-item__label">Heritage</div></div>
+        <div class="marquee-item"><img src="../assets/images/artist-sketchbook-open.png" alt="Artist Folios" /><div class="marquee-item__label">Artist Folios</div></div>
+        <div class="marquee-item"><img src="../assets/images/leather-workshop-interior.png" alt="The Craft" /><div class="marquee-item__label">The Craft</div></div>
+        <div class="marquee-item"><img src="../assets/images/corporate-embossed-journals.png" alt="Corporate" /><div class="marquee-item__label">Corporate</div></div>
+        <div class="marquee-item"><img src="../assets/images/masonry-gift.png" alt="Gift Sets" /><div class="marquee-item__label">Gift Sets</div></div>
+        <!-- Duplicates -->
+        <div class="marquee-item"><img src="../assets/images/collection-leather-journals.png" alt="Heritage Collection" /><div class="marquee-item__label">Heritage</div></div>
+        <div class="marquee-item"><img src="../assets/images/artist-sketchbook-open.png" alt="Artist Folios" /><div class="marquee-item__label">Artist Folios</div></div>
+        <div class="marquee-item"><img src="../assets/images/leather-workshop-interior.png" alt="The Craft" /><div class="marquee-item__label">The Craft</div></div>
+        <div class="marquee-item"><img src="../assets/images/corporate-embossed-journals.png" alt="Corporate" /><div class="marquee-item__label">Corporate</div></div>
+        <div class="marquee-item"><img src="../assets/images/masonry-gift.png" alt="Gift Sets" /><div class="marquee-item__label">Gift Sets</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Story Section -->
+  <!-- Editorial Spotlight (Replaces Blog Grid) -->
+  <section class="section container" aria-labelledby="spotlight-heading">
+    <div class="editorial-spotlight reveal">
+      <img src="../assets/images/blog-notes.png" alt="Close-up of artisan journal notes" class="editorial-spotlight__image" />
+      <div class="editorial-spotlight__content">
+        <span class="editorial-spotlight__tag">Feature Story</span>
+        <h2 class="editorial-spotlight__title" id="spotlight-heading">The Anatomy of an Heirloom</h2>
+        <p class="editorial-spotlight__text">What makes a journal last a century? It begins with the selection of full-grain, vegetable-tanned leather and ends with the meticulous Coptic stitch. We dive deep into the materials and techniques that define our signature collection.</p>
+        <p class="editorial-spotlight__text">Every crease and fold tells a story of patience, ensuring that your words are held within a binding that only grows more beautiful with time.</p>
+        <a href="pages/coming-soon.html" class="btn btn-outline">Read the Feature</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section with Overlay Stats -->
   <section class="story-section" aria-labelledby="story-heading">
-    <img src="../assets/images/leather-workshop-interior.png" alt="Leather workshop interior with natural light and artisan tools" class="story-section__bg" id="storyBgImg" />
+    <img src="../assets/images/leather-workshop-interior.png" alt="Leather workshop interior" class="story-section__bg" />
     <div class="story-section__overlay" aria-hidden="true"></div>
     <div class="story-section__content">
-      <div class="container">
-        <div class="story-section__inner reveal">
-          <p class="story-section__eyebrow">Our Studio</p>
-          <h2 class="story-section__title" id="story-heading">Where Every Piece Begins</h2>
-          <p class="story-section__text">Our Clerkenwell studio is where raw hides become heirlooms. Every workbench holds decades of knowledge, and every tool has worn into the hand that holds it. We invite you to see how your journal is made.</p>
-          <div class="flex gap-4 flex-wrap">
-            <a href="about.html" class="btn btn-gold btn-lg">Visit Our Story</a>
-            <a href="service.html" class="btn btn-outline-white btn-lg">Book a Studio Tour</a>
-          </div>
+      <div class="story-section__inner reveal">
+        <h2 class="story-section__title" id="story-heading">Forged in Clerkenwell</h2>
+        <p class="story-section__text">Our London studio is where raw materials become refined artifacts. Surrounded by the scent of rich leather and the quiet focus of master craftspeople, we continue a legacy of British bookbinding.</p>
+      </div>
+      
+      <div class="overlay-stats reveal">
+        <div class="overlay-stat">
+          <div class="overlay-stat__num"><span data-counter data-target="18">0</span>+</div>
+          <div class="overlay-stat__label">Years of Craft</div>
+        </div>
+        <div class="overlay-stat">
+          <div class="overlay-stat__num"><span data-counter data-target="12400">0</span></div>
+          <div class="overlay-stat__label">Journals Bound</div>
+        </div>
+        <div class="overlay-stat">
+          <div class="overlay-stat__num"><span data-counter data-target="84">0</span></div>
+          <div class="overlay-stat__label">Countries Reached</div>
+        </div>
+        <div class="overlay-stat">
+          <div class="overlay-stat__num"><span data-counter data-target="100">0</span>%</div>
+          <div class="overlay-stat__label">Handcrafted</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Counter -->
-  <div class="stats-row" role="region" aria-label="Our achievements">
-    <div class="stat-card">
-      <div class="stat-card__number">
-        <span data-counter data-target="18" data-suffix="+" aria-label="18 plus years">0</span>
-      </div>
-      <p class="stat-card__label">Years of Craft</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card__number">
-        <span data-counter data-target="12400" data-suffix="+" aria-label="12400 plus journals made">0</span>
-      </div>
-      <p class="stat-card__label">Journals Made</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card__number">
-        <span data-counter data-target="84" data-suffix="" aria-label="84 countries shipped to">0</span>
-      </div>
-      <p class="stat-card__label">Countries Shipped</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card__number">
-        <span data-counter data-target="98" data-suffix="%" aria-label="98 percent satisfaction rate">0</span>
-      </div>
-      <p class="stat-card__label">Satisfaction Rate</p>
-    </div>
-  </div>
-
-  <!-- Services Horizontal Scroll -->
-  <section class="section section--surface" aria-labelledby="services-scroll-heading">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="section-label">What We Offer</span>
-        <h2 id="services-scroll-heading">Every Creative Need, Covered</h2>
-      </header>
-      <div class="services-scroll" aria-label="Services — scroll to see more" tabindex="0">
-        <article class="scroll-service-card">
-          <img src="../assets/images/hero-leather-journal.png" alt="Custom leather journal with wax seal" class="scroll-service-card__img" loading="lazy" id="svc1Img" />
-          <div class="scroll-service-card__body">
-            <h3 class="scroll-service-card__title">Custom Journals</h3>
-            <p class="scroll-service-card__text">Choose your leather, paper weight, and binding style. Every detail yours to decide.</p>
-            <a href="service.html" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </article>
-        <article class="scroll-service-card">
-          <img src="../assets/images/artist-sketchbook-open.png" alt="Artist sketchbook lay-flat open" class="scroll-service-card__img" loading="lazy" id="svc2Img" />
-          <div class="scroll-service-card__body">
-            <h3 class="scroll-service-card__title">Sketchbooks</h3>
-            <p class="scroll-service-card__text">Lay-flat Coptic binding meets heavyweight mixed-media pages. Made for serious artists.</p>
-            <a href="service.html" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </article>
-        <article class="scroll-service-card">
-          <img src="../assets/images/corporate-embossed-journals.png" alt="Corporate leather notebooks in presentation box" class="scroll-service-card__img" loading="lazy" id="svc3Img" />
-          <div class="scroll-service-card__body">
-            <h3 class="scroll-service-card__title">Corporate Orders</h3>
-            <p class="scroll-service-card__text">Brand-embossed journals for teams, events, and leadership gifts. Minimum 10 units.</p>
-            <a href="contact.html" class="btn btn-primary btn-sm">Get Quote</a>
-          </div>
-        </article>
-        <article class="scroll-service-card">
-          <img src="../assets/images/service-restore.png" alt="Old leather book being restored by artisan" class="scroll-service-card__img" loading="lazy" id="svc4Img" />
-          <div class="scroll-service-card__body">
-            <h3 class="scroll-service-card__title">Restoration</h3>
-            <p class="scroll-service-card__text">Breathing new life into damaged or aged leather books and journals. Free assessment.</p>
-            <a href="service.html" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </article>
-        <article class="scroll-service-card">
-          <img src="../assets/images/collection-leather-journals.png" alt="Beautifully gift-wrapped leather journal with ribbon" class="scroll-service-card__img" loading="lazy" id="svc5Img" />
-          <div class="scroll-service-card__body">
-            <h3 class="scroll-service-card__title">Gift Sets</h3>
-            <p class="scroll-service-card__text">Curated leather journal and pen sets, presented in our signature hand-tied gift boxes.</p>
-            <a href="pricing.html" class="btn btn-primary btn-sm">Shop Now</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog / Journal Teaser -->
-  <section class="section" aria-labelledby="blog-heading">
-    <div class="container">
-      <header class="section-header reveal">
-        <span class="section-label">From the Workshop</span>
-        <h2 id="blog-heading">Stories &amp; Craft Notes</h2>
-        <p class="section-subtitle">Behind every journal is a story of materials, technique, and passion. We write ours down.</p>
-      </header>
-      <div class="blog-grid">
-        <article class="card blog-card reveal reveal--delay-1">
-          <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/leather-workshop-interior.png" alt="Close-up of leather crafting tools on a workbench" loading="lazy" id="blog1Img" />
-          </div>
-          <div class="card__body">
-            <div class="blog-card__meta">
-              <span class="blog-card__category">Craft Notes</span>
-              <span>June 2026</span>
-            </div>
-            <h3 class="card__title">The 5 Leather Types We Use and Why</h3>
-            <p class="card__text">Full-grain, top-grain, vegetable-tanned — understanding the differences shapes everything we make.</p>
-            <a href="pages/coming-soon.html" class="blog-card__read-more hover-arrow">
-              Read Article
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
-        <article class="card blog-card reveal reveal--delay-2">
-          <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/blog-notes.png" alt="Hands holding an open journal with handwritten notes" loading="lazy" id="blog2Img" />
-          </div>
-          <div class="card__body">
-            <div class="blog-card__meta">
-              <span class="blog-card__category">Behind the Scenes</span>
-              <span>May 2026</span>
-            </div>
-            <h3 class="card__title">Coptic Stitch vs Smyth Sewn: Which Binding is Right for You?</h3>
-            <p class="card__text">A deep dive into the two most-loved bookbinding methods and what makes each one special.</p>
-            <a href="pages/coming-soon.html" class="blog-card__read-more hover-arrow">
-              Read Article
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
-        <article class="card blog-card reveal reveal--delay-3">
-          <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/hero-leather-journal.png" alt="Leather journal with pressed flowers and botanical illustration" loading="lazy" id="blog3Img" />
-          </div>
-          <div class="card__body">
-            <div class="blog-card__meta">
-              <span class="blog-card__category">Inspiration</span>
-              <span>Apr 2026</span>
-            </div>
-            <h3 class="card__title">How Daily Journaling Changed My Practice as an Architect</h3>
-            <p class="card__text">A client shares how switching to a leather journal transformed their creative workflow and idea-keeping.</p>
-            <a href="pages/coming-soon.html" class="blog-card__read-more hover-arrow">
-              Read Article
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instagram / Gallery Grid -->
-  <section class="section--sm section--alt" aria-labelledby="gallery-heading">
-    <div class="container">
-      <header class="section-header reveal" style="margin-bottom:var(--space-8);">
-        <span class="section-label">Workshop Gallery</span>
-        <h2 id="gallery-heading">Behind the Bindery</h2>
-      </header>
-      <div class="insta-grid" aria-label="Workshop gallery images">
-        <div class="insta-item"><img src="../assets/images/leather-workshop-interior.png" alt="Leather workshop interior" loading="lazy" id="gal1Img" /></div>
-        <div class="insta-item"><img src="../assets/images/collection-leather-journals.png" alt="Bookbinding tools and thread" loading="lazy" id="gal2Img" /></div>
-        <div class="insta-item"><img src="../assets/images/artisan-hands-stitching.png" alt="Artisan hands at work" loading="lazy" id="gal3Img" /></div>
-        <div class="insta-item"><img src="../assets/images/hero-leather-journal.png" alt="Collection of finished leather journals" loading="lazy" id="gal4Img" /></div>
-        <div class="insta-item"><img src="../assets/images/blog-notes.png" alt="Open journal with handwritten notes" loading="lazy" id="gal5Img" /></div>
-        <div class="insta-item"><img src="../assets/images/corporate-embossed-journals.png" alt="Close-up of leather texture and gold tooling" loading="lazy" id="gal6Img" /></div>
-      </div>
+  <!-- Gallery Grid -->
+  <section aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading" class="sr-only">Visual Diary</h2>
+    <div class="insta-grid" aria-label="Workshop gallery images">
+      <div class="insta-item"><img src="../assets/images/leather-workshop-interior.png" alt="Leather workshop interior" loading="lazy" /></div>
+      <div class="insta-item"><img src="../assets/images/collection-leather-journals.png" alt="Bookbinding tools" loading="lazy" /></div>
+      <div class="insta-item"><img src="../assets/images/artisan-hands-stitching.png" alt="Artisan hands at work" loading="lazy" /></div>
+      <div class="insta-item"><img src="../assets/images/hero-leather-journal.png" alt="Finished journals" loading="lazy" /></div>
+      <div class="insta-item"><img src="../assets/images/blog-notes.png" alt="Journal notes" loading="lazy" /></div>
+      <div class="insta-item"><img src="../assets/images/corporate-embossed-journals.png" alt="Embossed leather" loading="lazy" /></div>
     </div>
   </section>
 
