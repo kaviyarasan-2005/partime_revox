@@ -2174,11 +2174,11 @@ select.form-control {
 }
 
 .footer-brand .brand-name {
-  color: var(--color-text);
+  color: #FFFFFF;
 }
 
 .footer-brand .brand-tagline {
-  color: var(--color-text-muted);
+  color: var(--silver-400);
 }
 
 .footer-desc {
