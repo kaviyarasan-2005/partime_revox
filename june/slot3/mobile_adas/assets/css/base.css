@@ -38,7 +38,7 @@ body {
 /* ---- Typography ---- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
@@ -73,6 +73,7 @@ h6 {
 
 p {
   font-size: var(--text-base);
+  font-weight: var(--weight-medium);
   line-height: var(--leading-normal);
   color: var(--color-text-secondary);
   transition: color var(--transition-theme);
@@ -90,6 +91,30 @@ small, .text-sm {
 
 .text-xs {
   font-size: var(--text-xs);
+}
+
+.text-base {
+  font-size: var(--text-base);
+}
+
+.text-md {
+  font-size: var(--text-md);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+
+.text-3xl {
+  font-size: var(--text-3xl);
 }
 
 strong, b {

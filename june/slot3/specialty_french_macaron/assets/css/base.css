@@ -32,7 +32,7 @@ body {
 /* ── Typography ────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600 !important;
   line-height: var(--leading-tight);
   color: var(--text-primary);
   letter-spacing: var(--tracking-tight);
@@ -42,13 +42,14 @@ h1 { font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl)); }
 h2 { font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl)); }
 h3 { font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl)); }
 h4 { font-size: var(--text-xl); }
-h5 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 600; }
-h6 { font-size: var(--text-base); font-family: var(--font-body); font-weight: 600; }
+h5 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 600 !important; }
+h6 { font-size: var(--text-base); font-family: var(--font-body); font-weight: 600 !important; }
 
 p {
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
   max-width: 70ch;
+  font-weight: 450 !important;
 }
 
 a {
@@ -278,3 +279,121 @@ input, textarea, select {
 /* ── RTL Support ───────────────────────────────────────── */
 [dir="rtl"] .fade-in-left  { animation-name: fadeInRight; }
 [dir="rtl"] .fade-in-right { animation-name: fadeInLeft; }
+
+/* =========================================================
+   DARK MODE — Image Visibility Enhancements
+   ========================================================= */
+
+/* Global: Boost brightness & soften contrast for all images in dark mode */
+[data-theme="dark"] img:not([src*="svg"]) {
+  filter: brightness(1.08) contrast(0.95);
+  transition: filter var(--t-base);
+}
+
+/* Image containers — add subtle warm glow border for depth separation */
+[data-theme="dark"] .card-img-wrap,
+[data-theme="dark"] .flavor-img-wrap,
+[data-theme="dark"] .tower-img-wrap,
+[data-theme="dark"] .gallery-item,
+[data-theme="dark"] .wedding-img-main,
+[data-theme="dark"] .wedding-img-sm,
+[data-theme="dark"] .story-img-main,
+[data-theme="dark"] .story-img-accent,
+[data-theme="dark"] .team-img-wrap,
+[data-theme="dark"] .service-card-img,
+[data-theme="dark"] .value-card-img {
+  box-shadow: 0 0 0 1px rgba(232, 131, 154, 0.12), 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Hero background image — brighter in dark mode so content is still vivid */
+[data-theme="dark"] .hero-bg img {
+  filter: brightness(1.12) contrast(0.92) saturate(1.1);
+}
+
+/* Hero overlay — slightly more transparent to let more image through */
+[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(
+    110deg,
+    rgba(15, 10, 14, 0.82) 0%,
+    rgba(15, 10, 14, 0.7) 50%,
+    rgba(140, 45, 70, 0.5) 100%
+  );
+}
+
+/* Card images — slightly brighter with warm tone to pop on dark cards */
+[data-theme="dark"] .card-img,
+[data-theme="dark"] .flavor-img {
+  filter: brightness(1.1) contrast(0.93) saturate(1.05);
+}
+
+/* Gallery images — enhanced visibility, override the hover darken */
+[data-theme="dark"] .gallery-item img {
+  filter: brightness(1.1) contrast(0.94);
+}
+
+[data-theme="dark"] .gallery-item:hover img {
+  filter: brightness(0.95) contrast(0.94);
+}
+
+/* Team / avatar images — warm, clear faces */
+[data-theme="dark"] .team-img,
+[data-theme="dark"] .testimonial-avatar {
+  filter: brightness(1.12) contrast(0.9) saturate(1.05);
+  border-color: rgba(232, 131, 154, 0.3);
+}
+
+/* Tower / feature section image */
+[data-theme="dark"] .tower-img {
+  filter: brightness(1.1) contrast(0.92);
+}
+
+/* Tower image badge — dark mode override */
+[data-theme="dark"] .tower-img-badge {
+  background: rgba(35, 24, 32, 0.9);
+  border-color: rgba(232, 131, 154, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* Wedding images */
+[data-theme="dark"] .wedding-img-main img,
+[data-theme="dark"] .wedding-img-sm img {
+  filter: brightness(1.1) contrast(0.93) saturate(1.08);
+}
+
+/* Story images — about page */
+[data-theme="dark"] .story-img-main img,
+[data-theme="dark"] .story-img-accent img {
+  filter: brightness(1.1) contrast(0.93);
+}
+
+/* Service card images */
+[data-theme="dark"] .service-card-img {
+  filter: brightness(1.08) contrast(0.94);
+}
+
+/* Value card images */
+[data-theme="dark"] .value-card-img {
+  filter: brightness(1.08) contrast(0.94);
+}
+
+/* Hero2 media (home2 page) */
+[data-theme="dark"] .hero2-media img {
+  filter: brightness(1.1) contrast(0.92) saturate(1.05);
+}
+
+[data-theme="dark"] .hero2-media-overlay {
+  background: linear-gradient(90deg, rgba(26, 17, 21, 0.4) 0%, transparent 40%);
+}
+
+/* Page hero backgrounds — dark mode gradient already exists,
+   but ensure any background images are brighter */
+[data-theme="dark"] .page-hero::before {
+  background: radial-gradient(circle, rgba(232, 131, 154, 0.1) 0%, transparent 70%);
+}
+
+/* Flavor of the month card on dark */
+[data-theme="dark"] .flavor-month-card {
+  background: var(--bg-surface);
+  border-color: rgba(232, 131, 154, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}

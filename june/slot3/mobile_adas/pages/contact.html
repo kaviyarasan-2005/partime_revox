@@ -27,7 +27,7 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Page Hero -->
-  <section class="page-hero" style="background: var(--gradient-primary); min-height: 240px; padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);">
+  <section class="page-hero" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('../images/contact_hero.png'); background-size: cover; background-position: center; min-height: 240px; padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);">
     <div class="container text-center">
       <div class="breadcrumb justify-center">
         <a href="../index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Contact</span>
@@ -43,41 +43,41 @@
     <section class="contact-section py-20">
       <div class="container">
         
-        <div class="grid grid-2">
+        <div class="contact-layout">
           
           <!-- Contact Info Column -->
           <div class="contact-info-col animate-on-scroll">
             <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
             <p class="text-text-secondary mb-8 leading-relaxed">Our mobile vans travel throughout the metropolitan area, performing calibrations directly inside body shops, windshield replacement hubs, and fleet yards.</p>
             
-            <div class="flex flex-col gap-6">
-              <div class="flex items-center gap-4">
-                <div class="card-icon" style="flex-shrink: 0; background: var(--color-accent-light); color: var(--color-accent); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);"><i data-lucide="phone"></i></div>
+            <div class="contact-info-cards mb-8">
+              <div class="card contact-info-card">
+                <div class="info-icon"><i data-lucide="phone"></i></div>
                 <div>
-                  <span class="block text-text-muted text-xs uppercase">Phone Number</span>
-                  <a href="tel:+18005550199" class="font-bold text-lg text-text hover:text-accent">(800) 555-0199</a>
+                  <h4 class="font-bold text-xs text-text-muted uppercase mb-1">Phone Number</h4>
+                  <a href="tel:+18005550199" class="font-bold text-base text-text hover:text-accent">(800) 555-0199</a>
                 </div>
               </div>
               
-              <div class="flex items-center gap-4">
-                <div class="card-icon" style="flex-shrink: 0; background: var(--color-accent-light); color: var(--color-accent); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);"><i data-lucide="mail"></i></div>
+              <div class="card contact-info-card">
+                <div class="info-icon"><i data-lucide="mail"></i></div>
                 <div>
-                  <span class="block text-text-muted text-xs uppercase">Email Address</span>
-                  <a href="mailto:dispatch@calibrateadas.com" class="font-bold text-lg text-text hover:text-accent">dispatch@calibrateadas.com</a>
+                  <h4 class="font-bold text-xs text-text-muted uppercase mb-1">Email Address</h4>
+                  <a href="mailto:dispatch@calibrateadas.com" class="font-bold text-sm text-text hover:text-accent">dispatch@calibrateadas.com</a>
                 </div>
               </div>
               
-              <div class="flex items-center gap-4">
-                <div class="card-icon" style="flex-shrink: 0; background: var(--color-accent-light); color: var(--color-accent); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);"><i data-lucide="clock"></i></div>
+              <div class="card contact-info-card" style="grid-column: span 2;">
+                <div class="info-icon"><i data-lucide="clock"></i></div>
                 <div>
-                  <span class="block text-text-muted text-xs uppercase">Operating Hours</span>
-                  <span class="font-bold text-lg">Mon - Sat: 7:00 AM - 6:00 PM</span>
+                  <h4 class="font-bold text-xs text-text-muted uppercase mb-1">Operating Hours</h4>
+                  <span class="font-bold text-base">Mon - Sat: 7:00 AM - 6:00 PM</span>
                 </div>
               </div>
             </div>
-
+ 
             <!-- Emergency callout -->
-            <div class="card mt-8 animate-on-scroll relative overflow-hidden" style="background: rgba(239, 68, 68, 0.03); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-xl); padding: var(--space-8);">
+            <div class="card animate-on-scroll relative overflow-hidden" style="background: rgba(239, 68, 68, 0.03); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-xl); padding: var(--space-8);">
               <!-- Subtle pulsing gradient -->
               <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
               
@@ -100,7 +100,7 @@
           
           <!-- Booking Form Column -->
           <div class="contact-form-col animate-on-scroll">
-            <div class="card hover-lift" style="padding: var(--space-8); background: rgba(255,255,255,0.02); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+            <div class="card contact-form-card hover-lift">
               <h3 class="text-xl font-bold mb-6">Service Request Form</h3>
               
               <form class="validate-form flex flex-col gap-4" action="https://formspree.io/f/placeholder" method="POST">
@@ -115,7 +115,7 @@
                     <input type="text" id="contact-company" name="company" required class="form-input" placeholder="Apex Collision">
                   </div>
                 </div>
-
+ 
                 <div class="form-row grid grid-2">
                   <div class="form-group">
                     <label for="contact-email" class="form-label">Email Address *</label>
@@ -127,7 +127,7 @@
                     <input type="tel" id="contact-phone" name="phone" required class="form-input" placeholder="(555) 000-0000">
                   </div>
                 </div>
-
+ 
                 <div class="form-row grid grid-2">
                   <div class="form-group">
                     <label for="vehicle-make" class="form-label">Vehicle Make & Model *</label>
@@ -145,7 +145,7 @@
                     </select>
                   </div>
                 </div>
-
+ 
                 <div class="form-group">
                   <label for="contact-message" class="form-label">Special Calibration Notes</label>
                   <textarea id="contact-message" name="message" rows="4" class="form-textarea" placeholder="Detail any custom suspension kits, aftermarket glass, or active DTC codes..."></textarea>
@@ -155,7 +155,7 @@
               </form>
             </div>
           </div>
-
+ 
         </div>
 
         <!-- Service Areas / Coverage Map -->

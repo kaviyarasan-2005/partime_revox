@@ -27,7 +27,7 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Page Hero -->
-  <section class="page-hero" style="background: var(--gradient-primary); min-height: 240px; padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);">
+  <section class="page-hero" style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('../images/wyui.webp'); background-size: cover; background-position: center; min-height: 240px; padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-8);">
     <div class="container text-center">
       <div class="breadcrumb justify-center">
         <a href="../index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Pricing</span>
@@ -120,20 +120,20 @@
           <p class="section-desc">Drag the slider to see pricing rates based on your monthly calibration volumes.</p>
         </div>
         
-        <div class="card p-8 animate-on-scroll">
-          <div class="slider-wrapper mb-8">
+        <div class="card animate-on-scroll" style="padding: var(--space-8); max-width: 600px; margin: 0 auto;">
+          <div class="volume-slider-wrapper mb-8">
             <label for="volume-slider" class="block font-semibold mb-4 text-lg">Expected Monthly Calibrations: <span id="volume-count" class="text-accent text-xl font-bold">1</span></label>
-            <input type="range" id="volume-slider" min="1" max="100" value="1" class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-200 accent-primary" style="background: var(--color-border);">
+            <input type="range" id="volume-slider" min="1" max="100" value="1" class="volume-slider">
           </div>
           
           <div class="slider-results grid grid-2">
-            <div class="border-end p-4">
+            <div>
               <span class="block text-text-muted text-sm uppercase">Estimated Cost Per Unit</span>
-              <div id="volume-price" class="text-3xl font-bold text-accent mt-2">$299</div>
+              <div id="volume-price" class="volume-price mt-2">$299</div>
             </div>
-            <div class="p-4">
+            <div>
               <span class="block text-text-muted text-sm uppercase">Billing Type</span>
-              <div class="text-xl font-bold mt-2">Volume Invoice</div>
+              <div class="text-xl font-bold mt-2" style="margin-top: var(--space-4);">Volume Invoice</div>
             </div>
           </div>
         </div>

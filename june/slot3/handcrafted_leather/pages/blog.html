@@ -13,6 +13,17 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--blog {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/blog-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--blog {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/blog-hero.png");
+    }
+
     /* ── Section-specific custom styles ── */
 
     /* Featured Post Card */
@@ -192,10 +203,11 @@
       color: white;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .blog-filters-inner {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
+        gap: var(--space-4);
       }
       .blog-search-box {
         width: 100%;
@@ -481,20 +493,19 @@
   <div class="container navbar__container">
     <a href="../index.html" class="navbar__brand" aria-label="LeatherCraft Bindery — Home">
       <div class="navbar__logo" aria-hidden="true">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/>
-          <rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/>
-          <rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/>
-          <rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/>
-          <rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/>
-          <rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/>
-        </svg>
+        <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <div class="navbar__brand-text">
         <span class="navbar__brand-name">LeatherCraft</span>
       </div>
     </a>
     <nav class="navbar__nav" id="navMenu" aria-label="Main navigation">
+      <button class="navbar__close-btn" id="navClose" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       <ul class="navbar__list" role="list">
         <li class="navbar__item navbar__item--dropdown" id="homeDropdownItem">
           <button class="navbar__link navbar__dropdown-toggle" id="homeDropdownBtn" aria-expanded="false" aria-haspopup="true" aria-controls="homeDropdown">
@@ -511,9 +522,13 @@
         <li class="navbar__item"><a href="pricing.html" class="navbar__link" data-page="pricing">Pricing</a></li>
         <li class="navbar__item"><a href="blog.html" class="navbar__link" data-page="blog">Blog</a></li>
         <li class="navbar__item"><a href="contact.html" class="navbar__link" data-page="contact">Contact</a></li>
+        <li class="navbar__item navbar__item--cta-mobile">
+          <a href="contact.html" class="btn btn-primary btn-block">Get a Quote</a>
+        </li>
       </ul>
     </nav>
     <div class="navbar__controls">
+      <a href="contact.html" class="navbar__cta">Get a Quote</a>
       <button class="navbar__control-btn navbar__rtl-btn" id="rtlToggle" aria-label="Switch to RTL layout">
         <span class="rtl-label">RTL</span>
       </button>
@@ -532,7 +547,7 @@
 <main id="main-content">
 
   <!-- Section 1: Page Hero -->
-  <section class="page-hero" aria-label="Blog page header">
+  <section class="page-hero page-hero--blog" aria-label="Blog page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">Workshop Journal</p>
       <h1 class="page-hero__title">Stories &amp; Craft Notes</h1>
@@ -551,7 +566,7 @@
       <!-- Section 2: Featured Post -->
       <article class="featured-post reveal" aria-labelledby="featured-title">
         <div class="featured-post__img-wrap">
-          <img class="featured-post__img" src="../assets/images/hero-leather-journal.png" alt="Detail of a handcrafted leather journal spine showing traditional hand stitching" id="featPostImg" />
+          <img class="featured-post__img" src="../assets/images/blog-featured.png" alt="Detail of a handcrafted leather journal spine showing traditional hand stitching" id="featPostImg" />
         </div>
         <div class="featured-post__body">
           <div class="featured-post__meta">
@@ -620,7 +635,7 @@
         <!-- Real Cards (hidden until skeleton finishes) -->
         <article class="card blog-card real-content" style="display:none;" data-cat="craft-notes" aria-label="The 5 Leather Hides We Source and Why">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/collection-leather-journals.png" alt="Rolls of raw leather hide on workshop table" id="blogCard1Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/blog-leather-guide.png" alt="Rolls of raw leather hide on workshop table" id="blogCard1Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -638,7 +653,7 @@
 
         <article class="card blog-card real-content" style="display:none;" data-cat="tutorials" aria-label="Coptic Stitch vs Smyth Sewn: Choosing Your Binding">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/artisan-hands-stitching.png" alt="Close up of hand bookbinding stitches with thread" id="blogCard2Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/custom-journals-detail.png" alt="Close up of hand bookbinding stitches with thread" id="blogCard2Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -656,7 +671,7 @@
 
         <article class="card blog-card real-content" style="display:none;" data-cat="inspiration" aria-label="How Daily Journaling Transforms Creative Practices">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/artist-sketchbook-open.png" alt="Journal open flat with handwritten thoughts and coffee beside it" id="blogCard3Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/artist-sketchbook-detail.png" alt="Journal open flat with handwritten thoughts and coffee beside it" id="blogCard3Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -674,7 +689,7 @@
 
         <article class="card blog-card real-content" style="display:none;" data-cat="restoration" aria-label="Breathing New Life into a Century-Old Bible">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/leather-workshop-interior.png" alt="Spine of an old leather book undergoing restoration" id="blogCard4Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/book-restoration-detail.png" alt="Spine of an old leather book undergoing restoration" id="blogCard4Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -692,7 +707,7 @@
 
         <article class="card blog-card real-content" style="display:none;" data-cat="craft-notes" aria-label="Sustainable Tannery Certifications Explained">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/corporate-embossed-journals.png" alt="Clean structured leather hide warehouse" id="blogCard5Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/corporate-journals-detail.png" alt="Clean structured leather hide warehouse" id="blogCard5Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -710,7 +725,7 @@
 
         <article class="card blog-card real-content" style="display:none;" data-cat="tutorials" aria-label="Watercolor on Ivory Paper: A Testing Guide">
           <div class="card__image-wrap hover-zoom">
-            <img class="card__image" src="../assets/images/artist-sketchbook-open.png" alt="Artist working with watercolor in leather notebook" id="blogCard6Img" loading="lazy" />
+            <img class="card__image" src="../assets/images/service-restore.png" alt="Artist working with watercolor in leather notebook" id="blogCard6Img" loading="lazy" />
           </div>
           <div class="card__body">
             <div class="blog-card__meta">
@@ -768,7 +783,7 @@
     <div class="container">
       <div class="spotlight-card reveal">
         <div class="spotlight-card__media">
-          <img src="../assets/images/artisan-hands-stitching.png" alt="Detail of artisan hands sewing signatures into a sketchbook" id="spotImg" />
+          <img src="../assets/images/artisan-hands-stitching-new.png" alt="Detail of artisan hands sewing signatures into a sketchbook" id="spotImg" />
           <div class="spotlight-card__overlay">
             <a href="coming-soon.html" class="play-btn" aria-label="Play bookbinding video tutorial">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -796,12 +811,12 @@
         <p class="section-subtitle">A daily window into our London studio. Raw hide tooling, edge-burnishing, paper signatures, and hot tea.</p>
       </header>
       <div class="workshop-gallery-grid reveal">
-        <div class="workshop-gallery-item"><img src="../assets/images/leather-workshop-interior.png" alt="Clean structured leather workshop layout" id="feed1Img" loading="lazy" /></div>
-        <div class="workshop-gallery-item"><img src="../assets/images/collection-leather-journals.png" alt="Bookbinding linen threads and needles" id="feed2Img" loading="lazy" /></div>
-        <div class="workshop-gallery-item"><img src="../assets/images/artisan-hands-stitching.png" alt="Artisan sewing signatures together" id="feed3Img" loading="lazy" /></div>
-        <div class="workshop-gallery-item"><img src="../assets/images/hero-leather-journal.png" alt="Stack of earth-tone leather sketchbooks" id="feed4Img" loading="lazy" /></div>
-        <div class="workshop-gallery-item"><img src="../assets/images/artist-sketchbook-open.png" alt="Open journal pages with calligraphy ink" id="feed5Img" loading="lazy" /></div>
-        <div class="workshop-gallery-item"><img src="../assets/images/corporate-embossed-journals.png" alt="Clerkenwell leather stamping brass blocks" id="feed6Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/masonry-gift.png" alt="Clean structured leather workshop layout" id="feed1Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/hero-leather-journal-new.png" alt="Bookbinding linen threads and needles" id="feed2Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/blog-notes.png" alt="Artisan sewing signatures together" id="feed3Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/contact-hero.png" alt="Stack of earth-tone leather sketchbooks" id="feed4Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/pricing-hero.png" alt="Open journal pages with calligraphy ink" id="feed5Img" loading="lazy" /></div>
+        <div class="workshop-gallery-item"><img src="../assets/images/service-hero.png" alt="Clerkenwell leather stamping brass blocks" id="feed6Img" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -833,14 +848,7 @@
         <div class="footer__brand">
           <a href="../index.html" class="footer__logo" aria-label="LeatherCraft Bindery � Home">
             <div class="footer__logo-icon" aria-hidden="true">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/>
-                <rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/>
-                <rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/>
-                <rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/>
-                <rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/>
-                <rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/>
-              </svg>
+              <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <div>
               <div class="footer__brand-name">LeatherCraft</div>

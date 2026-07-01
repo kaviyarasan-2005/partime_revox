@@ -661,16 +661,26 @@
   background: var(--color-surface);
   color: var(--color-text-secondary);
   font-family: var(--font-heading);
-  font-weight: var(--weight-bold);
-  font-size: var(--text-lg);
-  padding: var(--space-3) var(--space-8);
-  border-radius: var(--radius-full);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--color-glass-border);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all var(--transition-fast);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.partner-tag svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
 }
 
 .partner-tag:hover {
@@ -680,17 +690,126 @@
   box-shadow: var(--shadow-md), var(--shadow-glow-accent);
 }
 
+.partner-tag:hover svg {
+  transform: scale(1.1);
+}
+
 @keyframes scroll-ticker {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - var(--space-6)/2)); }
 }
 
 /* ============================================
+   HOMEPAGE TIMELINE GRID
+   ============================================ */
+.timeline-grid {
+  position: relative;
+  margin-top: var(--space-8);
+}
+
+.timeline-grid .timeline-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: var(--space-6); /* Override default timeline item padding-bottom */
+}
+
+.timeline-grid .timeline-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md), var(--shadow-glow-accent);
+}
+
+.timeline-grid .timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-4);
+}
+
+.timeline-grid .timeline-step {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent-light);
+  line-height: 1;
+}
+
+.timeline-grid .timeline-item:hover .timeline-step {
+  color: var(--color-accent);
+}
+
+.timeline-grid .timeline-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.timeline-grid .timeline-item:hover .timeline-icon {
+  background: var(--gradient-accent);
+  color: #FFFFFF;
+}
+
+.timeline-grid .timeline-icon i {
+  width: 20px;
+  height: 20px;
+}
+
+.timeline-grid .timeline-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+.timeline-grid .timeline-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* ============================================
    DANGER CARD LAYOUT (Responsive)
    ============================================ */
 .danger-card-layout {
-  padding: var(--space-16);
-  gap: var(--space-12);
+  padding: var(--space-10);
+  gap: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);
+}
+
+.danger-card-layout .comparison-info {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 360px;
+}
+
+.danger-card-layout .comparison-display {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 360px;
 }
 
 @media (max-width: 768px) {

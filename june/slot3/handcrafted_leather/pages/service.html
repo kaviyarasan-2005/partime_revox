@@ -13,7 +13,19 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
-    .services-tabs { margin-bottom: var(--space-12); }
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--service {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/service-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--service {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/service-hero.png");
+    }
+
+    .services-tabs { margin-bottom: var(--space-6); }
+    #main-content .section { padding-block: var(--space-10); }
 
     .service-detail {
       display: grid;
@@ -98,13 +110,19 @@
   <div class="container navbar__container">
     <a href="../index.html" class="navbar__brand" aria-label="LeatherCraft Bindery — Home">
       <div class="navbar__logo" aria-hidden="true">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/><rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/><rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/><rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/><rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/><rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/></svg>
+        <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <div class="navbar__brand-text">
         <span class="navbar__brand-name">LeatherCraft</span>
       </div>
     </a>
     <nav class="navbar__nav" id="navMenu" aria-label="Main navigation">
+      <button class="navbar__close-btn" id="navClose" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       <ul class="navbar__list" role="list">
         <li class="navbar__item navbar__item--dropdown" id="homeDropdownItem">
           <button class="navbar__link navbar__dropdown-toggle" id="homeDropdownBtn" aria-expanded="false" aria-haspopup="true" aria-controls="homeDropdown">
@@ -120,9 +138,13 @@
         <li class="navbar__item"><a href="pricing.html" class="navbar__link" data-page="pricing">Pricing</a></li>
         <li class="navbar__item"><a href="blog.html" class="navbar__link" data-page="blog">Blog</a></li>
         <li class="navbar__item"><a href="contact.html" class="navbar__link" data-page="contact">Contact</a></li>
+        <li class="navbar__item navbar__item--cta-mobile">
+          <a href="contact.html" class="btn btn-primary btn-block">Get a Quote</a>
+        </li>
       </ul>
     </nav>
     <div class="navbar__controls">
+      <a href="contact.html" class="navbar__cta">Get a Quote</a>
       <button class="navbar__control-btn navbar__rtl-btn" id="rtlToggle" aria-label="Switch to RTL layout">
         <span class="rtl-label">RTL</span>
       </button>
@@ -140,7 +162,7 @@
 
 <main id="main-content">
 
-  <section class="page-hero" aria-label="Services page header">
+  <section class="page-hero page-hero--service" aria-label="Services page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">What We Create</p>
       <h1 class="page-hero__title">Our Services</h1>
@@ -204,7 +226,7 @@
         <div class="tabs__panel is-active" id="tab-journals" role="tabpanel" aria-labelledby="btn-journals">
           <div class="service-detail">
             <div class="service-detail__image">
-              <img src="../assets/images/collection-leather-journals.png" alt="Open custom leather journal showing hand-tooled cover and ivory pages" loading="lazy" id="svcD1Img" />
+              <img src="../assets/images/custom-journals-detail.png" alt="Open custom leather journal showing hand-tooled cover and ivory pages" loading="lazy" id="svcD1Img" />
             </div>
             <div>
               <span class="section-label">Fully Bespoke</span>
@@ -230,7 +252,7 @@
         <div class="tabs__panel" id="tab-sketchbooks" role="tabpanel" aria-labelledby="btn-sketchbooks">
           <div class="service-detail">
             <div class="service-detail__image">
-              <img src="../assets/images/artist-sketchbook-open.png" alt="Lay-flat leather sketchbook open showing mixed-media artwork" loading="lazy" id="svcD2Img" />
+              <img src="../assets/images/artist-sketchbook-detail.png" alt="Lay-flat leather sketchbook open showing mixed-media artwork" loading="lazy" id="svcD2Img" />
             </div>
             <div>
               <span class="section-label">For the Artist</span>
@@ -256,7 +278,7 @@
         <div class="tabs__panel" id="tab-corporate" role="tabpanel" aria-labelledby="btn-corporate">
           <div class="service-detail">
             <div class="service-detail__image">
-              <img src="../assets/images/corporate-embossed-journals.png" alt="Stack of corporate leather journals with embossed company logo in gold" loading="lazy" id="svcD3Img" />
+              <img src="../assets/images/corporate-journals-detail.png" alt="Stack of corporate leather journals with embossed company logo in gold" loading="lazy" id="svcD3Img" />
             </div>
             <div>
               <span class="section-label">Business &amp; Events</span>
@@ -282,7 +304,7 @@
         <div class="tabs__panel" id="tab-restoration" role="tabpanel" aria-labelledby="btn-restoration">
           <div class="service-detail">
             <div class="service-detail__image">
-              <img src="../assets/images/artisan-hands-stitching.png" alt="Artisan repairing the spine of a damaged antique leather-bound book" loading="lazy" id="svcD4Img" />
+              <img src="../assets/images/book-restoration-detail.png" alt="Artisan repairing the spine of a damaged antique leather-bound book" loading="lazy" id="svcD4Img" />
             </div>
             <div>
               <span class="section-label">Bring It Back to Life</span>
@@ -343,7 +365,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section" aria-labelledby="faq-svc-heading">
+  <section class="section" aria-labelledby="faq-svc-heading" style="padding-top: 0; padding-bottom: 0;">
     <div class="container" style="max-width:760px;">
       <header class="section-header reveal">
         <span class="section-label">Questions</span>
@@ -403,14 +425,7 @@
         <div class="footer__brand">
           <a href="../index.html" class="footer__logo" aria-label="LeatherCraft Bindery � Home">
             <div class="footer__logo-icon" aria-hidden="true">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/>
-                <rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/>
-                <rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/>
-                <rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/>
-                <rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/>
-                <rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/>
-              </svg>
+              <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <div>
               <div class="footer__brand-name">LeatherCraft</div>

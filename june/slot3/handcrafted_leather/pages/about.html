@@ -13,6 +13,40 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--about {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/leather-workshop-interior.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--about {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/leather-workshop-interior.png");
+    }
+
+    /* ── CTA Banner with Background ── */
+    .about-cta {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.9), rgba(30, 61, 52, 0.92)), url("../assets/images/collection-leather-journals.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--warm-ivory);
+      padding: var(--space-16) 0;
+      position: relative;
+    }
+    [data-theme="dark"] .about-cta {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95)), url("../assets/images/collection-leather-journals.png");
+    }
+    .about-cta .section-label {
+      color: var(--antique-gold);
+    }
+    .about-cta h2 {
+      color: #fff !important;
+    }
+    .about-cta .section-subtitle {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
     /* ── About Split ── */
     .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     @media (max-width: 900px) { 
@@ -128,20 +162,19 @@
   <div class="container navbar__container">
     <a href="../index.html" class="navbar__brand" aria-label="LeatherCraft Bindery — Home">
       <div class="navbar__logo" aria-hidden="true">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/>
-          <rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/>
-          <rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/>
-          <rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/>
-          <rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/>
-          <rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/>
-        </svg>
+        <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
       <div class="navbar__brand-text">
         <span class="navbar__brand-name">LeatherCraft</span>
       </div>
     </a>
     <nav class="navbar__nav" id="navMenu" aria-label="Main navigation">
+      <button class="navbar__close-btn" id="navClose" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       <ul class="navbar__list" role="list">
         <li class="navbar__item navbar__item--dropdown" id="homeDropdownItem">
           <button class="navbar__link navbar__dropdown-toggle" id="homeDropdownBtn" aria-expanded="false" aria-haspopup="true" aria-controls="homeDropdown">
@@ -157,9 +190,13 @@
         <li class="navbar__item"><a href="pricing.html" class="navbar__link" data-page="pricing">Pricing</a></li>
         <li class="navbar__item"><a href="blog.html" class="navbar__link" data-page="blog">Blog</a></li>
         <li class="navbar__item"><a href="contact.html" class="navbar__link" data-page="contact">Contact</a></li>
+        <li class="navbar__item navbar__item--cta-mobile">
+          <a href="contact.html" class="btn btn-primary btn-block">Get a Quote</a>
+        </li>
       </ul>
     </nav>
     <div class="navbar__controls">
+      <a href="contact.html" class="navbar__cta">Get a Quote</a>
       <button class="navbar__control-btn navbar__rtl-btn" id="rtlToggle" aria-label="Switch to RTL layout">
         <span class="rtl-label">RTL</span>
       </button>
@@ -178,7 +215,7 @@
 <main id="main-content">
 
   <!-- Page Hero -->
-  <section class="page-hero" aria-label="About page header">
+  <section class="page-hero page-hero--about" aria-label="About page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">Est. 2008</p>
       <h1 class="page-hero__title">Our Story &amp; Heritage</h1>
@@ -353,7 +390,7 @@
   </div>
 
   <!-- CTA -->
-  <section class="section" aria-labelledby="cta-about-heading">
+  <section class="about-cta" aria-labelledby="cta-about-heading">
     <div class="container text-center reveal">
       <span class="section-label">Work With Us</span>
       <h2 id="cta-about-heading">Commission Your Bespoke Journal</h2>
@@ -376,14 +413,7 @@
         <div class="footer__brand">
           <a href="../index.html" class="footer__logo" aria-label="LeatherCraft Bindery � Home">
             <div class="footer__logo-icon" aria-hidden="true">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="6" width="5" height="32" rx="2" fill="#2F5D50"/>
-                <rect x="9" y="4" width="28" height="36" rx="3" fill="currentColor" opacity="0.9"/>
-                <rect x="9" y="4" width="5" height="36" fill="currentColor" opacity="0.55"/>
-                <rect x="16" y="14" width="16" height="2" rx="1" fill="#C4A962"/>
-                <rect x="16" y="20" width="12" height="1.5" rx="0.75" fill="#C4A962" opacity="0.7"/>
-                <rect x="16" y="25" width="14" height="1.5" rx="0.75" fill="#C4A962" opacity="0.5"/>
-              </svg>
+              <img src="../assets/leather_logo.png" alt="LeatherCraft Logo" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <div>
               <div class="footer__brand-name">LeatherCraft</div>

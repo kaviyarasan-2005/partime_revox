@@ -53,7 +53,7 @@
 
         <div class="services-grid">
           <div class="service-card animate-on-scroll">
-            <img src="../assets/images/img_75599251.jpg" class="service-card-img" alt="Classic Macaron Boxes" loading="lazy">
+            <img src="../assets/images/service_classic_box.png" class="service-card-img" alt="Classic Macaron Boxes" loading="lazy">
             <div class="service-card-body">
               <h3 class="service-name">Classic Macaron Boxes</h3>
               <p class="service-desc">Our flagship offering — beautifully boxed French macarons in your choice of flavors from our rotating seasonal menu. Perfect for gifting or personal indulgence.</p>
@@ -67,7 +67,7 @@
           </div>
 
           <div class="service-card animate-on-scroll delay-1">
-            <img src="../assets/images/img_cf69274a.jpg" class="service-card-img" alt="Corporate Events" loading="lazy">
+            <img src="../assets/images/service_corporate.png" class="service-card-img" alt="Corporate Events" loading="lazy">
             <div class="service-card-body">
               <h3 class="service-name">Corporate Events</h3>
               <p class="service-desc">Impress clients and reward employees with premium branded macaron boxes, custom logo packaging, and event delivery service for corporate events, conferences, and gifting.</p>
@@ -81,7 +81,7 @@
           </div>
 
           <div class="service-card animate-on-scroll delay-2">
-            <img src="../assets/images/img_3083de08.jpg" class="service-card-img" alt="Pastry Masterclasses" loading="lazy">
+            <img src="../assets/images/service_masterclass.png" class="service-card-img" alt="Pastry Masterclasses" loading="lazy">
             <div class="service-card-body">
               <h3 class="service-name">Pastry Masterclasses</h3>
               <p class="service-desc">Step into our kitchen and learn the delicate art of French patisserie. Our hands-on workshops are designed for both enthusiastic beginners and seasoned bakers.</p>
@@ -97,7 +97,100 @@
       </div>
     </section>
 
-    <!-- ── PROCESS ────────────────────────────────────────── -->
+    <!-- ── BOX BUILDER PREVIEW ────────────────────────────── -->
+    <section class="py-20 bg-surface" aria-labelledby="customizer-heading">
+      <div class="container">
+        <div class="section-header mb-16 text-center">
+          <div class="section-tag" style="justify-content:center; margin:0 auto var(--sp-4);">Interactive Preview</div>
+          <h2 id="customizer-heading" class="section-title">Build Your Custom Gift Box</h2>
+          <p class="section-desc" style="margin-inline:auto">Mix and match your favorite flavors. Select a flavor below to fill the slots in your virtual 8-pack box.</p>
+        </div>
+
+        <div class="customizer-box-preview animate-on-scroll">
+          <!-- Box Visual Slot Grid -->
+          <div class="customizer-box-visual">
+            <div class="macaron-tray" id="customizer-tray">
+              <div class="macaron-slot" data-slot="0"></div>
+              <div class="macaron-slot" data-slot="1"></div>
+              <div class="macaron-slot" data-slot="2"></div>
+              <div class="macaron-slot" data-slot="3"></div>
+              <div class="macaron-slot" data-slot="4"></div>
+              <div class="macaron-slot" data-slot="5"></div>
+              <div class="macaron-slot" data-slot="6"></div>
+              <div class="macaron-slot" data-slot="7"></div>
+            </div>
+          </div>
+
+          <!-- Flavor Controls -->
+          <div class="customizer-flavor-selector">
+            <h3 style="font-family:var(--font-heading); font-size:var(--text-lg); color:var(--text-primary);">Select Flavors:</h3>
+            <div class="flavor-bubble-grid">
+              <button class="flavor-bubble" data-color="#E8839A" data-name="Rose Lychee">
+                <span class="flavor-bubble-dot" style="background:#E8839A"></span>
+                Rose Lychee
+              </button>
+              <button class="flavor-bubble" data-color="#8DAA8E" data-name="Pistachio">
+                <span class="flavor-bubble-dot" style="background:#8DAA8E"></span>
+                Pistachio
+              </button>
+              <button class="flavor-bubble" data-color="#B5A8D0" data-name="Lavender">
+                <span class="flavor-bubble-dot" style="background:#B5A8D0"></span>
+                Lavender
+              </button>
+              <button class="flavor-bubble" data-color="#F0C870" data-name="Lemon Citron">
+                <span class="flavor-bubble-dot" style="background:#F0C870"></span>
+                Lemon Citron
+              </button>
+              <button class="flavor-bubble" data-color="#D4A853" data-name="Salted Caramel">
+                <span class="flavor-bubble-dot" style="background:#D4A853"></span>
+                Caramel
+              </button>
+              <button class="flavor-bubble" data-color="#8B5E3C" data-name="Valrhona Dark">
+                <span class="flavor-bubble-dot" style="background:#8B5E3C"></span>
+                Chocolate
+              </button>
+            </div>
+            <div style="margin-top:auto; display:flex; gap:var(--sp-4); flex-wrap:wrap">
+              <button class="btn btn-secondary btn-sm" id="clear-customizer-btn">Clear Box</button>
+              <a href="./pricing.html" class="btn btn-primary btn-sm">Order This Box</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inline Customizer Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const slots = document.querySelectorAll('.macaron-slot');
+        const bubbles = document.querySelectorAll('.flavor-bubble');
+        const clearBtn = document.getElementById('clear-customizer-btn');
+        let currentSlotIdx = 0;
+
+        bubbles.forEach(bubble => {
+          bubble.addEventListener('click', () => {
+            if (currentSlotIdx < slots.length) {
+              const color = bubble.getAttribute('data-color');
+              const name = bubble.getAttribute('data-name');
+              const targetSlot = slots[currentSlotIdx];
+
+              targetSlot.innerHTML = `<div class="macaron-dot" style="background:${color}" title="${name}"></div>`;
+              targetSlot.classList.add('filled');
+              
+              currentSlotIdx++;
+            }
+          });
+        });
+
+        clearBtn.addEventListener('click', () => {
+          slots.forEach(slot => {
+            slot.innerHTML = '';
+            slot.classList.remove('filled');
+          });
+          currentSlotIdx = 0;
+        });
+      });
+    </script>
     <section class="py-20 bg-alt" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header mb-16">

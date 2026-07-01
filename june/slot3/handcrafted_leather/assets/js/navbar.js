@@ -73,6 +73,11 @@
       overlay.addEventListener('click', closeMenu);
     }
 
+    var navClose = document.getElementById('navClose');
+    if (navClose) {
+      navClose.addEventListener('click', closeMenu);
+    }
+
     /* Close menu on Escape */
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMenu();
@@ -169,6 +174,7 @@
         (page === 'about' && currentPath === 'about.html') ||
         (page === 'service' && currentPath === 'service.html') ||
         (page === 'pricing' && currentPath === 'pricing.html') ||
+        (page === 'blog' && currentPath === 'blog.html') ||
         (page === 'contact' && currentPath === 'contact.html')
       ) {
         link.classList.add('is-active');

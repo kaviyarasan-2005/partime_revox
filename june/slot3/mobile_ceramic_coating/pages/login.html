@@ -61,6 +61,13 @@
         padding: var(--sp-5);
       }
     }
+    .auth-header h2 {
+      font-size: var(--text-xl) !important;
+    }
+    .social-login .btn-outline {
+      border-color: var(--color-ceramic-blue) !important;
+      color: var(--color-ceramic-blue) !important;
+    }
   </style>
 </head>
 <body>
@@ -84,7 +91,10 @@
     <div class="auth-header">
             <a href="../index.html" class="auth-brand" aria-label="Glint Home" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; margin-bottom:var(--sp-4);">
         <div class="auth-logo" style="margin-bottom:0; width:48px; height:48px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L4 5v6c0 5.25 3.42 10.16 8 11 4.58-.84 8-5.75 8-11V5l-8-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z" fill="currentColor" />
+          </svg>
         </div>
         <div style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; letter-spacing:0.5px; color:var(--text-primary);">Glint</div>
       </a>
@@ -102,7 +112,7 @@
       <div class="form-group">
         <div class="flex-between mb-2">
           <label for="login-password" class="form-label" style="margin-bottom:0;">Password</label>
-          <a href="#" class="text-xs">Forgot?</a>
+          <a href="#" class="text-xs">Forgot Password?</a>
         </div>
         <input type="password" id="login-password" name="password" class="form-control" required placeholder="••••••••" data-error-required="Password is required." />
         <div class="form-error"></div>

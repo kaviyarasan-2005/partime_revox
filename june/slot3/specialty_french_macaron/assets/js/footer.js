@@ -17,7 +17,14 @@
             <div class="footer-brand">
               <a href="${base}/index.html" class="footer-logo" aria-label="Liora Home">
                 <div class="footer-logo-icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.5.93-4.78 2.46-6.54"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="1"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="none">
+                    <path d="M7 14 C7 8.5 10.5 5 16 5 C21.5 5 25 8.5 25 14" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M7 14 Q8.5 16 10 14 Q11.5 16 13 14 Q14.5 16 16 14 Q17.5 16 19 14 Q20.5 16 22 14 Q23.5 16 25 14" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="7.5" y="15.5" width="17" height="3" rx="1.5" fill="rgba(255,255,255,0.45)" stroke="white" stroke-width="1.2"/>
+                    <path d="M7 19 C7 24 10.5 27 16 27 C21.5 27 25 24 25 19" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M17 5 Q20 2 22 3.5 Q20 3 18 5" fill="rgba(255,255,255,0.7)" stroke="white" stroke-width="0.8" stroke-linejoin="round"/>
+                    <line x1="19.5" y1="3.2" x2="18" y2="5" stroke="white" stroke-width="0.6" opacity="0.6"/>
+                  </svg>
                 </div>
                 <div>
                   <span class="footer-brand-name">Liora</span>
