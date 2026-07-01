@@ -1120,6 +1120,7 @@
 }
 
 @media (max-width: 1024px) {
+  .service-detail-grid.reverse { direction: ltr; }
   .dashboard-layout {
     grid-template-columns: 1fr;
   }
