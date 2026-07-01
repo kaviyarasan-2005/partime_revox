@@ -563,6 +563,32 @@
   margin-top: var(--space-4);
 }
 
+.slider-results {
+  border-top: 1px solid var(--color-glass-border);
+  padding-top: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.slider-results > div {
+  padding: var(--space-4);
+}
+
+.slider-results > div:first-child {
+  border-right: 1px solid var(--color-glass-border);
+}
+
+[dir="rtl"] .slider-results > div:first-child {
+  border-right: none;
+  border-left: 1px solid var(--color-glass-border);
+}
+
+@media (max-width: 640px) {
+  .slider-results > div:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--color-glass-border);
+  }
+}
+
 /* Payment Methods */
 .payment-methods {
   display: flex;
