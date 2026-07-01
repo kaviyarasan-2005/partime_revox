@@ -8,6 +8,9 @@
   const isRoot = !window.location.pathname.includes('/pages/');
   const base   = isRoot ? '.' : '..';
 
+  // Simple cart state
+  let cartCount = 0;
+
   function getNavHTML() {
     const links = [
       {
@@ -64,6 +67,24 @@
       return `<li><a href="${link.href}" class="mobile-nav-link">${link.label}</a></li>`;
     }).join('');
 
+    // Cart button SVG icon
+    const cartIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>`;
+
+    // Redesigned macaron logo SVG — a stylized macaron with layered halves
+    const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top macaron shell -->
+      <ellipse cx="12" cy="8" rx="8" ry="5" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+      <!-- Filling layer -->
+      <line x1="4.5" y1="11" x2="19.5" y2="11" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+      <!-- Bottom macaron shell -->
+      <ellipse cx="12" cy="14" rx="8" ry="5" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.5"/>
+      <!-- Decorative ruffles (feet) -->
+      <path d="M5 11 Q6.5 12.5 8 11" stroke="white" stroke-width="1" opacity="0.6"/>
+      <path d="M8 11 Q9.5 12.5 11 11" stroke="white" stroke-width="1" opacity="0.6"/>
+      <path d="M11 11 Q12.5 12.5 14 11" stroke="white" stroke-width="1" opacity="0.6"/>
+      <path d="M14 11 Q15.5 12.5 17 11" stroke="white" stroke-width="1" opacity="0.6"/>
+    </svg>`;
+
     return `
       <a href="#main-content" class="skip-link">Skip to main content</a>
       <nav class="navbar" id="main-navbar" role="navigation" aria-label="Main navigation">
@@ -72,7 +93,7 @@
           <!-- Brand -->
           <a href="${base}/index.html" class="navbar-brand" aria-label="Liora Home">
             <div class="brand-logo" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.5.93-4.78 2.46-6.54"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="1"/></svg>
+              ${logoSvg}
             </div>
             <div>
               <span class="brand-name">Liora</span>
@@ -86,6 +107,12 @@
 
           <!-- Controls -->
           <div class="navbar-controls">
+            <!-- Cart Button (desktop) -->
+            <button class="ctrl-btn cart-btn" id="cart-btn-desktop" aria-label="Shopping cart" title="View Cart">
+              ${cartIcon}
+              <span class="cart-badge" id="cart-badge-desktop" style="display:none">0</span>
+            </button>
+
             <!-- RTL Toggle -->
             <button class="ctrl-btn rtl-btn" id="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR">
               <span id="rtl-label">RTL</span>
@@ -96,8 +123,6 @@
               <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
               <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
-
-
 
             <!-- Hamburger (mobile) -->
             <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -113,10 +138,30 @@
       <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="false">
         <ul style="list-style:none;padding:0;margin:0">
           ${mobileItems}
+          <!-- Mobile Cart (below Contact) -->
+          <li>
+            <button class="mobile-nav-link mobile-cart-link" id="cart-btn-mobile" aria-label="Shopping cart">
+              ${cartIcon}
+              <span>Cart</span>
+              <span class="cart-badge cart-badge-mobile" id="cart-badge-mobile" style="display:none">0</span>
+            </button>
+          </li>
         </ul>
-
       </div>
     `;
+  }
+
+  function updateCartBadges() {
+    const desktopBadge = document.getElementById('cart-badge-desktop');
+    const mobileBadge  = document.getElementById('cart-badge-mobile');
+    if (desktopBadge) {
+      desktopBadge.textContent = cartCount;
+      desktopBadge.style.display = cartCount > 0 ? 'flex' : 'none';
+    }
+    if (mobileBadge) {
+      mobileBadge.textContent = cartCount;
+      mobileBadge.style.display = cartCount > 0 ? 'inline-flex' : 'none';
+    }
   }
 
   function initNavbar() {
@@ -173,9 +218,32 @@
       }
     });
 
+    // ── Cart Button Interaction ──
+    const cartDesktop = document.getElementById('cart-btn-desktop');
+    const cartMobile  = document.getElementById('cart-btn-mobile');
+
+    function handleCartClick() {
+      // Cart button bounce animation
+      this.classList.add('cart-bounce');
+      setTimeout(() => this.classList.remove('cart-bounce'), 400);
+    }
+
+    if (cartDesktop) cartDesktop.addEventListener('click', handleCartClick);
+    if (cartMobile) cartMobile.addEventListener('click', handleCartClick);
+
+    // Initialize badges
+    updateCartBadges();
+
     // ── Lucide icons re-init ──
     if (window.lucide) window.lucide.createIcons();
   }
+
+  // Expose cart API globally for other scripts
+  window.LioraCart = {
+    add: function(n) { cartCount += (n || 1); updateCartBadges(); },
+    set: function(n) { cartCount = n; updateCartBadges(); },
+    get: function()  { return cartCount; }
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNavbar);
