@@ -1359,3 +1359,18 @@
   margin-bottom: var(--sp-1);
   color: var(--text-primary);
 }
+
+/* Team Card Social Icons - Light mode improvement */
+.team-card-social .social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ceramic-blue);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
