@@ -13,6 +13,17 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--service {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/service-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--service {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/service-hero.png");
+    }
+
     .services-tabs { margin-bottom: var(--space-6); }
     #main-content .section { padding-block: var(--space-10); }
 
@@ -141,7 +152,7 @@
 
 <main id="main-content">
 
-  <section class="page-hero" aria-label="Services page header">
+  <section class="page-hero page-hero--service" aria-label="Services page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">What We Create</p>
       <h1 class="page-hero__title">Our Services</h1>
