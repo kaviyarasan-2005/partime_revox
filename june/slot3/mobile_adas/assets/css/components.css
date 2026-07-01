@@ -330,15 +330,17 @@
 /* ---- Stats Card ---- */
 .stat-card {
   text-align: center;
-  padding: var(--space-6);
+  padding: var(--space-2) var(--space-6);
 }
 
-.stat-card .stat-value {
+.stat-card .stat-value,
+.stat-card .stat-number {
   font-family: var(--font-heading);
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-weight: var(--weight-bold);
   color: var(--color-accent);
   margin-bottom: var(--space-1);
+  line-height: var(--leading-tight);
 }
 
 .stat-card .stat-label {

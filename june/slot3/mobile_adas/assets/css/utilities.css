@@ -37,6 +37,12 @@
 .mx-auto { margin-left: auto; margin-right: auto; }
 .pt-0 { padding-top: 0; }
 .pb-0 { padding-bottom: 0; }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+.py-20 { padding-top: var(--space-20); padding-bottom: var(--space-20); }
 
 /* ---- Display ---- */
 .hidden { display: none; }
