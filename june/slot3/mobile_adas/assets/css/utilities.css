@@ -36,6 +36,10 @@
 .mb-8 { margin-bottom: var(--space-8); }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .pt-0 { padding-top: 0; }
+.pt-4 { padding-top: var(--space-4); }
+.pt-6 { padding-top: var(--space-6); }
+.pt-8 { padding-top: var(--space-8); }
+.pt-12 { padding-top: var(--space-12); }
 .pb-0 { padding-bottom: 0; }
 .py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
 .py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
