@@ -153,6 +153,14 @@
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
+/* Dark mode pricing card contrast fixes */
+[data-theme="dark"] .plan-price,
+[data-theme="dark"] .product-card-price,
+[data-theme="dark"] .bundle-price,
+[data-theme="dark"] .price-bundle {
+  color: var(--color-text-primary);
+}
+
 /* Dark mode form inputs */
 [data-theme="dark"] .form-input,
 [data-theme="dark"] .form-select,
@@ -576,6 +584,8 @@ input, textarea, select {
   position: absolute;
   inset: 0;
   z-index: 1;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .hero-content {
@@ -618,6 +628,7 @@ input, textarea, select {
   color: var(--color-text-light);
   margin-bottom: 20px;
   margin-inline: auto;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -626,6 +637,7 @@ input, textarea, select {
   margin-bottom: 36px;
   max-width: 600px;
   margin-inline: auto;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text-center p {
@@ -1227,10 +1239,6 @@ input, textarea, select {
   background: rgba(255,255,255,0.2);
 }
 
-.social-instagram { }
-.social-facebook { }
-.social-x { }
-.social-youtube { }
 
 .footer-col h4 {
   color: var(--color-text-light);
@@ -1869,7 +1877,7 @@ input, textarea, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   cursor: pointer;
 }
 
@@ -1881,10 +1889,11 @@ input, textarea, select {
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
   border: 3px solid transparent;
+  margin-bottom: 4px;
 }
 
 .color-swatch-item:hover .color-swatch-circle {
-  transform: scale(1.15);
+  transform: scale(1.1);
   box-shadow: 0 8px 24px rgba(225, 112, 85, 0.3);
   border-color: var(--color-secondary);
 }
@@ -1900,12 +1909,12 @@ input, textarea, select {
   font-size: 0.75rem;
   color: var(--color-secondary);
   font-weight: 600;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
 }
 
 .color-swatch-item:hover .color-swatch-link {
-  opacity: 1;
+  color: var(--color-primary);
 }
 
 /* === MASONRY GALLERY === */
