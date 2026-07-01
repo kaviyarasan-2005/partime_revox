@@ -13,6 +13,40 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--about {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/leather-workshop-interior.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--about {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/leather-workshop-interior.png");
+    }
+
+    /* ── CTA Banner with Background ── */
+    .about-cta {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.9), rgba(30, 61, 52, 0.92)), url("../assets/images/collection-leather-journals.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--warm-ivory);
+      padding: var(--space-16) 0;
+      position: relative;
+    }
+    [data-theme="dark"] .about-cta {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95)), url("../assets/images/collection-leather-journals.png");
+    }
+    .about-cta .section-label {
+      color: var(--antique-gold);
+    }
+    .about-cta h2 {
+      color: #fff !important;
+    }
+    .about-cta .section-subtitle {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
     /* ── About Split ── */
     .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     @media (max-width: 900px) { 
@@ -171,7 +205,7 @@
 <main id="main-content">
 
   <!-- Page Hero -->
-  <section class="page-hero" aria-label="About page header">
+  <section class="page-hero page-hero--about" aria-label="About page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">Est. 2008</p>
       <h1 class="page-hero__title">Our Story &amp; Heritage</h1>
@@ -346,7 +380,7 @@
   </div>
 
   <!-- CTA -->
-  <section class="section" aria-labelledby="cta-about-heading">
+  <section class="about-cta" aria-labelledby="cta-about-heading">
     <div class="container text-center reveal">
       <span class="section-label">Work With Us</span>
       <h2 id="cta-about-heading">Commission Your Bespoke Journal</h2>
