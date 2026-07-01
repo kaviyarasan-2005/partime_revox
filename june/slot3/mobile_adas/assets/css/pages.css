@@ -594,6 +594,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
+  align-items: start;
 }
 
 .contact-form-card {
