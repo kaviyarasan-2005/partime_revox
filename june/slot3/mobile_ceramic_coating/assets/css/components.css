@@ -881,6 +881,26 @@
   .stats-divider { display: none; }
 }
 
+/* Added responsive adjustments for larger and smaller screens */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: var(--sp-5) var(--sp-6);
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+}
+
+
+
+
 /* ============================================================
    TEAM CARD
    ============================================================ */
