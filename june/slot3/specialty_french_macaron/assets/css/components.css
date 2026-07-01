@@ -257,6 +257,9 @@
 .testimonial-card {
   padding: var(--sp-8);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .testimonial-quote-icon {
@@ -264,6 +267,7 @@
   height: 36px;
   color: var(--clr-blush);
   margin-bottom: var(--sp-4);
+  flex-shrink: 0;
 }
 
 .testimonial-text {
@@ -273,12 +277,14 @@
   color: var(--text-primary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--sp-6);
+  flex-grow: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: var(--sp-4);
+  margin-top: auto;
 }
 
 .testimonial-avatar {

@@ -1193,6 +1193,33 @@
   flex-shrink: 0;
 }
 
+/* Mobile view design overrides for Core Values */
+@media (max-width: 768px) {
+  .philosophy-container {
+    gap: var(--sp-8);
+  }
+
+  .philosophy-row {
+    grid-template-columns: 1fr !important;
+    gap: var(--sp-6) !important;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-xl);
+    padding: var(--sp-6);
+    box-shadow: var(--shadow-md);
+    direction: ltr !important;
+  }
+
+  .philosophy-row:nth-child(even) .philosophy-content {
+    direction: ltr !important;
+  }
+
+  .philosophy-image-wrap {
+    aspect-ratio: 16/10;
+    border-radius: var(--r-lg);
+  }
+}
+
 .philosophy-row:hover .philosophy-icon {
   background: var(--color-primary);
   color: #fff;
