@@ -133,6 +133,36 @@
   color: var(--c-primary) !important;
 }
 
+/* ── Logo Mark Styles ── */
+.nav-inner .group svg,
+footer .group svg {
+  transition: transform 0.3s ease;
+}
+.nav-inner .group:hover svg,
+footer .group:hover svg {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* ── Before/After Comparison Cards ── */
+.ba-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border);
+}
+.ba-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.ba-handle {
+  transition: left 0.05s ease-out;
+}
+.ba-before-clip {
+  transition: width 0.05s ease-out;
+}
+.ba-slider:active .ba-handle,
+.ba-slider:active .ba-before-clip {
+  transition: none;
+}
+
 /* ── Light Mode Text and Navbar Overrides ── */
 html:not(.dark) section.section-alt .text-white:not(.pricing-card.featured *):not(.btn):not(.badge),
 html:not(.dark) section.section-bg .text-white:not(.pricing-card.featured *):not(.btn):not(.badge) {
@@ -364,6 +394,15 @@ html:not(.dark) .glass-card p[style*="color:rgba(255,255,255"] {
 html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.55"],
 html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.6"] {
   color: var(--text-secondary) !important;
+}
+/* Overrides to ensure text is white/light on dark teal backgrounds even in light mode */
+section[style*="var(--c-primary)"] .glass-card p[style*="color:rgba(255,255,255"],
+section[style*="var(--c-secondary)"] .glass-card p[style*="color:rgba(255,255,255"],
+section[style*="var(--c-primary)"] .glass-card [style*="color:rgba(255,255,255,0.55"],
+section[style*="var(--c-primary)"] .glass-card [style*="color:rgba(255,255,255,0.6"],
+section[style*="var(--c-secondary)"] .glass-card [style*="color:rgba(255,255,255,0.55"],
+section[style*="var(--c-secondary)"] .glass-card [style*="color:rgba(255,255,255,0.6"] {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 
@@ -627,6 +666,21 @@ html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.6"] {
   color: var(--c-accent);
   border-color: rgba(209, 213, 219,0.40);
 }
+html:not(.dark) .icon-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  color: var(--text-primary);
+}
+html:not(.dark) .icon-btn:hover {
+  background: rgba(0, 0, 0, 0.10);
+  color: var(--c-primary);
+  border-color: rgba(0, 0, 0, 0.20);
+}
+html:not(.dark) .icon-btn.active {
+  background: var(--c-accent) !important;
+  color: var(--c-primary) !important;
+  border-color: var(--c-accent) !important;
+}
 
 #rtl-toggle {
   font-family: 'Outfit', sans-serif;
@@ -806,6 +860,15 @@ html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.6"] {
   font-weight: 500;
   margin-top: 6px;
 }
+/* Contrast overrides when background is primary teal or secondary sea green */
+section[style*="var(--c-primary)"] .stat-number,
+section[style*="var(--c-secondary)"] .stat-number {
+  color: #FFFFFF !important;
+}
+section[style*="var(--c-primary)"] .stat-label,
+section[style*="var(--c-secondary)"] .stat-label {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
 
 /* ── Badges ─────────────────────────────────────────────────── */
 .badge {
@@ -818,9 +881,10 @@ html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.6"] {
   font-weight: 600;
 }
 .badge-accent {
-  background: rgba(209, 213, 219,0.15);
+  background: rgba(0, 0, 0, 0.70);
   color: var(--c-accent);
-  border: 1px solid rgba(209, 213, 219,0.30);
+  border: 1px solid rgba(241, 165, 111, 0.35);
+  backdrop-filter: blur(4px);
 }
 .badge-success { background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.25); }
 .badge-warning { background: rgba(234,179,8,0.12); color: #eab308; border: 1px solid rgba(234,179,8,0.25); }
@@ -1003,6 +1067,16 @@ html:not(.dark) .glass-card [style*="color:rgba(255,255,255,0.6"] {
   color: var(--c-primary);
   border-color: var(--c-accent);
   transform: translateY(-2px);
+}
+html:not(.dark) .social-icon {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+html:not(.dark) .social-icon:hover {
+  background: var(--c-accent);
+  color: var(--c-primary);
+  border-color: var(--c-accent);
 }
 
 /* Branded Social Login Buttons */
@@ -1275,6 +1349,21 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   color: var(--c-accent);
 }
 .sidebar-link i { font-size: 1rem; width: 18px; text-align: center; }
+
+.sidebar-link-danger {
+  color: #FFA5A5 !important;
+}
+.sidebar-link-danger:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #FFC0C0 !important;
+}
+.dark .sidebar-link-danger {
+  color: #F87171 !important;
+}
+.dark .sidebar-link-danger:hover {
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #EF4444 !important;
+}
 
 .sidebar-section-label {
   font-size: 0.65rem;
