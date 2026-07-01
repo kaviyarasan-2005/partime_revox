@@ -937,14 +937,8 @@
 
           <!-- Map Placeholder -->
           <div class="reveal delay-100">
-            <div class="map-placeholder-custom" role="img" aria-label="Service area map placeholder">
-              <!-- Pulse rings -->
-              <div class="map-pulse" aria-hidden="true"></div>
-              <div class="map-pulse map-pulse-2" aria-hidden="true"></div>
-              <!-- Pin -->
-              <div class="map-pin-large" aria-hidden="true"></div>
-              <div class="map-label">Service Area Map</div>
-              <div class="map-label-sub">50+ zip codes covered</div>
+            <div class="map-placeholder-custom" style="padding:0;display:block;">
+              <img src="assets/images/service-area-map.png" alt="Service area map showing coverage area" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
 
@@ -980,41 +974,71 @@
         </p>
       </div>
 
-      <div class="contact-faq-grid">
+      <div class="container-sm">
+        <div class="faq-list" role="list">
 
-        <!-- FAQ 1 -->
-        <div class="contact-faq-card reveal delay-100">
-          <div class="faq-card-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <!-- FAQ 1 -->
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+              <span class="faq-question">How soon can you come?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faq-1" role="region">
+              <div class="faq-body-inner">
+                We typically have same-week availability, and in many cases next-day slots are open. Once you submit your
+                booking request, we confirm your preferred time within 2 hours and send a technician profile with ETA.
+              </div>
+            </div>
           </div>
-          <h3 class="faq-card-q">How soon can you come?</h3>
-          <p class="faq-card-a">
-            We typically have same-week availability, and in many cases next-day slots are open. Once you submit your booking request, we confirm your preferred time within 2 hours and send a technician profile with ETA.
-          </p>
-        </div>
 
-        <!-- FAQ 2 -->
-        <div class="contact-faq-card reveal delay-200">
-          <div class="faq-card-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <!-- FAQ 2 -->
+          <div class="faq-item reveal delay-100" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+              <span class="faq-question">Do I need to be present?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faq-2" role="region">
+              <div class="faq-body-inner">
+                Yes — we ask that you or a trusted adult be present during the installation for security and so we can
+                walk you through the finished system. The good news: you can relax at home or keep working while we handle
+                everything.
+              </div>
+            </div>
           </div>
-          <h3 class="faq-card-q">Do I need to be present?</h3>
-          <p class="faq-card-a">
-            Yes — we ask that you or a trusted adult be present during the installation for security and so we can walk you through the finished system. The good news: you can relax at home or keep working while we handle everything.
-          </p>
-        </div>
 
-        <!-- FAQ 3 -->
-        <div class="contact-faq-card reveal delay-300">
-          <div class="faq-card-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <!-- FAQ 3 -->
+          <div class="faq-item reveal delay-200" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+              <span class="faq-question">Do you bring all the equipment?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faq-3" role="region">
+              <div class="faq-body-inner">
+                Absolutely. Our vans are fully stocked with premium-brand audio equipment, wiring kits, mounting hardware,
+                and diagnostic tools. You don't need to source or purchase anything — we handle it all, start to finish.
+              </div>
+            </div>
           </div>
-          <h3 class="faq-card-q">Do you bring all the equipment?</h3>
-          <p class="faq-card-a">
-            Absolutely. Our vans are fully stocked with premium-brand audio equipment, wiring kits, mounting hardware, and diagnostic tools. You don't need to source or purchase anything — we handle it all, start to finish.
-          </p>
-        </div>
 
+        </div>
       </div>
     </div>
   </section>
