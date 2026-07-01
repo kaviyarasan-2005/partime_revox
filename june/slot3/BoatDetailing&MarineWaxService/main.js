@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initBlogFilter();
   initDashboardSidebar();
+  initBASliders();
 });
 
 /* ================================================================
@@ -641,3 +642,52 @@ window.initTabs = function(containerSel) {
 
   bars.forEach(b => { b.style.width = '0'; obs.observe(b); });
 })();
+
+/* ================================================================
+   BEFORE / AFTER COMPARISON SLIDERS
+   ================================================================ */
+function initBASliders() {
+  const sliders = document.querySelectorAll('.ba-slider');
+  if (!sliders.length) return;
+
+  sliders.forEach(slider => {
+    const clip   = slider.querySelector('.ba-before-clip');
+    const handle = slider.querySelector('.ba-handle');
+    if (!clip || !handle) return;
+
+    let dragging = false;
+
+    function updatePosition(clientX) {
+      const rect = slider.getBoundingClientRect();
+      let x = clientX - rect.left;
+      x = Math.max(0, Math.min(x, rect.width));
+      const pct = (x / rect.width) * 100;
+      clip.style.width = pct + '%';
+      handle.style.left = pct + '%';
+    }
+
+    // Mouse events
+    slider.addEventListener('mousedown', e => {
+      e.preventDefault();
+      dragging = true;
+      updatePosition(e.clientX);
+    });
+    document.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      e.preventDefault();
+      updatePosition(e.clientX);
+    });
+    document.addEventListener('mouseup', () => { dragging = false; });
+
+    // Touch events
+    slider.addEventListener('touchstart', e => {
+      dragging = true;
+      updatePosition(e.touches[0].clientX);
+    }, { passive: true });
+    document.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      updatePosition(e.touches[0].clientX);
+    }, { passive: true });
+    document.addEventListener('touchend', () => { dragging = false; });
+  });
+}

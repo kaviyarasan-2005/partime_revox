@@ -3,6 +3,12 @@
    ============================================================ */
 
 [data-theme="dark"] {
+  /* Contrast-enhanced colors */
+  --color-primary: #d1b1df; /* high contrast pastel lavender */
+  --color-primary-light: #e6cff2;
+  --color-primary-dark: #b58bd3;
+  --color-text-secondary: #c5b8a5; /* warm high contrast beige-grey */
+
   /* Navbar */
   .navbar { border-bottom-color: #2a2a2a; }
 
@@ -204,5 +210,26 @@
   }
   .cta-section .section-eyebrow {
     color: var(--color-secondary) !important;
+  }
+
+  /* Primary Button Overrides for High Text Contrast */
+  .btn-primary {
+    color: #0c060d !important;
+    font-weight: 600 !important;
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+  }
+  .btn-primary:hover {
+    color: #0c060d !important;
+    background-color: var(--color-primary-light) !important;
+    border-color: var(--color-primary-light) !important;
+  }
+
+  /* Nav Links and Category Cards Hover Background Contrast */
+  .nav-link:hover {
+    background-color: rgba(209, 177, 223, 0.08) !important;
+  }
+  .category-card:hover {
+    background-color: rgba(209, 177, 223, 0.05) !important;
   }
 }

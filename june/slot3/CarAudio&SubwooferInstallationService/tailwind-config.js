@@ -35,8 +35,8 @@ tailwind.config = {
         body: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow-primary': '0 0 15px rgba(0, 240, 255, 0.4)',
-        'glow-accent': '0 0 15px rgba(255, 0, 127, 0.4)',
+        'glow-primary': '0 0 20px rgba(59, 142, 255, 0.5)',
+        'glow-accent': '0 0 20px rgba(255, 0, 127, 0.5)',
       }
     },
   },

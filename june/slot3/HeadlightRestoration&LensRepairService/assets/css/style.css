@@ -141,6 +141,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -151,7 +152,7 @@ body {
   color: var(--color-text-primary);
   background-color: var(--bg-primary);
   transition: background-color var(--transition-slow), color var(--transition-slow);
-  overflow-x: hidden;
+  /* NOTE: overflow-x is on <html> — keeping it on <body> breaks position:fixed in Safari/mobile */
 }
 
 img {
@@ -632,6 +633,7 @@ p {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: var(--z-navbar);
+  overflow: visible;
   transition: background var(--transition-slow), box-shadow var(--transition-slow);
 }
 
@@ -644,6 +646,7 @@ p {
   margin-inline: auto;
   padding-inline: var(--container-padding);
   height: 100%;
+  min-height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -659,9 +662,25 @@ p {
   flex-shrink: 0;
 }
 
+.navbar-logo img,
 .navbar-logo svg {
   width: 40px;
   height: 40px;
+  object-fit: contain;
+}
+
+.auth-logo img,
+.auth-logo svg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.cs-logo img,
+.cs-logo svg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .navbar-logo-text {
@@ -819,6 +838,17 @@ p {
   width: 36px;
   padding: 0;
   font-size: 16px;
+}
+
+/* Constrain RTL toggle to same compact square as theme-toggle */
+.rtl-toggle {
+  min-width: 36px;
+  width: 36px;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .theme-toggle:hover,
@@ -1544,6 +1574,13 @@ p {
   text-decoration: none;
 }
 
+.footer-logo img,
+.footer-logo svg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .footer-logo-text {
   font-size: 1.6rem;
   font-weight: 800;
@@ -2182,6 +2219,7 @@ p {
 .social-connect-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 14px 24px;
   border-radius: var(--border-radius);
@@ -2189,49 +2227,26 @@ p {
   font-weight: 600;
   color: #FFFFFF;
   text-decoration: none;
+  background: var(--color-primary);
+  border: 1px solid transparent;
   transition: all var(--transition-base);
   min-height: 44px;
 }
 
 .social-connect-btn:hover {
   transform: translateY(-2px);
+  background: var(--color-secondary);
+  color: var(--color-primary-dark);
   box-shadow: var(--shadow-md);
 }
 
-.social-btn-facebook {
-  background: #1877F2;
-}
-
-.social-btn-facebook:hover {
-  background: #1565d8;
-}
-
-.social-btn-instagram {
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.social-btn-twitter {
-  background: #000000;
-}
-
-.social-btn-twitter:hover {
-  background: #111;
-}
-
-.social-btn-linkedin {
-  background: #0077B5;
-}
-
-.social-btn-linkedin:hover {
-  background: #005f94;
-}
-
+/* Individual class overrides removed for brand color consistency */
+.social-btn-facebook,
+.social-btn-instagram,
+.social-btn-twitter,
+.social-btn-linkedin,
 .social-btn-youtube {
-  background: #FF0000;
-}
-
-.social-btn-youtube:hover {
-  background: #cc0000;
+  background: var(--color-primary);
 }
 
 /* ============================================================
@@ -2693,7 +2708,19 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+  .stat-counter-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 360px) {
+  :root {
+    /* Reinforce --navbar-height for page-wrapper offset at 360px */
+    --navbar-height: var(--navbar-height-mobile);
+  }
+
   h1 {
     font-size: 1.75rem;
   }
@@ -2706,7 +2733,54 @@ p {
     padding: 14px 24px;
     font-size: var(--font-size-base);
   }
+
+  /* Page-wrapper must offset exactly the fixed navbar */
+  .page-wrapper {
+    padding-top: var(--navbar-height-mobile) !important;
+  }
+
+  /* Navbar inner: tighter spacing so everything fits in 60px height */
+  .navbar-inner {
+    gap: 6px;
+    padding-inline: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  /* Compact logo */
+  .navbar-logo img,
+  .navbar-logo svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.2rem;
+  }
+
+  /* Compact controls */
+  .navbar-controls {
+    gap: 4px;
+  }
+
+  /* Compact RTL & theme toggles */
+  .theme-toggle,
+  .rtl-toggle {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-size: 0.6rem;
+    padding: 0;
+  }
+
+  /* Compact hamburger */
+  .hamburger {
+    width: 34px;
+    height: 34px;
+    gap: 4px;
+  }
 }
+
 
 /* ============================================================
    PRINT STYLES

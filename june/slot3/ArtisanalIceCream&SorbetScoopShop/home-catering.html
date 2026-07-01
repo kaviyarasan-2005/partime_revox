@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -47,7 +47,7 @@
       <li role="listitem"><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
 
-    <!-- Right side: toggles + cart + hamburger -->
+    <!-- Right side: toggles + hamburger -->
     <div class="navbar-right">
       <div class="navbar-toggles">
         <button class="util-btn rtl-btn" data-rtl-toggle aria-label="Switch to RTL">RTL</button>
@@ -55,18 +55,7 @@
           <i class="fa-solid fa-moon" aria-hidden="true"></i>
         </button>
       </div>
-      <div class="cart-wrapper">
-        <button class="btn btn-primary btn-nav-cta" id="cart-toggle" aria-label="Shopping cart" aria-expanded="false" aria-controls="cart-dropdown">
-          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> Cart
-          <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
-        </button>
-        <div class="cart-dropdown hidden" id="cart-dropdown">
-          <div class="cart-empty">
-            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
-            <p>Your cart is empty</p>
-          </div>
-        </div>
-      </div>
+      <a href="login.html" class="btn btn-outline-primary btn-nav-cta" id="login-btn" style="margin-right: 12px; min-width: 90px; height: 40px; padding: 0 15px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">Login</a>
 
       <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -98,11 +87,8 @@
     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
 
   </ul>
-  <div class="mobile-drawer-cart">
-    <button class="btn btn-secondary btn-sm" id="mobile-cart-toggle" aria-label="Shopping cart">
-      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> View Cart
-      <span class="cart-badge" id="mobile-cart-badge" style="display:none;">0</span>
-    </button>
+    <div class="mobile-drawer-cart" style="display:flex;gap:12px;flex-direction:column;padding:24px;">
+    <a href="login.html" class="btn btn-outline-primary btn-sm" id="mobile-login-btn" style="width:100%; display: flex; align-items: center; justify-content: center; text-decoration: none; height: 40px;">Login</a>
   </div>
 
 </nav>
@@ -434,7 +420,7 @@
           </div>
           <p class="testimonial-quote">"The wedding was absolutely magical. The custom cake was beyond stunning, and every guest raved about the flavours. We're still getting messages about it!"</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+            <div class="testimonial-avatar" aria-hidden="true"><img src="assets/images/person 1.png" alt="Sophie &amp; James Laurent" /></div>
             <div>
               <div class="testimonial-name">Sophie &amp; James Laurent</div>
               <div class="testimonial-role">Wedding — June 2025</div>
@@ -451,7 +437,7 @@
           </div>
           <p class="testimonial-quote">"We hired them for our product launch and it was the highlight of the event. Branded cups, incredible flavours — our team is still talking about it three months later."</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="testimonial-avatar" aria-hidden="true"><img src="assets/images/person  2.jpg" alt="Marcus Chen" /></div>
             <div>
               <div class="testimonial-name">Marcus Chen</div>
               <div class="testimonial-role">Corporate Event Planner</div>
@@ -468,7 +454,7 @@
           </div>
           <p class="testimonial-quote">"My daughter's 10th birthday was unforgettable. The ice cream cake with her favourite flavours had every child (and parent!) in pure joy. 10/10 would book again."</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user"></i></div>
+            <div class="testimonial-avatar" aria-hidden="true"><img src="assets/images/person 3.jpg" alt="Priya Sharma" /></div>
             <div>
               <div class="testimonial-name">Priya Sharma</div>
               <div class="testimonial-role">Birthday Party — April 2025</div>
@@ -485,7 +471,7 @@
           </div>
           <p class="testimonial-quote">"The Grand Affair package was exactly what our annual gala needed. Professional, elegant, and absolutely delicious. Our guests were thoroughly impressed."</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user-group"></i></div>
+            <div class="testimonial-avatar" aria-hidden="true"><img src="assets/images/person 4.jpg" alt="Elena Montrose" /></div>
             <div>
               <div class="testimonial-name">Elena Montrose</div>
               <div class="testimonial-role">Private Party Host</div>
@@ -505,7 +491,7 @@
   <!-- SECTION 6: CORPORATE GIFTING CTA -->
   <section class="cta-section" id="corporate-gifting" aria-labelledby="gift-h2">
     <div class="cta-bg">
-      <img src="https://images.unsplash.com/photo-1607344645866-375c7bf09570?w=1600&q=85&auto=format&fit=crop"
+      <img src="assets/images/branded gift boxes with ribbon for corporate gifting.webp"
            alt="Branded gift boxes with ribbon for corporate gifting" loading="lazy" />
     </div>
     <div class="cta-overlay" style="background-color:rgba(44,24,16,0.45);"></div>
@@ -575,7 +561,9 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+
+
+  <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
 <script src="assets/js/loyalty.js"></script>
 <script src="assets/js/cart.js"></script>

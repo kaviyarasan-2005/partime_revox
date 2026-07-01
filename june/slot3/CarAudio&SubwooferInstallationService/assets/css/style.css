@@ -46,11 +46,11 @@
   --silver-900: #1A1E24;
 
   /* Semantic tokens — Light Mode */
-  --color-primary: var(--blue-500);
-  --color-primary-hover: var(--blue-600);
+  --color-primary: #3B8EFF;
+  --color-primary-hover: #1A6FDB;
   --color-primary-light: var(--blue-50);
   --color-secondary: var(--gray-700);
-  --color-accent: #C026D3;
+  --color-accent: #FF007F;
 
   --color-bg: var(--gray-50);
   --color-bg-alt: var(--silver-50);
@@ -71,8 +71,8 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.09), 0 10px 10px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12);
-  --shadow-blue: 0 4px 20px rgba(26, 111, 219, 0.25);
-  --shadow-blue-lg: 0 8px 40px rgba(26, 111, 219, 0.35);
+  --shadow-blue: 0 4px 20px rgba(59, 142, 255, 0.3);
+  --shadow-blue-lg: 0 8px 40px rgba(59, 142, 255, 0.4);
 
   /* Borders & Radius */
   --radius-sm: 6px;
@@ -1407,11 +1407,11 @@ select.form-control {
 
 /* ── Feature Cards (Why Choose) ───────────────────────────── */
 .feature-icon-wrap {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background: var(--color-primary-light);
-  border: 1px solid var(--blue-200);
-  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(59, 142, 255, 0.25);
+  border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1420,18 +1420,24 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.feature-icon-wrap svg {
+.feature-icon-wrap svg,
+.feature-icon-wrap i {
   width: 28px;
   height: 28px;
+  font-size: 26px;
   color: var(--color-primary);
+  transition: color var(--transition-base);
 }
 
 .card:hover .feature-icon-wrap {
   background: var(--color-primary);
   border-color: var(--color-primary);
+  box-shadow: var(--shadow-blue);
+  transform: translateY(-2px) scale(1.04);
 }
 
-.card:hover .feature-icon-wrap svg {
+.card:hover .feature-icon-wrap svg,
+.card:hover .feature-icon-wrap i {
   color: #fff;
 }
 
@@ -1855,7 +1861,7 @@ select.form-control {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
 
@@ -2168,11 +2174,11 @@ select.form-control {
 }
 
 .footer-brand .brand-name {
-  color: var(--color-text);
+  color: #FFFFFF;
 }
 
 .footer-brand .brand-tagline {
-  color: var(--color-text-muted);
+  color: var(--silver-400);
 }
 
 .footer-desc {
@@ -3230,7 +3236,26 @@ tbody td strong {
   }
 
   .mobile-nav-auth {
+    display: flex !important;
+  }
+
+  /* Hide header auth actions on tablet/mobile, but keep toggles outside */
+  .nav-actions #nav-login,
+  .nav-actions #nav-signup {
     display: none !important;
+  }
+
+  /* Compact spacing for header actions on mobile to prevent overflow */
+  .nav-actions {
+    gap: var(--space-1) !important;
+  }
+
+  .nav-actions .btn {
+    padding: 0 var(--space-2) !important;
+  }
+
+  .nav-actions .btn-icon {
+    width: 36px !important;
   }
 
   /* Hide desktop-only RTL toggle text on very small desktops — keep icon-only look */
@@ -3252,6 +3277,7 @@ tbody td strong {
 
   .sidebar.open {
     transform: translateX(0);
+    z-index: 1000 !important;
   }
 
   .main-content {
@@ -3328,17 +3354,17 @@ tbody td strong {
     padding: var(--space-4);
   }
 
-  #nav-login,
-  #nav-signup {
-    display: none !important;
-  }
+  /* Handled at max-width: 1024px breakpoint */
+}
 
-  .mobile-nav-toggles {
-    display: none !important;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-actions #nav-login,
+  .nav-actions #nav-signup {
+    display: inline-flex !important;
   }
 
   .mobile-nav-auth {
-    display: flex !important;
+    display: none !important;
   }
 }
 
@@ -3804,7 +3830,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-border);
 }
 
 [data-theme="dark"] .glass-card {

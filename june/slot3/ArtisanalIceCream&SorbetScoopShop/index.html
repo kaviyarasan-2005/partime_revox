@@ -92,7 +92,7 @@
       <li role="listitem"><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
 
-    <!-- Right side: toggles + cart + hamburger -->
+    <!-- Right side: toggles + hamburger -->
     <div class="navbar-right">
       <div class="navbar-toggles">
         <button class="util-btn rtl-btn" data-rtl-toggle aria-label="Switch to RTL">RTL</button>
@@ -100,18 +100,7 @@
           <i class="fa-solid fa-moon" aria-hidden="true"></i>
         </button>
       </div>
-      <div class="cart-wrapper">
-        <button class="btn btn-primary btn-nav-cta" id="cart-toggle" aria-label="Shopping cart" aria-expanded="false" aria-controls="cart-dropdown">
-          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> Cart
-          <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
-        </button>
-        <div class="cart-dropdown hidden" id="cart-dropdown">
-          <div class="cart-empty">
-            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
-            <p>Your cart is empty</p>
-          </div>
-        </div>
-      </div>
+      <a href="login.html" class="btn btn-outline-primary btn-nav-cta" id="login-btn" style="margin-right: 12px; min-width: 90px; height: 40px; padding: 0 15px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">Login</a>
 
       <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -143,26 +132,14 @@
     </li>
     <li><a href="about.html" class="mobile-nav-link">About</a></li>
     <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-    <li>
-      <button class="mobile-nav-link" data-mobile-toggle="mob-flavor-sub" style="background:none;border:none;width:100%;text-align:start;cursor:pointer;font-family:inherit;">
-        Flavors <i class="fa-solid fa-chevron-down" style="float:inline-end;margin-top:4px;font-size:.7rem;" aria-hidden="true"></i>
-      </button>
-      <div class="mobile-nav-sublinks" id="mob-flavor-sub">
-        <a href="flavors.html#seasonal" class="mobile-nav-sublink">Seasonal Specials</a>
-        <a href="flavors.html#classics" class="mobile-nav-sublink">Classic Collection</a>
-        <a href="flavors.html#dairy-free" class="mobile-nav-sublink">Dairy-Free &amp; Vegan</a>
-      </div>
-    </li>
+    <li><a href="flavors.html" class="mobile-nav-link">Flavors</a></li>
     <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
     <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
 
   </ul>
-  <div class="mobile-drawer-cart">
-    <button class="btn btn-secondary btn-sm" id="mobile-cart-toggle" aria-label="Shopping cart">
-      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> View Cart
-      <span class="cart-badge" id="mobile-cart-badge" style="display:none;">0</span>
-    </button>
+  <div class="mobile-drawer-cart" style="display:flex;gap:12px;flex-direction:column;padding:24px;">
+    <a href="login.html" class="btn btn-outline-primary btn-sm" id="mobile-login-btn" style="width:100%; display: flex; align-items: center; justify-content: center; text-decoration: none; height: 40px;">Login</a>
   </div>
 
 </nav>
@@ -395,7 +372,7 @@
 
         <div class="reveal reveal-delay-2">
           <div class="img-container" style="height:520px;border-radius:20px;">
-            <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?w=800&q=85&auto=format&fit=crop"
+            <img src="assets/images/behind the scenes in nova kicten.png"
                  alt="Artisan hand-churning ice cream in a copper pot"
                  loading="lazy"
                  style="width:100%;height:100%;object-fit:cover;" />
@@ -441,7 +418,7 @@
         <!-- Oat Milk -->
         <article class="flavor-card reveal reveal-delay-2" style="border-color:rgba(74,155,142,0.3);">
           <div class="card-image" style="height:200px;">
-            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80&auto=format&fit=crop"
+            <img src="assets/images/finished vanilla bean ice cream with visible vanilla seeds.jpg"
                  alt="Oat milk vanilla ice cream" loading="lazy" />
           </div>
           <div class="card-body">
@@ -705,6 +682,8 @@
 </footer>
 
 <!-- JS -->
+
+
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
 <script src="assets/js/loyalty.js"></script>

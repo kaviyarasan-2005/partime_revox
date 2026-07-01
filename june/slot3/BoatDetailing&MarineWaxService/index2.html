@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
-    .hero2-bg { background-image: url('assets/images/before& after 4.webp'); background-size:cover; background-position:center; }
+    .hero2-bg { background-image: url('assets/images/home2-hero.png'); background-size:cover; background-position:center; }
     .feature-img-card { position:relative; overflow:hidden; border-radius:1.5rem; }
     .feature-img-card img { width:100%; height:320px; object-fit:cover; transition:transform 0.5s ease; }
     .feature-img-card:hover img { transform:scale(1.05); }
-    .feature-img-card .card-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.60); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; opacity:0; transition:opacity 0.35s; }
+    .feature-img-card .card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.40) 100%); backdrop-filter:blur(3px); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; opacity:0; transition:opacity 0.35s; }
     .feature-img-card:hover .card-overlay { opacity:1; }
   </style>
 </head>
@@ -31,7 +31,7 @@
   <div class="nav-inner">
     <a href="index.html" class="flex items-center gap-3 group">
       <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200" style="background-color:var(--c-accent)">
-        <i class="fas fa-anchor text-lg" style="color:var(--c-primary)"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="22" height="22" style="display:inline-block;vertical-align:middle"><g transform="translate(20,20)" fill="none" stroke="#008080" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-9" r="3.2" fill="#008080" stroke="none"/><line x1="0" y1="-6" x2="0" y2="8"/><line x1="-6" y1="-1" x2="6" y2="-1"/><path d="M-8,8 Q-5,4 0,8 Q5,12 8,8"/><path d="M-10,13 Q-6,10 -2,13 Q2,16 6,13 Q9,10 10,13" stroke-width="2" opacity="0.55"/></g></svg>
       </div>
       <div class="leading-tight text-left">
         <div class="font-bold text-xl text-white font-outfit tracking-tight">AquaShine</div>
@@ -110,10 +110,10 @@
       <p class="mobile-menu-label mt-3">Dashboard</p>
       <a href="user-dashboard.html" class="mobile-link">User Dashboard</a>
       <a href="admin-dashboard.html" class="mobile-link">Admin Dashboard</a>
-
-      <div class="pt-3">
+      <div class="pt-3 sm:hidden">
         <a href="login.html" class="btn-accent w-full justify-center"><i class="fas fa-calendar-check"></i> Book Now</a>
       </div>
+
     </div>
   </div>
 </nav>
@@ -219,37 +219,83 @@
   </div>
 </section>
 
-<!-- ═══════════════ GALLERY STRIP ═══════════════ -->
+<!-- ═══════════════ BEFORE & AFTER — Comparison Cards ═══════════════ -->
 <section class="section section-alt">
   <div class="container-xl">
     <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
       <div>
         <div class="section-tag mb-3 fade-in"><i class="fas fa-images"></i> Gallery</div>
         <h2 class="section-title slide-up">Before & After <span style="color:var(--c-accent)">Results</span></h2>
+        <p class="section-subtitle mt-2 slide-up delay-100">Drag the slider to reveal the dramatic transformation on each project.</p>
       </div>
       <a href="portfolio.html" class="btn btn-outline mt-4 sm:mt-0">Full Gallery <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-      <div class="portfolio-item rounded-2xl" data-lightbox="assets/images/boat detailing.jpeg">
-        <img src="assets/images/boat detailing.jpeg" alt="Lake boat" style="height:180px;object-fit:cover;width:100%" />
-        <div class="portfolio-overlay"><i class="fas fa-expand-alt text-white"></i></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Comparison Card 1: Hull Restoration -->
+      <div class="ba-card fade-in" style="border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);box-shadow:var(--shadow-md)">
+        <div class="ba-slider" style="position:relative;height:280px;overflow:hidden;cursor:ew-resize;user-select:none">
+          <img src="assets/images/ba-hull-after.png" alt="Hull After Restoration" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <div class="ba-before-clip" style="position:absolute;inset:0;width:50%;overflow:hidden">
+            <img src="assets/images/ba-hull-before.png" alt="Hull Before Restoration" style="width:200%;max-width:none;height:100%;object-fit:cover" />
+          </div>
+          <div class="ba-handle" style="position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--c-accent);transform:translateX(-50%);z-index:10">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--c-accent);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.3)">
+              <i class="fas fa-arrows-left-right" style="color:var(--c-primary);font-size:14px"></i>
+            </div>
+          </div>
+          <span class="ba-label ba-label-before" style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.7);color:#fff;font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">Before</span>
+          <span class="ba-label ba-label-after" style="position:absolute;top:12px;right:12px;background:var(--c-accent);color:var(--c-primary);font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">After</span>
+        </div>
+        <div style="padding:1.25rem">
+          <h3 class="font-outfit font-bold text-lg mb-1" style="color:var(--text-primary)">Hull Gel Coat Restoration</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Severe oxidation and chalking removed. Factory-fresh mirror finish restored with compound polish and ceramic sealant.</p>
+        </div>
       </div>
-      <div class="portfolio-item rounded-2xl" data-lightbox="assets/images/before& after 5.webp">
-        <img src="assets/images/before& after 5.webp" alt="Marina" style="height:180px;object-fit:cover;width:100%" />
-        <div class="portfolio-overlay"><i class="fas fa-expand-alt text-white"></i></div>
+
+      <!-- Comparison Card 2: Teak Deck -->
+      <div class="ba-card fade-in delay-200" style="border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);box-shadow:var(--shadow-md)">
+        <div class="ba-slider" style="position:relative;height:280px;overflow:hidden;cursor:ew-resize;user-select:none">
+          <img src="assets/images/ba-teak-after.png" alt="Teak Deck After Cleaning" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <div class="ba-before-clip" style="position:absolute;inset:0;width:50%;overflow:hidden">
+            <img src="assets/images/ba-teak-before.png" alt="Teak Deck Before Cleaning" style="width:200%;max-width:none;height:100%;object-fit:cover" />
+          </div>
+          <div class="ba-handle" style="position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--c-accent);transform:translateX(-50%);z-index:10">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--c-accent);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.3)">
+              <i class="fas fa-arrows-left-right" style="color:var(--c-primary);font-size:14px"></i>
+            </div>
+          </div>
+          <span class="ba-label ba-label-before" style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.7);color:#fff;font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">Before</span>
+          <span class="ba-label ba-label-after" style="position:absolute;top:12px;right:12px;background:var(--c-accent);color:var(--c-primary);font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">After</span>
+        </div>
+        <div style="padding:1.25rem">
+          <h3 class="font-outfit font-bold text-lg mb-1" style="color:var(--text-primary)">Teak Deck Restoration</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Weathered gray teak cleaned, brightened, and sealed to reveal rich golden honey tones. Mold and discoloration eliminated.</p>
+        </div>
       </div>
-      <div class="portfolio-item rounded-2xl col-span-1 md:col-span-1" data-lightbox="assets/images/boat service.png">
-        <img src="assets/images/boat service.png" alt="Dock" style="height:180px;object-fit:cover;width:100%" />
-        <div class="portfolio-overlay"><i class="fas fa-expand-alt text-white"></i></div>
+
+      <!-- Comparison Card 3: Full Yacht Detail -->
+      <div class="ba-card fade-in delay-400" style="border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);box-shadow:var(--shadow-md)">
+        <div class="ba-slider" style="position:relative;height:280px;overflow:hidden;cursor:ew-resize;user-select:none">
+          <img src="assets/images/ba-yacht-after.png" alt="Yacht After Full Detail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <div class="ba-before-clip" style="position:absolute;inset:0;width:50%;overflow:hidden">
+            <img src="assets/images/ba-yacht-before.png" alt="Yacht Before Full Detail" style="width:200%;max-width:none;height:100%;object-fit:cover" />
+          </div>
+          <div class="ba-handle" style="position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--c-accent);transform:translateX(-50%);z-index:10">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--c-accent);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.3)">
+              <i class="fas fa-arrows-left-right" style="color:var(--c-primary);font-size:14px"></i>
+            </div>
+          </div>
+          <span class="ba-label ba-label-before" style="position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.7);color:#fff;font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">Before</span>
+          <span class="ba-label ba-label-after" style="position:absolute;top:12px;right:12px;background:var(--c-accent);color:var(--c-primary);font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;z-index:5">After</span>
+        </div>
+        <div style="padding:1.25rem">
+          <h3 class="font-outfit font-bold text-lg mb-1" style="color:var(--text-primary)">Full Yacht Detail</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Complete exterior overhaul — hull polishing, window cleaning, topside detailing. From neglected to showroom-ready in one visit.</p>
+        </div>
       </div>
-      <div class="portfolio-item rounded-2xl" data-lightbox="assets/images/before& after 1.jpeg">
-        <img src="assets/images/before& after 1.jpeg" alt="Ocean" style="height:180px;object-fit:cover;width:100%" />
-        <div class="portfolio-overlay"><i class="fas fa-expand-alt text-white"></i></div>
-      </div>
-      <div class="portfolio-item rounded-2xl" data-lightbox="assets/images/wax service.jpg">
-        <img src="assets/images/wax service.jpg" alt="Boat dock" style="height:180px;object-fit:cover;width:100%" />
-        <div class="portfolio-overlay"><i class="fas fa-expand-alt text-white"></i></div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -386,7 +432,7 @@
       <div>
         <a href="index.html" class="flex items-center gap-3 group mb-5">
           <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200" style="background-color:var(--c-accent)">
-            <i class="fas fa-anchor text-lg" style="color:var(--c-primary)"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="22" height="22" style="display:inline-block;vertical-align:middle"><g transform="translate(20,20)" fill="none" stroke="#008080" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-9" r="3.2" fill="#008080" stroke="none"/><line x1="0" y1="-6" x2="0" y2="8"/><line x1="-6" y1="-1" x2="6" y2="-1"/><path d="M-8,8 Q-5,4 0,8 Q5,12 8,8"/><path d="M-10,13 Q-6,10 -2,13 Q2,16 6,13 Q9,10 10,13" stroke-width="2" opacity="0.55"/></g></svg>
           </div>
           <div class="leading-tight text-left">
             <div class="font-bold text-xl text-white font-outfit tracking-tight">AquaShine</div>

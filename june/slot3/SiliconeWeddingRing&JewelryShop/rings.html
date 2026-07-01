@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -21,9 +21,20 @@
   <header class="navbar" role="banner">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo" aria-label="BAND Home">
-        <svg class="logo-svg" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="17" cy="20" r="13" stroke="#E17055" stroke-width="4" fill="none"/>
-          <circle cx="33" cy="20" r="13" stroke="#2D3436" stroke-width="4" fill="none"/>
+        <svg class="logo-svg" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Two rings with diamond gems on top — BAND ring logo -->
+          <!-- Left coral ring -->
+          <circle cx="19" cy="27" r="13" stroke="#E17055" stroke-width="3.5" fill="none"/>
+          <!-- Left diamond gem (coral) on top of left ring -->
+          <polygon points="17,4 21,4 23.5,11 19,15 14.5,11" fill="#E17055"/>
+          <polygon points="17,4 21,4 19,8.5" fill="#b83c25" opacity="0.55"/>
+          <line x1="14.5" y1="11" x2="23.5" y2="11" stroke="#b83c25" stroke-width="0.7" opacity="0.65"/>
+          <!-- Right currentColor ring -->
+          <circle cx="37" cy="27" r="13" stroke="currentColor" stroke-width="3.5" fill="none"/>
+          <!-- Right diamond gem (currentColor) on top of right ring -->
+          <polygon points="32.5,11 35,4 39,4 41.5,11 37,15" fill="currentColor" opacity="0.85"/>
+          <polygon points="35,4 39,4 37,8.5" fill="currentColor" opacity="0.45"/>
+          <line x1="32.5" y1="11" x2="41.5" y2="11" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>
         </svg>
         <span class="logo-text">BAND</span>
       </a>
@@ -37,15 +48,7 @@
             </div>
           </li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item dropdown-wrapper">
-            <a href="rings.html" class="nav-link active" aria-haspopup="true">Rings <i class="fa-solid fa-chevron-down arrow-indicator" style="font-size:0.6rem;"></i></a>
-            <div class="dropdown-menu" role="menu">
-              <a href="rings.html" class="dropdown-item">Men's Collection</a>
-              <a href="rings.html" class="dropdown-item">Women's Collection</a>
-              <a href="rings.html" class="dropdown-item">Custom Colors</a>
-              <a href="safety-testing.html" class="dropdown-item">Safety Tested</a>
-            </div>
-          </li>
+          <li class="nav-item"><a href="rings.html" class="nav-link active">Rings</a></li>
           <li class="nav-item"><a href="size-guide.html" class="nav-link">Size Guide</a></li>
           <li class="nav-item"><a href="bundles.html" class="nav-link">Bundles</a></li>
           <li class="nav-item"><a href="subscription.html" class="nav-link">Subscription</a></li>
@@ -72,13 +75,7 @@
         <a href="home-wedding.html" class="mobile-nav-link">Home 2</a>
       </div>
       <a href="about.html" class="mobile-nav-link">About</a>
-      <button class="mobile-nav-toggle">Rings <i class="fa-solid fa-chevron-down arrow-indicator" style="font-size:0.6rem;"></i></button>
-      <div class="mobile-nav-sub">
-        <a href="rings.html" class="mobile-nav-link">Men's Collection</a>
-        <a href="rings.html" class="mobile-nav-link">Women's Collection</a>
-        <a href="rings.html" class="mobile-nav-link">Custom Colors</a>
-        <a href="safety-testing.html" class="mobile-nav-link">Safety Tested</a>
-      </div>
+      <a href="rings.html" class="mobile-nav-link">Rings</a>
       <a href="size-guide.html" class="mobile-nav-link">Size Guide</a>
       <a href="bundles.html" class="mobile-nav-link">Bundles</a>
       <a href="subscription.html" class="mobile-nav-link">Subscription</a>
@@ -97,11 +94,11 @@
     <section class="hero" style="min-height:55vh;" aria-label="Rings collection hero">
       <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=1600&q=80&auto=format&fit=crop"
            alt="Flat-lay of multiple BAND silicone rings in various colors" class="hero-bg" fetchpriority="high" />
-      <div class="hero-overlay" style="background:rgba(245,246,250,0.28);"></div>
+      <div class="hero-overlay" style="background:rgba(245,246,250,0.72);"></div>
       <div class="container hero-content" style="text-align:center;">
         <div class="reveal">
-          <h1 style="color:var(--color-primary);">The Complete Collection</h1>
-          <p style="color:var(--color-text-secondary);">15 colors. 4 styles. Infinite possibilities.</p>
+          <h1 style="color:var(--color-primary);text-shadow:none;">The Complete Collection</h1>
+          <p style="color:var(--color-text-secondary);text-shadow:none;">15 colors. 4 styles. Infinite possibilities.</p>
           <nav class="breadcrumb" style="justify-content:center;margin-top:12px;" aria-label="Breadcrumb">
             <a href="index.html" class="breadcrumb-item" style="color:var(--color-text-secondary);">Home</a>
             <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
@@ -156,7 +153,7 @@
           <!-- Product 1 -->
           <article class="product-card reveal" aria-label="Classic Black Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&q=80&auto=format&fit=crop"
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop"
                    alt="Midnight Black Classic BAND silicone ring" class="product-card-img" loading="lazy" />
               <span class="product-card-badge badge badge-bestseller">Best Seller</span>
               <div class="product-card-actions">
@@ -201,7 +198,7 @@
           <!-- Product 3 -->
           <article class="product-card reveal reveal-delay-2" aria-label="Navy Blue Grooved Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop"
+              <img src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=500&q=80&auto=format&fit=crop&sat=-50"
                    alt="Navy Blue Grooved Pattern BAND silicone ring" class="product-card-img" loading="lazy" />
               <div class="product-card-actions">
                 <button class="product-card-action-btn" title="Quick View"><i class="fa-solid fa-eye"></i></button>
@@ -222,7 +219,7 @@
           <!-- Product 4 -->
           <article class="product-card reveal reveal-delay-3" aria-label="Forest Green Classic Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80&auto=format&fit=crop&sat=-20"
+              <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&q=80&auto=format&fit=crop&hue-rotate=90"
                    alt="Forest Green Classic BAND silicone ring" class="product-card-img" loading="lazy" />
               <span class="product-card-badge badge badge-new">New</span>
               <div class="product-card-actions">
@@ -244,7 +241,7 @@
           <!-- Product 5 -->
           <article class="product-card reveal" aria-label="Forge Orange Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop&hue-rotate=30"
+              <img src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=500&q=80&auto=format&fit=crop&hue-rotate=20"
                    alt="Forge Orange Beveled Edge BAND silicone ring" class="product-card-img" loading="lazy" />
               <span class="product-card-badge badge badge-bestseller">Best Seller</span>
               <div class="product-card-actions">
@@ -266,7 +263,7 @@
           <!-- Product 6 -->
           <article class="product-card reveal reveal-delay-1" aria-label="Burgundy Grooved Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&q=80&auto=format&fit=crop&sepia=50"
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop&hue-rotate=150"
                    alt="Burgundy Grooved Pattern BAND silicone ring" class="product-card-img" loading="lazy" />
               <div class="product-card-actions">
                 <button class="product-card-action-btn" title="Quick View"><i class="fa-solid fa-eye"></i></button>
@@ -287,7 +284,7 @@
           <!-- Product 7 -->
           <article class="product-card reveal reveal-delay-2" aria-label="Teal Stackable Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80&auto=format&fit=crop&sat=50"
+              <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500&q=80&auto=format&fit=crop&hue-rotate=140"
                    alt="Teal Stackable BAND silicone ring set" class="product-card-img" loading="lazy" />
               <span class="product-card-badge badge badge-new">New</span>
               <div class="product-card-actions">
@@ -309,7 +306,7 @@
           <!-- Product 8 -->
           <article class="product-card reveal reveal-delay-3" aria-label="Rose Gold Classic Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop"
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80&auto=format&fit=crop"
                    alt="Rose Gold Classic BAND silicone ring" class="product-card-img" loading="lazy" />
               <div class="product-card-actions">
                 <button class="product-card-action-btn" title="Quick View"><i class="fa-solid fa-eye"></i></button>
@@ -330,7 +327,7 @@
           <!-- Product 9 -->
           <article class="product-card reveal" aria-label="Lavender Beveled Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&q=80&auto=format&fit=crop&brightness=110"
+              <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&q=80&auto=format&fit=crop&hue-rotate=260"
                    alt="Lavender Beveled Edge BAND silicone ring" class="product-card-img" loading="lazy" />
               <span class="product-card-badge badge badge-lowstock">Low Stock</span>
               <div class="product-card-actions">
@@ -352,7 +349,7 @@
           <!-- Product 10 -->
           <article class="product-card reveal reveal-delay-1" aria-label="Desert Tan Classic Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80&auto=format&fit=crop&brightness=105"
+              <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=500&q=80&auto=format&fit=crop"
                    alt="Desert Tan Classic BAND silicone ring" class="product-card-img" loading="lazy" />
               <div class="product-card-actions">
                 <button class="product-card-action-btn" title="Quick View"><i class="fa-solid fa-eye"></i></button>
@@ -373,7 +370,7 @@
           <!-- Product 11 -->
           <article class="product-card reveal reveal-delay-2" aria-label="Alpine White Ring">
             <div class="product-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80&auto=format&fit=crop&brightness=120"
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500&q=80&auto=format&fit=crop"
                    alt="Alpine White Classic BAND silicone ring" class="product-card-img" loading="lazy" />
               <div class="product-card-actions">
                 <button class="product-card-action-btn" title="Quick View"><i class="fa-solid fa-eye"></i></button>
@@ -431,7 +428,7 @@
               <p style="font-weight:600;margin-bottom:16px;color:var(--color-text-secondary);">Click rings to add them to your bundle:</p>
               <div class="builder-ring-grid">
                 <div class="builder-ring-item" data-ring-id="r1" data-price="19.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Midnight Black Classic Ring">
-                  <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=70" alt="Midnight Black" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=70" alt="Midnight Black" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Midnight Black</div>
                     <div class="builder-ring-price">$19.99</div>
@@ -445,42 +442,42 @@
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r3" data-price="21.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Navy Blue Grooved Ring">
-                  <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=70" alt="Navy Blue" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=200&q=70&sat=-50" alt="Navy Blue" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Navy Blue</div>
                     <div class="builder-ring-price">$21.99</div>
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r4" data-price="19.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Forest Green Ring">
-                  <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=70" alt="Forest Green" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=200&q=70&hue-rotate=90" alt="Forest Green" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Forest Green</div>
                     <div class="builder-ring-price">$19.99</div>
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r5" data-price="22.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Forge Orange Ring">
-                  <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&q=70" alt="Forge Orange" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=200&q=70&hue-rotate=20" alt="Forge Orange" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Forge Orange</div>
                     <div class="builder-ring-price">$22.99</div>
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r6" data-price="21.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Burgundy Ring">
-                  <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=70" alt="Burgundy" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=70&hue-rotate=150" alt="Burgundy" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Burgundy</div>
                     <div class="builder-ring-price">$21.99</div>
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r7" data-price="19.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Teal Ring">
-                  <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=70" alt="Teal" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=200&q=70&hue-rotate=140" alt="Teal" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Teal</div>
                     <div class="builder-ring-price">$19.99</div>
                   </div>
                 </div>
                 <div class="builder-ring-item" data-ring-id="r8" data-price="19.99" tabindex="0" role="checkbox" aria-checked="false" aria-label="Rose Gold Ring">
-                  <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&q=70" alt="Rose Gold" class="builder-ring-img" />
+                  <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=200&q=70" alt="Rose Gold" class="builder-ring-img" />
                   <div class="builder-ring-info">
                     <div class="builder-ring-name">Rose Gold</div>
                     <div class="builder-ring-price">$19.99</div>
@@ -605,10 +602,21 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="navbar-logo" aria-label="BAND Home">
-            <svg class="logo-svg" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="17" cy="20" r="13" stroke="#E17055" stroke-width="4" fill="none"/>
-              <circle cx="33" cy="20" r="13" stroke="#F5F6FA" stroke-width="4" fill="none"/>
-            </svg>
+            <svg class="logo-svg" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Two rings with diamond gems on top — BAND ring logo -->
+          <!-- Left coral ring -->
+          <circle cx="19" cy="27" r="13" stroke="#E17055" stroke-width="3.5" fill="none"/>
+          <!-- Left diamond gem (coral) on top of left ring -->
+          <polygon points="17,4 21,4 23.5,11 19,15 14.5,11" fill="#E17055"/>
+          <polygon points="17,4 21,4 19,8.5" fill="#b83c25" opacity="0.55"/>
+          <line x1="14.5" y1="11" x2="23.5" y2="11" stroke="#b83c25" stroke-width="0.7" opacity="0.65"/>
+          <!-- Right currentColor ring -->
+          <circle cx="37" cy="27" r="13" stroke="currentColor" stroke-width="3.5" fill="none"/>
+          <!-- Right diamond gem (currentColor) on top of right ring -->
+          <polygon points="32.5,11 35,4 39,4 41.5,11 37,15" fill="currentColor" opacity="0.85"/>
+          <polygon points="35,4 39,4 37,8.5" fill="currentColor" opacity="0.45"/>
+          <line x1="32.5" y1="11" x2="41.5" y2="11" stroke="currentColor" stroke-width="0.7" opacity="0.5"/>
+        </svg>
             <span class="logo-text">BAND</span>
           </a>
           <p>Premium silicone rings for life's adventures. Built tough, worn with pride.</p>

@@ -439,3 +439,21 @@
 [dir="rtl"] .checker-selects {
   direction: rtl;
 }
+
+/* ── Topbar RTL Overrides ─────────────────────────────────── */
+[dir="rtl"] .topbar {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .topbar-actions {
+  flex-direction: row-reverse !important;
+  gap: var(--space-3) !important;
+}
+
+[dir="rtl"] .topbar-actions > div:last-child {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .topbar-actions > div:last-child > div:first-child {
+  text-align: left !important;
+}

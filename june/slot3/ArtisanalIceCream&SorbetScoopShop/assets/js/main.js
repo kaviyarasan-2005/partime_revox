@@ -324,5 +324,9 @@
       });
     });
 
+    /* ============================================================
+       14. LOGIN MODAL TOGGLE (DEPRECATED - Redirection to login.html used instead)
+       ============================================================ */
+    // Standalone pages are used now.
   });
 })();

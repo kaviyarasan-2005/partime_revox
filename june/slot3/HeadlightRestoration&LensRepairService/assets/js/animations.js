@@ -74,15 +74,18 @@ const AnimationsManager = (() => {
       drawer.classList.add('open');
       hamburger.classList.add('active');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
+      // Lock scroll on <html>, NOT <body> — overflow:hidden on body breaks
+      // position:fixed navbar in Chrome DevTools device mode and Safari
+      document.documentElement.style.overflow = 'hidden';
     }
 
     function closeDrawer() {
       drawer.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
+
   }
 
   /* ---- Mobile Sub-menus ---- */
@@ -136,7 +139,10 @@ const AnimationsManager = (() => {
   }
 
   function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-count'), 10);
+    const rawTarget = el.getAttribute('data-count');
+    const isDecimal = rawTarget.includes('.');
+    const decimals = isDecimal ? rawTarget.split('.')[1].length : 0;
+    const target = parseFloat(rawTarget);
     const suffix = el.getAttribute('data-suffix') || '';
     const prefix = el.getAttribute('data-prefix') || '';
     const duration = 1800;
@@ -146,10 +152,10 @@ const AnimationsManager = (() => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * target);
-      el.textContent = prefix + current.toLocaleString() + suffix;
+      const current = eased * target;
+      el.textContent = prefix + (decimals > 0 ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
       if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = prefix + target.toLocaleString() + suffix;
+      else el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : target.toLocaleString()) + suffix;
     }
 
     requestAnimationFrame(update);
