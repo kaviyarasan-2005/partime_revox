@@ -138,14 +138,6 @@
       <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="false">
         <ul style="list-style:none;padding:0;margin:0">
           ${mobileItems}
-          <!-- Mobile Cart (below Contact) -->
-          <li>
-            <button class="mobile-nav-link mobile-cart-link" id="cart-btn-mobile" aria-label="Shopping cart">
-              ${cartIcon}
-              <span>Cart</span>
-              <span class="cart-badge cart-badge-mobile" id="cart-badge-mobile" style="display:none">0</span>
-            </button>
-          </li>
         </ul>
       </div>
     `;
