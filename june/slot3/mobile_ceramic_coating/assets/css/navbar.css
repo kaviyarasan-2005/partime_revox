@@ -56,10 +56,7 @@
 .brand-logo svg {
   width: 24px;
   height: 24px;
-  color: #fff;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
+  display: block;
 }
 
 .brand-text {
