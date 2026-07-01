@@ -870,17 +870,23 @@ select {
 }
 
 .logo-svg {
-  width: 50px;
-  height: 40px;
+  width: 48px;
+  height: 38px;
+  flex-shrink: 0;
 }
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.06em;
   transition: color 0.3s ease;
+}
+
+/* Footer logo — always white text on dark bg */
+.footer .logo-text {
+  color: var(--color-text-light);
 }
 
 [data-theme="dark"] .logo-text {
