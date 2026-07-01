@@ -70,19 +70,19 @@
     // Cart button SVG icon
     const cartIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>`;
 
-    // Redesigned macaron logo SVG — a stylized macaron with layered halves
-    const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <!-- Top macaron shell -->
-      <ellipse cx="12" cy="8" rx="8" ry="5" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
-      <!-- Filling layer -->
-      <line x1="4.5" y1="11" x2="19.5" y2="11" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-      <!-- Bottom macaron shell -->
-      <ellipse cx="12" cy="14" rx="8" ry="5" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.5"/>
-      <!-- Decorative ruffles (feet) -->
-      <path d="M5 11 Q6.5 12.5 8 11" stroke="white" stroke-width="1" opacity="0.6"/>
-      <path d="M8 11 Q9.5 12.5 11 11" stroke="white" stroke-width="1" opacity="0.6"/>
-      <path d="M11 11 Q12.5 12.5 14 11" stroke="white" stroke-width="1" opacity="0.6"/>
-      <path d="M14 11 Q15.5 12.5 17 11" stroke="white" stroke-width="1" opacity="0.6"/>
+    // Brand logo SVG — elegant macaron with leaf accent
+    const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="none">
+      <!-- Top dome shell -->
+      <path d="M7 14 C7 8.5 10.5 5 16 5 C21.5 5 25 8.5 25 14" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Ruffled feet / pieds -->
+      <path d="M7 14 Q8.5 16 10 14 Q11.5 16 13 14 Q14.5 16 16 14 Q17.5 16 19 14 Q20.5 16 22 14 Q23.5 16 25 14" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Cream filling -->
+      <rect x="7.5" y="15.5" width="17" height="3" rx="1.5" fill="rgba(255,255,255,0.45)" stroke="white" stroke-width="1.2"/>
+      <!-- Bottom dome shell -->
+      <path d="M7 19 C7 24 10.5 27 16 27 C21.5 27 25 24 25 19" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Leaf accent -->
+      <path d="M17 5 Q20 2 22 3.5 Q20 3 18 5" fill="rgba(255,255,255,0.7)" stroke="white" stroke-width="0.8" stroke-linejoin="round"/>
+      <line x1="19.5" y1="3.2" x2="18" y2="5" stroke="white" stroke-width="0.6" opacity="0.6"/>
     </svg>`;
 
     return `
