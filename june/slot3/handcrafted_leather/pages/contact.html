@@ -13,6 +13,17 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--contact {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/contact-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--contact {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/contact-hero.png");
+    }
+
     .contact-layout {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -134,7 +145,7 @@
 
 <main id="main-content">
 
-  <section class="page-hero" aria-label="Contact page header">
+  <section class="page-hero page-hero--contact" aria-label="Contact page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">We'd Love to Hear From You</p>
       <h1 class="page-hero__title">Get in Touch</h1>

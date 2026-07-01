@@ -13,6 +13,17 @@
   <link rel="stylesheet" href="../assets/css/navbar.css" />
   <link rel="stylesheet" href="../assets/css/footer.css" />
   <style>
+    /* ── Page Hero Image & Overlays ── */
+    .page-hero--pricing {
+      background-image: linear-gradient(rgba(30, 61, 52, 0.8), rgba(30, 61, 52, 0.85)), url("../assets/images/pricing-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    [data-theme="dark"] .page-hero--pricing {
+      background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url("../assets/images/pricing-hero.png");
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -136,7 +147,7 @@
 
 <main id="main-content">
 
-  <section class="page-hero" aria-label="Pricing page header">
+  <section class="page-hero page-hero--pricing" aria-label="Pricing page header">
     <div class="container page-hero__content">
       <p class="page-hero__eyebrow">Transparent Pricing</p>
       <h1 class="page-hero__title">Pricing &amp; Collections</h1>
