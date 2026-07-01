@@ -1407,11 +1407,11 @@ select.form-control {
 
 /* ── Feature Cards (Why Choose) ───────────────────────────── */
 .feature-icon-wrap {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background: var(--color-primary-light);
-  border: 1px solid var(--blue-200);
-  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(59, 142, 255, 0.25);
+  border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1420,18 +1420,24 @@ select.form-control {
   flex-shrink: 0;
 }
 
-.feature-icon-wrap svg {
+.feature-icon-wrap svg,
+.feature-icon-wrap i {
   width: 28px;
   height: 28px;
+  font-size: 26px;
   color: var(--color-primary);
+  transition: color var(--transition-base);
 }
 
 .card:hover .feature-icon-wrap {
   background: var(--color-primary);
   border-color: var(--color-primary);
+  box-shadow: var(--shadow-blue);
+  transform: translateY(-2px) scale(1.04);
 }
 
-.card:hover .feature-icon-wrap svg {
+.card:hover .feature-icon-wrap svg,
+.card:hover .feature-icon-wrap i {
   color: #fff;
 }
 

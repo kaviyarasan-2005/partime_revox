@@ -281,16 +281,23 @@
       gap: var(--space-4);
     }
     .contact-info-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(26,111,219,0.1);
-      border: 1px solid rgba(26,111,219,0.2);
-      border-radius: var(--radius-lg);
+      width: 52px;
+      height: 52px;
+      background: rgba(59, 142, 255, 0.1);
+      border: 1.5px solid rgba(59, 142, 255, 0.22);
+      border-radius: var(--radius-xl);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--color-primary);
+      font-size: 20px;
       flex-shrink: 0;
+      transition: background var(--transition-base), box-shadow var(--transition-base);
+    }
+    .contact-info-card:hover .contact-info-icon {
+      background: var(--color-primary);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(59,142,255,0.35);
     }
     .contact-info-label {
       font-family: var(--font-display);
@@ -509,9 +516,7 @@
       <!-- Brand -->
       <a href="index.html" class="navbar-brand" aria-label="CarAudio Pro Home">
         <div class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-          </svg>
+          <i class="fa-solid fa-volume-high text-white text-lg"></i>
         </div>
         <div class="brand-text">
           <div class="brand-name">CarAudio<span style="color:var(--color-primary)">Pro</span></div>        </div>
@@ -864,7 +869,7 @@
 
                 <!-- Submit -->
                 <button type="submit" class="btn btn-primary booking-submit-btn" id="booking-submit-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
                   Book Installation
                 </button>
               </form>
@@ -879,7 +884,7 @@
           <div class="contact-info-card reveal delay-100">
             <div class="contact-info-row">
               <div class="contact-info-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <i class="fa-solid fa-phone"></i>
               </div>
               <div>
                 <div class="contact-info-label">Phone</div>
@@ -895,7 +900,7 @@
           <div class="contact-info-card reveal delay-200">
             <div class="contact-info-row">
               <div class="contact-info-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <i class="fa-solid fa-envelope"></i>
               </div>
               <div>
                 <div class="contact-info-label">Email</div>
@@ -911,7 +916,7 @@
           <div class="contact-info-card reveal delay-300">
             <div class="contact-info-row">
               <div class="contact-info-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <i class="fa-solid fa-clock"></i>
               </div>
               <div>
                 <div class="contact-info-label">Business Hours</div>
@@ -925,7 +930,7 @@
           <div class="contact-info-card reveal delay-400">
             <div class="contact-info-row">
               <div class="contact-info-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <i class="fa-solid fa-location-dot"></i>
               </div>
               <div>
                 <div class="contact-info-label">Service Area</div>
@@ -946,7 +951,7 @@
           <div class="card card-body reveal delay-200" style="background:var(--color-primary-light);border-color:var(--blue-200);">
             <div style="display:flex;align-items:flex-start;gap:var(--space-4);">
               <div style="width:40px;height:40px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <i class="fa-solid fa-circle-check" style="color:#fff;font-size:18px;"></i>
               </div>
               <div>
                 <div style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--blue-700);margin-bottom:var(--space-1);">Booking Confirmed in 2 Hours</div>
@@ -1087,8 +1092,8 @@
       <div>
         <a href="index.html" class="navbar-brand footer-brand" style="margin-bottom:var(--space-4);display:inline-flex;" aria-label="CarAudio Pro">
           <div class="brand-logo" aria-hidden="true">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          </div>
+          <i class="fa-solid fa-volume-high text-white text-lg"></i>
+        </div>
           <div class="brand-text">
             <div class="brand-name">CarAudio<span style="color:var(--color-primary)">Pro</span></div>          </div>
         </a>
