@@ -17,6 +17,20 @@
   <style>
     .hero-contact-page { background: linear-gradient(135deg, #0D2137 0%, #1A3A5C 100%); }
     .hero-contact-page .hero-bg { background-image: url('assets/images/hero-contact.png'); }
+    .hero-contact-page .hero-overlay {
+      background: linear-gradient(135deg, rgba(13, 27, 42, 0.94) 0%, rgba(26, 58, 92, 0.85) 50%, rgba(13, 27, 42, 0.8) 100%);
+    }
+    .hero-contact-page .hero-content p {
+      color: #FFFFFF;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    }
+    .hero-contact-page .hero-stat-label {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .hero-contact-page .breadcrumb,
+    .hero-contact-page .breadcrumb a {
+      color: rgba(255, 255, 255, 0.85);
+    }
     /* Contact Form & Info layout */
     .contact-main-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
     @media (max-width: 1023px) { .contact-main-grid { grid-template-columns: 1fr; } }
@@ -38,7 +52,8 @@
     .quick-faq-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
     @media (max-width: 639px) { .quick-faq-grid { grid-template-columns: 1fr; } }
     .quick-faq-card { padding: 24px; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-card); }
-    .quick-faq-card i { font-size: 24px; color: var(--color-secondary); margin-bottom: 12px; display: block; }
+    .quick-faq-card-icon { width: 44px; height: 44px; border-radius: var(--border-radius); background: rgba(26, 58, 92, 0.06); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; color: var(--color-secondary); margin-bottom: 16px; }
+    [data-theme="dark"] .quick-faq-card-icon { background: rgba(255, 255, 255, 0.05); }
     .quick-faq-card h4 { margin-bottom: 8px; font-size: var(--font-size-base); }
     .quick-faq-card p { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: 10px; }
     .form-contact { display: flex; flex-direction: column; gap: 16px; }
@@ -67,7 +82,7 @@
     <div class="navbar-controls">
       <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
       <button class="rtl-toggle" aria-label="Switch direction"></button>
-      <a href="login.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+      <a href="login.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
     </div>
   </div>
@@ -82,7 +97,7 @@
     <a href="pricing.html" class="mobile-nav-link">Pricing</a>
     <a href="contact.html" class="mobile-nav-link active">Contact</a>
     <div><a href="#" class="mobile-nav-link" data-submenu="cnt-dash-sub">Dashboard <i class="fa-solid fa-chevron-down nav-chevron"></i></a><div id="cnt-dash-sub" class="mobile-sub-menu"><a href="dashboard-user.html" class="mobile-nav-link" style="padding-inline-start:32px;font-size:.9rem;">User Dashboard</a><a href="dashboard-admin.html" class="mobile-nav-link" style="padding-inline-start:32px;font-size:.9rem;">Admin Dashboard</a></div></div>
-    <a href="login.html" class="mobile-signin-btn">Sign In</a>
+    <a href="login.html" class="mobile-signin-btn">Log In</a>
   </nav>
 </div>
 
@@ -275,28 +290,28 @@
       </header>
       <div class="quick-faq-grid">
         <div class="quick-faq-card reveal reveal-delay-1">
-          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <div class="quick-faq-card-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
           <h4>How fast can you respond?</h4>
           <p>We respond to all inquiries within 2 hours during business hours. Emergency requests are prioritized.</p>
-          <a href="services.html#faq" class="btn-ghost btn btn-sm"><i class="fa-solid fa-arrow-right"></i> Read More</a>
+          <a href="services.html#faq" class="btn-ghost btn btn-sm">Read More <i class="fa-solid fa-arrow-right" style="margin-inline-start:6px;" aria-hidden="true"></i></a>
         </div>
         <div class="quick-faq-card reveal reveal-delay-2">
-          <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+          <div class="quick-faq-card-icon" aria-hidden="true"><i class="fa-solid fa-van-shuttle"></i></div>
           <h4>Do you come to me?</h4>
           <p>Yes — 100% mobile service. We bring all equipment to your home, office, or any preferred location.</p>
-          <a href="services.html#faq" class="btn-ghost btn btn-sm"><i class="fa-solid fa-arrow-right"></i> Read More</a>
+          <a href="services.html#faq" class="btn-ghost btn btn-sm">Read More <i class="fa-solid fa-arrow-right" style="margin-inline-start:6px;" aria-hidden="true"></i></a>
         </div>
         <div class="quick-faq-card reveal reveal-delay-3">
-          <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+          <div class="quick-faq-card-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
           <h4>Is there a warranty?</h4>
           <p>Every restoration includes our 2-year UV protection warranty, fully transferable and redeemable nationwide.</p>
-          <a href="services.html#warranty" class="btn-ghost btn btn-sm"><i class="fa-solid fa-arrow-right"></i> Read More</a>
+          <a href="services.html#warranty" class="btn-ghost btn btn-sm">Read More <i class="fa-solid fa-arrow-right" style="margin-inline-start:6px;" aria-hidden="true"></i></a>
         </div>
         <div class="quick-faq-card reveal reveal-delay-4">
-          <i class="fa-solid fa-building" aria-hidden="true"></i>
+          <div class="quick-faq-card-icon" aria-hidden="true"><i class="fa-solid fa-truck"></i></div>
           <h4>Do you offer fleet pricing?</h4>
           <p>Yes — volume discounts start at 5+ vehicles. Contact us or visit our Pro page for fleet-specific pricing.</p>
-          <a href="home-pro.html" class="btn-ghost btn btn-sm"><i class="fa-solid fa-arrow-right"></i> Read More</a>
+          <a href="home-pro.html" class="btn-ghost btn btn-sm">Read More <i class="fa-solid fa-arrow-right" style="margin-inline-start:6px;" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>

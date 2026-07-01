@@ -29,6 +29,7 @@
   --dash-border: #2A2A2A;
   --dash-text-main: #F8FAFC;
   --dash-text-muted: #94A3B8;
+  --dash-primary: #8ab4e8;
   --dash-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
   --dash-shadow-hover: 0 10px 25px -4px rgba(0, 0, 0, 0.6);
 }
@@ -93,6 +94,13 @@ html {
   gap: 12px;
   text-decoration: none;
   overflow: hidden;
+}
+
+.dash-logo img,
+.dash-logo svg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .dash-logo-text {
@@ -577,7 +585,7 @@ html {
 
 /* Premium Buttons */
 .btn-dash-primary {
-  background: linear-gradient(135deg, var(--dash-primary), #2C5282);
+  background: var(--dash-primary);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -599,7 +607,7 @@ html {
 
 /* Promo/Action Card inside dashboard */
 .dash-promo-card {
-  background: linear-gradient(135deg, var(--dash-primary), #112A46);
+  background: var(--dash-primary);
   border-radius: var(--dash-radius);
   padding: 24px;
   color: #fff;

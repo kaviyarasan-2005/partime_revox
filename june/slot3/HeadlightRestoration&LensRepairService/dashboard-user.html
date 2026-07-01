@@ -62,16 +62,6 @@
         <i class="fa-solid fa-headset"></i> <span>Support</span>
       </a>
     </nav>
-
-    <div class="dash-sidebar-footer">
-      <div class="dash-user-card">
-        <img src="assets/images/images.jpg" alt="John Doe" class="dash-user-avatar" style="object-fit:cover;" />
-        <div class="dash-user-info">
-          <p class="dash-user-name">John Doe</p>
-          <p class="dash-user-role">Premium Member</p>
-        </div>
-      </div>
-    </div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -82,7 +72,10 @@
       <div class="dash-header-left">
         <button class="dash-btn-icon" id="mobile-menu-btn" style="display:none;"><i
             class="fa-solid fa-bars"></i></button>
-        <h1 class="dash-title">Good morning, John</h1>
+        <div>
+          <h1 class="dash-title" style="line-height:1.2;">Good morning, John</h1>
+          <p class="dash-subtitle" style="font-size:0.75rem;color:var(--dash-text-muted);margin:2px 0 0 0;">Welcome back! Here's the latest update on your vehicle restorations.</p>
+        </div>
       </div>
       <div class="dash-header-right">
         <div class="dash-search">
@@ -96,11 +89,29 @@
           <i class="fa-regular fa-bell"></i>
           <span class="dash-badge">3</span>
         </button>
+        <div class="dash-user-card">
+          <img src="assets/images/images.jpg" alt="John Doe" class="dash-user-avatar" style="object-fit:cover;" />
+          <div class="dash-user-info">
+            <p class="dash-user-name">John Doe</p>
+            <p class="dash-user-role">Premium Member</p>
+          </div>
+        </div>
       </div>
     </header>
 
     <!-- CONTENT -->
     <div class="dash-content">
+
+      <!-- Welcome Banner -->
+      <div class="dash-welcome-banner" style="background: #1A3A5C; color: #fff; padding: 24px; border-radius: var(--dash-radius); margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: var(--dash-shadow); border: 1px solid rgba(255, 255, 255, 0.07);">
+        <div style="flex: 1;">
+          <h2 style="margin: 0 0 8px 0; font-size: 1.35rem; font-weight: 700; color: #fff !important;">Welcome to your LUME Portal!</h2>
+          <p style="margin: 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.9) !important; line-height: 1.5;">Manage your vehicle profiles, inspect active headlight warranties, view digital invoices, or schedule your next restoration service instantly.</p>
+        </div>
+        <div style="flex-shrink: 0;">
+          <a href="services.html" class="btn btn-secondary" style="border-radius: 8px; font-size: 0.85rem; padding: 10px 20px; text-decoration:none;"><i class="fa-solid fa-calendar-check" style="margin-right: 6px;"></i> Book New Service</a>
+        </div>
+      </div>
 
       <!-- KPIs -->
       <div class="dash-kpi-grid">

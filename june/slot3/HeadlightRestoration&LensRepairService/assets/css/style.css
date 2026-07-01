@@ -659,9 +659,25 @@ p {
   flex-shrink: 0;
 }
 
+.navbar-logo img,
 .navbar-logo svg {
   width: 40px;
   height: 40px;
+  object-fit: contain;
+}
+
+.auth-logo img,
+.auth-logo svg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.cs-logo img,
+.cs-logo svg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .navbar-logo-text {
@@ -819,6 +835,17 @@ p {
   width: 36px;
   padding: 0;
   font-size: 16px;
+}
+
+/* Constrain RTL toggle to same compact square as theme-toggle */
+.rtl-toggle {
+  min-width: 36px;
+  width: 36px;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .theme-toggle:hover,
@@ -1544,6 +1571,13 @@ p {
   text-decoration: none;
 }
 
+.footer-logo img,
+.footer-logo svg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .footer-logo-text {
   font-size: 1.6rem;
   font-weight: 800;
@@ -2182,6 +2216,7 @@ p {
 .social-connect-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 14px 24px;
   border-radius: var(--border-radius);
@@ -2189,49 +2224,26 @@ p {
   font-weight: 600;
   color: #FFFFFF;
   text-decoration: none;
+  background: var(--color-primary);
+  border: 1px solid transparent;
   transition: all var(--transition-base);
   min-height: 44px;
 }
 
 .social-connect-btn:hover {
   transform: translateY(-2px);
+  background: var(--color-secondary);
+  color: var(--color-primary-dark);
   box-shadow: var(--shadow-md);
 }
 
-.social-btn-facebook {
-  background: #1877F2;
-}
-
-.social-btn-facebook:hover {
-  background: #1565d8;
-}
-
-.social-btn-instagram {
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.social-btn-twitter {
-  background: #000000;
-}
-
-.social-btn-twitter:hover {
-  background: #111;
-}
-
-.social-btn-linkedin {
-  background: #0077B5;
-}
-
-.social-btn-linkedin:hover {
-  background: #005f94;
-}
-
+/* Individual class overrides removed for brand color consistency */
+.social-btn-facebook,
+.social-btn-instagram,
+.social-btn-twitter,
+.social-btn-linkedin,
 .social-btn-youtube {
-  background: #FF0000;
-}
-
-.social-btn-youtube:hover {
-  background: #cc0000;
+  background: var(--color-primary);
 }
 
 /* ============================================================
@@ -2693,6 +2705,13 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+  .stat-counter-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 360px) {
   h1 {
     font-size: 1.75rem;
@@ -2705,6 +2724,46 @@ p {
   .btn-lg {
     padding: 14px 24px;
     font-size: var(--font-size-base);
+  }
+
+  /* Navbar layout fix at 360px */
+  .navbar-inner {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+
+  .navbar-logo img,
+  .navbar-logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.3rem;
+  }
+
+  .navbar-controls {
+    gap: 4px;
+  }
+
+  /* Shrink RTL & theme toggles at 360px */
+  .theme-toggle,
+  .rtl-toggle {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
+  }
+
+  /* Shrink hamburger at 360px */
+  .hamburger {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Ensure page-wrapper top padding matches mobile navbar height */
+  .page-wrapper {
+    padding-top: var(--navbar-height-mobile);
   }
 }
 

@@ -14,12 +14,33 @@ const LUME = (() => {
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
         e.preventDefault();
-        const offset = parseInt(getComputedStyle(document.documentElement)
-          .getPropertyValue('--navbar-height').trim(), 10) + 16;
+        const navbar = document.querySelector('.navbar');
+        const offset = (navbar ? navbar.offsetHeight : 60) + 16;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       });
     });
+  }
+
+  /* ---- Sync page-wrapper padding to actual navbar height ---- */
+  /* Prevents content sliding under fixed navbar at narrow widths (e.g. 360px) */
+  function initNavbarHeightSync() {
+    const navbar = document.querySelector('.navbar');
+    const wrapper = document.querySelector('.page-wrapper');
+    if (!navbar || !wrapper) return;
+
+    function sync() {
+      const h = navbar.offsetHeight;
+      wrapper.style.paddingTop = h + 'px';
+    }
+
+    sync();
+    window.addEventListener('resize', sync, { passive: true });
+
+    // Also re-sync after fonts load (can shift height)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(sync);
+    }
   }
 
   /* ---- Copy to clipboard helper ---- */
@@ -150,8 +171,10 @@ const LUME = (() => {
   /* ---- Init ---- */
   function init() {
     initSmoothScroll();
+    initNavbarHeightSync();
     addScrollToTopBtn();
   }
+
 
   return { init, showToast, copyToClipboard, formatCurrency, formatDate };
 })();
