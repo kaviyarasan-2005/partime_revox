@@ -202,7 +202,14 @@
   flex-shrink: 0;
 }
 
-/* Theme Toggle */
+/* Hide icons in navigation for smaller screens */
+@media (max-width: 1024px) {
+  .nav-link svg,
+  .mobile-nav-link svg {
+    display: none;
+  }
+}
+
 .theme-toggle {
   width: 40px;
   height: 40px;
