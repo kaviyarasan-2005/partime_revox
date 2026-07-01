@@ -169,6 +169,7 @@
         (page === 'about' && currentPath === 'about.html') ||
         (page === 'service' && currentPath === 'service.html') ||
         (page === 'pricing' && currentPath === 'pricing.html') ||
+        (page === 'blog' && currentPath === 'blog.html') ||
         (page === 'contact' && currentPath === 'contact.html')
       ) {
         link.classList.add('is-active');
