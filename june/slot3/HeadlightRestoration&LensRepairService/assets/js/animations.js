@@ -74,15 +74,18 @@ const AnimationsManager = (() => {
       drawer.classList.add('open');
       hamburger.classList.add('active');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
+      // Lock scroll on <html>, NOT <body> — overflow:hidden on body breaks
+      // position:fixed navbar in Chrome DevTools device mode and Safari
+      document.documentElement.style.overflow = 'hidden';
     }
 
     function closeDrawer() {
       drawer.classList.remove('open');
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
+
   }
 
   /* ---- Mobile Sub-menus ---- */

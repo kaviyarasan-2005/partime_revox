@@ -27,14 +27,22 @@ const LUME = (() => {
   function initNavbarHeightSync() {
     const navbar = document.querySelector('.navbar');
     const wrapper = document.querySelector('.page-wrapper');
-    if (!navbar || !wrapper) return;
+    if (!navbar) return;
 
     function sync() {
       const h = navbar.offsetHeight;
-      wrapper.style.paddingTop = h + 'px';
+      // Sync page-wrapper padding
+      if (wrapper) wrapper.style.paddingTop = h + 'px';
+      // Sync mobile drawer top so it sits flush below the navbar
+      const drawer = document.querySelector('.mobile-drawer');
+      if (drawer) drawer.style.top = h + 'px';
     }
 
     sync();
+
+    // Re-sync after short delay so rtl.js has populated toggle text
+    setTimeout(sync, 120);
+
     window.addEventListener('resize', sync, { passive: true });
 
     // Also re-sync after fonts load (can shift height)

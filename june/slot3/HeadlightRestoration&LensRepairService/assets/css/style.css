@@ -141,6 +141,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -151,7 +152,7 @@ body {
   color: var(--color-text-primary);
   background-color: var(--bg-primary);
   transition: background-color var(--transition-slow), color var(--transition-slow);
-  overflow-x: hidden;
+  /* NOTE: overflow-x is on <html> — keeping it on <body> breaks position:fixed in Safari/mobile */
 }
 
 img {
@@ -632,6 +633,7 @@ p {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: var(--z-navbar);
+  overflow: visible;
   transition: background var(--transition-slow), box-shadow var(--transition-slow);
 }
 
@@ -644,6 +646,7 @@ p {
   margin-inline: auto;
   padding-inline: var(--container-padding);
   height: 100%;
+  min-height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2713,6 +2716,11 @@ p {
 }
 
 @media (max-width: 360px) {
+  :root {
+    /* Reinforce --navbar-height for page-wrapper offset at 360px */
+    --navbar-height: var(--navbar-height-mobile);
+  }
+
   h1 {
     font-size: 1.75rem;
   }
@@ -2726,46 +2734,53 @@ p {
     font-size: var(--font-size-base);
   }
 
-  /* Navbar layout fix at 360px */
-  .navbar-inner {
-    gap: 8px;
-    padding-inline: 12px;
+  /* Page-wrapper must offset exactly the fixed navbar */
+  .page-wrapper {
+    padding-top: var(--navbar-height-mobile) !important;
   }
 
+  /* Navbar inner: tighter spacing so everything fits in 60px height */
+  .navbar-inner {
+    gap: 6px;
+    padding-inline: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  /* Compact logo */
   .navbar-logo img,
   .navbar-logo svg {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .navbar-logo-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
+  /* Compact controls */
   .navbar-controls {
     gap: 4px;
   }
 
-  /* Shrink RTL & theme toggles at 360px */
+  /* Compact RTL & theme toggles */
   .theme-toggle,
   .rtl-toggle {
-    width: 32px;
-    min-width: 32px;
-    height: 32px;
-    font-size: 0.65rem;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-size: 0.6rem;
+    padding: 0;
   }
 
-  /* Shrink hamburger at 360px */
+  /* Compact hamburger */
   .hamburger {
-    width: 36px;
-    height: 36px;
-  }
-
-  /* Ensure page-wrapper top padding matches mobile navbar height */
-  .page-wrapper {
-    padding-top: var(--navbar-height-mobile);
+    width: 34px;
+    height: 34px;
+    gap: 4px;
   }
 }
+
 
 /* ============================================================
    PRINT STYLES

@@ -39,7 +39,8 @@ body.dashboard-body {
   color: var(--dash-text-main);
   font-family: var(--font-family);
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden removed — on body it breaks position:sticky in some browsers.
+     Horizontal overflow is controlled via html { overflow-x: hidden } in style.css */
   display: flex;
   width: 100%;
   max-width: 100vw;
@@ -50,14 +51,8 @@ body.dashboard-body * {
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
+/* html overflow-x is set globally in style.css; duplicate blocks removed */
 
-html {
-  overflow-x: hidden;
-}
 
 /* ---- Sidebar ---- */
 .dash-sidebar {
@@ -247,7 +242,8 @@ html {
   position: sticky;
   top: 0;
   z-index: 40;
-  overflow: hidden;
+  /* overflow: hidden removed — it clips the user card at the right edge */
+  overflow: visible;
 }
 
 [data-theme="dark"] .dash-header { background-color: rgba(30, 41, 59, 0.8); }
@@ -671,6 +667,47 @@ html {
     max-width: 100%;
     overflow-x: hidden;
   }
+
+  /* Show mobile menu toggle at tablet/1024px */
+  #mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* Header: reduce search width, tighten gaps so user card fits */
+  .dash-header {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .dash-header-left {
+    flex: 1;
+    min-width: 0;
+    gap: 12px;
+  }
+
+  .dash-header-right {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  /* Narrow the search at 1024px so user card isn't squeezed out */
+  .dash-search {
+    width: 180px;
+  }
+
+  /* Prevent user card text from overflowing */
+  .dash-user-card {
+    max-width: 140px;
+    overflow: hidden;
+  }
+
+  .dash-user-name,
+  .dash-user-role {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -703,6 +740,98 @@ html {
   .dash-btn-icon { width: 34px; height: 34px; }
   .dash-table { min-width: 450px; }
 }
+
+/* ---- Dashboard 360px layout fixes ---- */
+@media (max-width: 360px) {
+  /* Header: tighter padding, prevent overflow */
+  .dash-header {
+    padding: 0 8px;
+    height: auto;
+    min-height: var(--dash-header-height);
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .dash-header-left {
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .dash-title {
+    font-size: 0.9rem;
+  }
+
+  /* Tighten icon buttons */
+  .dash-header-right {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .dash-btn-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  /* Hide user name/role text — show only avatar at 360px */
+  .dash-user-card .dash-user-info {
+    display: none;
+  }
+
+  .dash-user-card {
+    gap: 0;
+  }
+
+  .dash-user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+  }
+
+  /* Welcome banner: stack vertically on very small screens */
+  .dash-welcome-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    padding: 16px !important;
+  }
+
+  .dash-welcome-banner > div:last-child {
+    width: 100%;
+  }
+
+  .dash-welcome-banner .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Content padding */
+  .dash-content {
+    padding: 10px;
+  }
+
+  /* KPI grid: single column */
+  .dash-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  /* Panel headers: wrap action buttons below title */
+  .dash-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .dash-panel-title {
+    font-size: 0.95rem;
+  }
+}
+
 [dir="rtl"] .dash-sidebar {
   left: auto;
   right: 0;
