@@ -410,6 +410,7 @@
     initSkeletonLoaders();
     initSmoothScroll();
     initTabs();
+    lucide.createIcons();
   }
 
   if (document.readyState === 'loading') {
