@@ -226,6 +226,17 @@
         display: block;
       }
     }
+
+    /* Fix bookings table layout on small mobile viewports */
+    @media (max-width: 768px) {
+      .dashboard-panel {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .admin-table {
+        min-width: 600px; /* Keep tabular layout clean and scrollable */
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
 </head>
