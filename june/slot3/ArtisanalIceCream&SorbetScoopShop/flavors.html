@@ -53,7 +53,7 @@
         <li role="listitem"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <!-- Right side: toggles + cart + hamburger -->
+      <!-- Right side: toggles + hamburger -->
       <div class="navbar-right">
         <div class="navbar-toggles">
           <button class="util-btn rtl-btn" data-rtl-toggle aria-label="Switch to RTL">RTL</button>
@@ -62,22 +62,7 @@
             <i class="fa-solid fa-moon" aria-hidden="true"></i>
           </button>
         </div>
-              <button class="btn btn-outline-primary btn-nav-cta" id="login-btn" style="margin-right: 12px; min-width: 90px; height: 40px; padding: 0 15px;">
-        <i class="fa-solid fa-user" aria-hidden="true"></i> Login
-      </button>
-      <div class="cart-wrapper">
-          <button class="btn btn-primary btn-nav-cta" id="cart-toggle" aria-label="Shopping cart" aria-expanded="false"
-            aria-controls="cart-dropdown">
-            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> Cart
-            <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
-          </button>
-          <div class="cart-dropdown hidden" id="cart-dropdown">
-            <div class="cart-empty">
-              <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
-              <p>Your cart is empty</p>
-            </div>
-          </div>
-        </div>
+        <a href="login.html" class="btn btn-outline-primary btn-nav-cta" id="login-btn" style="margin-right: 12px; min-width: 90px; height: 40px; padding: 0 15px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">Login</a>
 
         <!-- Hamburger -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span
@@ -111,13 +96,7 @@
 
     </ul>
       <div class="mobile-drawer-cart" style="display:flex;gap:12px;flex-direction:column;padding:24px;">
-    <button class="btn btn-secondary btn-sm" id="mobile-cart-toggle" aria-label="Shopping cart" style="width:100%;">
-      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> View Cart
-      <span class="cart-badge" id="mobile-cart-badge" style="display:none;">0</span>
-    </button>
-    <button class="btn btn-outline-primary btn-sm" id="mobile-login-btn" style="width:100%;">
-      <i class="fa-solid fa-user" aria-hidden="true"></i> Login
-    </button>
+    <a href="login.html" class="btn btn-outline-primary btn-sm" id="mobile-login-btn" style="width:100%; display: flex; align-items: center; justify-content: center; text-decoration: none; height: 40px;">Login</a>
   </div>
 
   </nav>
@@ -733,41 +712,7 @@
       </div>
     </div>
   </footer>
-  <!-- Login Modal -->
-<div class="modal-backdrop" id="login-modal" aria-hidden="true">
-  <div class="modal-content">
-    <button class="modal-close" id="login-modal-close" aria-label="Close modal">
-      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-    </button>
-    <div class="auth-header">
-      <h3>Welcome Back</h3>
-      <p>Login to your account to manage orders and rewards</p>
-    </div>
-    <form class="auth-form" id="login-form">
-      <div class="form-group">
-        <label for="login-email">Email Address</label>
-        <input type="email" id="login-email" class="form-input" required placeholder="name@example.com" style="width:100%;" />
-      </div>
-      <div class="form-group">
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" class="form-input" required placeholder="Enter your password" style="width:100%; padding-inline-end: 40px;" />
-        <button type="button" class="pw-toggle-btn" data-pw-toggle="login-password" aria-label="Toggle password visibility">
-          <i class="fa-solid fa-eye-slash" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; cursor: pointer; color: var(--color-text-primary);">
-          <input type="checkbox" style="accent-color: var(--color-primary);" /> Remember me
-        </label>
-        <a href="#" style="font-size: 0.85rem; color: var(--color-primary); font-weight: 500;">Forgot Password?</a>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width: 100%; min-height: 44px;">Log In</button>
-    </form>
-    <div class="auth-footer" style="margin-top: 24px; text-align: center; font-size: 0.875rem; color: var(--color-text-secondary);">
-      Don't have an account? <a href="#" style="color: var(--color-primary); font-weight: 600;">Sign Up</a>
-    </div>
-  </div>
-</div>
+
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/animations.js"></script>

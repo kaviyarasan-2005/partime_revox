@@ -325,45 +325,8 @@
     });
 
     /* ============================================================
-       14. LOGIN MODAL TOGGLE
+       14. LOGIN MODAL TOGGLE (DEPRECATED - Redirection to login.html used instead)
        ============================================================ */
-    const loginBtn = document.getElementById('login-btn');
-    const mobileLoginBtn = document.getElementById('mobile-login-btn');
-    const loginModal = document.getElementById('login-modal');
-    const loginModalClose = document.getElementById('login-modal-close');
-
-    function openLoginModal() {
-      if (!loginModal) return;
-      loginModal.classList.add('open');
-      loginModal.setAttribute('aria-hidden', 'false');
-      closeDrawer(); // Close mobile menu if open
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLoginModal() {
-      if (!loginModal) return;
-      loginModal.classList.remove('open');
-      loginModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    loginBtn && loginBtn.addEventListener('click', openLoginModal);
-    mobileLoginBtn && mobileLoginBtn.addEventListener('click', openLoginModal);
-    loginModalClose && loginModalClose.addEventListener('click', closeLoginModal);
-
-    // Close modal on background click
-    loginModal && loginModal.addEventListener('click', function (e) {
-      if (e.target === loginModal) {
-        closeLoginModal();
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && loginModal && loginModal.classList.contains('open')) {
-        closeLoginModal();
-      }
-    });
-
+    // Standalone pages are used now.
   });
 })();
