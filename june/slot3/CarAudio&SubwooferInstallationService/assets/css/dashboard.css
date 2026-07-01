@@ -334,6 +334,15 @@
 .dashboard-layout.sidebar-collapsed .sidebar {
   width: 60px;
 }
+.dashboard-layout.sidebar-collapsed .sidebar-header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  justify-content: center !important;
+}
+.dashboard-layout.sidebar-collapsed .sidebar-header a {
+  justify-content: center !important;
+  width: 100% !important;
+}
 .dashboard-layout.sidebar-collapsed .main-content {
   margin-left: 60px;
 }
@@ -409,6 +418,7 @@
   }
   .sidebar.open {
     transform: translateX(0) !important;
+    z-index: 1000 !important;
   }
   .main-content {
     margin-left: 0 !important;

@@ -3236,7 +3236,26 @@ tbody td strong {
   }
 
   .mobile-nav-auth {
+    display: flex !important;
+  }
+
+  /* Hide header auth actions on tablet/mobile, but keep toggles outside */
+  .nav-actions #nav-login,
+  .nav-actions #nav-signup {
     display: none !important;
+  }
+
+  /* Compact spacing for header actions on mobile to prevent overflow */
+  .nav-actions {
+    gap: var(--space-1) !important;
+  }
+
+  .nav-actions .btn {
+    padding: 0 var(--space-2) !important;
+  }
+
+  .nav-actions .btn-icon {
+    width: 36px !important;
   }
 
   /* Hide desktop-only RTL toggle text on very small desktops — keep icon-only look */
@@ -3258,6 +3277,7 @@ tbody td strong {
 
   .sidebar.open {
     transform: translateX(0);
+    z-index: 1000 !important;
   }
 
   .main-content {
@@ -3334,17 +3354,17 @@ tbody td strong {
     padding: var(--space-4);
   }
 
-  #nav-login,
-  #nav-signup {
-    display: none !important;
-  }
+  /* Handled at max-width: 1024px breakpoint */
+}
 
-  .mobile-nav-toggles {
-    display: none !important;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-actions #nav-login,
+  .nav-actions #nav-signup {
+    display: inline-flex !important;
   }
 
   .mobile-nav-auth {
-    display: flex !important;
+    display: none !important;
   }
 }
 

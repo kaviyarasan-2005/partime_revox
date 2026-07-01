@@ -625,7 +625,7 @@ const ProfileManager = {
 
 /* ── Initialize Dashboard ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  SidebarManager.init();
+  // SidebarManager.init(); // Handled by DashboardSidebar in main.js to prevent duplicate event listeners
   DashboardCharts.initAll();
   LiveTracking.init();
   AppointmentCalendar.init();
