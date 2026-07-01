@@ -789,8 +789,27 @@
    DANGER CARD LAYOUT (Responsive)
    ============================================ */
 .danger-card-layout {
-  padding: var(--space-16);
-  gap: var(--space-12);
+  padding: var(--space-10);
+  gap: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.1);
+}
+
+.danger-card-layout .comparison-info {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 360px;
+}
+
+.danger-card-layout .comparison-display {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 360px;
 }
 
 @media (max-width: 768px) {

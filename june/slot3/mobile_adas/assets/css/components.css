@@ -942,12 +942,14 @@
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-4);
   font-style: italic;
+  flex: 1;
 }
 
 .testimonial-card .author {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  margin-top: auto;
 }
 
 .testimonial-card .author-name {
