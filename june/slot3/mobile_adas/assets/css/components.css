@@ -309,7 +309,7 @@
 
 .card-body .btn-link {
   margin-top: auto;
-  align-self: flex-start;
+  align-self: center;
   color: var(--color-accent);
   font-weight: var(--weight-bold);
   display: flex;
@@ -919,6 +919,9 @@
 /* ---- Testimonial Card ---- */
 .testimonial-card {
   padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .testimonial-card .stars {
