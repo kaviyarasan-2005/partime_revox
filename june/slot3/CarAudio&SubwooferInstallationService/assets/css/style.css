@@ -46,11 +46,11 @@
   --silver-900: #1A1E24;
 
   /* Semantic tokens — Light Mode */
-  --color-primary: var(--blue-500);
-  --color-primary-hover: var(--blue-600);
+  --color-primary: #3B8EFF;
+  --color-primary-hover: #1A6FDB;
   --color-primary-light: var(--blue-50);
   --color-secondary: var(--gray-700);
-  --color-accent: #C026D3;
+  --color-accent: #FF007F;
 
   --color-bg: var(--gray-50);
   --color-bg-alt: var(--silver-50);
@@ -71,8 +71,8 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.09), 0 10px 10px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12);
-  --shadow-blue: 0 4px 20px rgba(26, 111, 219, 0.25);
-  --shadow-blue-lg: 0 8px 40px rgba(26, 111, 219, 0.35);
+  --shadow-blue: 0 4px 20px rgba(59, 142, 255, 0.3);
+  --shadow-blue-lg: 0 8px 40px rgba(59, 142, 255, 0.4);
 
   /* Borders & Radius */
   --radius-sm: 6px;

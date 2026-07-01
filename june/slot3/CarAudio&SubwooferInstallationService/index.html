@@ -158,18 +158,20 @@
     .package-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-6);
+      gap: var(--space-8);
     }
 
     @media (max-width: 1200px) {
       .package-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
       }
     }
 
     @media (max-width: 640px) {
       .package-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-6);
       }
     }
 
@@ -177,13 +179,14 @@
     .compare-info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--space-8);
+      gap: var(--space-12);
       align-items: center;
     }
 
     @media (max-width: 768px) {
       .compare-info-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-8);
       }
     }
 
@@ -191,26 +194,38 @@
     .tuning-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-6);
+      gap: var(--space-8);
     }
 
     @media (max-width: 1024px) {
       .tuning-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
       }
     }
 
     @media (max-width: 480px) {
       .tuning-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-6);
       }
+    }
+
+    /* Global 3-col grid spacing for this page */
+    .grid.grid-3 {
+      gap: var(--space-8);
+    }
+
+    /* Give card-body a bit more inner breathing room */
+    .card.card-body {
+      padding: var(--space-8);
     }
 
     /* Hero two-column layout */
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--space-16);
+      gap: var(--space-20);
       align-items: center;
     }
 
@@ -1010,13 +1025,13 @@
               <div class="compare-before" style="background:var(--gray-800);">
                 <span class="compare-label" style="left:var(--space-4);">Before</span>
                 <!-- Before: stock audio illustration -->
-                <img src="assets/images/before.jpg" alt="Stock Audio System"
+                <img src="assets/images/before-door.png" alt="Stock Audio System"
                   style="width:100%; height:100%; object-fit:cover; display:block;">
               </div>
               <div class="compare-after" style="background:var(--gray-900);">
                 <span class="compare-label" style="right:var(--space-4);">After</span>
                 <!-- After: upgraded audio illustration -->
-                <img src="assets/images/gallery-2.jpg" alt="CarAudio Pro Premium System"
+                <img src="assets/images/after-door.png" alt="CarAudio Pro Premium System"
                   style="width:100%; height:100%; object-fit:cover; display:block;">
               </div>
               <div class="compare-handle" role="slider" aria-label="Comparison slider" aria-valuenow="50"
