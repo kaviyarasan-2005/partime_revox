@@ -882,6 +882,11 @@
 .pricing-card .pricing-features {
   text-align: start;
   align-self: stretch;
+  margin-bottom: var(--space-8);
+}
+
+.pricing-card .btn {
+  margin-top: auto;
 }
 
 .pricing-card.featured {
