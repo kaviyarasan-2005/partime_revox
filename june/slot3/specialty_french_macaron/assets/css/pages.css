@@ -642,6 +642,7 @@
 .box-card.popular {
   border-color: var(--color-primary);
   transform: scale(1.03);
+  padding-top: calc(var(--sp-8) + 12px);
 }
 
 .box-card.popular:hover { transform: scale(1.03) translateY(-5px); }
