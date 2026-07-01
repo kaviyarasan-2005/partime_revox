@@ -639,9 +639,8 @@
   box-shadow: var(--shadow-lg);
 }
 
-.box-card.popular {
-  border-color: var(--color-primary);
-  transform: scale(1.03);
+.box-card.popular,
+.box-card:has(.pricing-featured-badge) {
   padding-top: calc(var(--sp-8) + 12px);
 }
 

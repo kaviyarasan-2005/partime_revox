@@ -328,9 +328,8 @@
   overflow: visible;
 }
 
-.pricing-card.featured {
-  border-color: var(--color-primary);
-  background: linear-gradient(135deg, rgba(201,80,107,0.05) 0%, var(--bg-card) 100%);
+.pricing-card.featured,
+.pricing-card:has(.pricing-featured-badge) {
   padding-top: calc(var(--sp-10) + 12px);
 }
 
@@ -343,6 +342,10 @@
   background: linear-gradient(90deg, var(--clr-rose), var(--clr-gold));
   border-top-left-radius: var(--r-xl);
   border-top-right-radius: var(--r-xl);
+}
+
+[data-theme="dark"] .pricing-card.featured::before {
+  display: none;
 }
 
 .pricing-featured-badge {
