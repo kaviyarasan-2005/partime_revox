@@ -222,7 +222,9 @@
 }
 
 @media (max-width: 1024px) {
-  .navbar__cta { display: none; }
+  .navbar__cta {
+    display: none;
+  }
 }
 
 .navbar__control-btn {
@@ -315,9 +317,17 @@
 
 .navbar__overlay.is-visible { display: block; }
 
+.navbar__close-btn {
+  display: none;
+}
+
 /* ════════════════════════════
    RESPONSIVE MOBILE NAV
 ════════════════════════════ */
+.navbar__item--cta-mobile {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .navbar__nav {
     position: fixed;
@@ -398,10 +408,28 @@
     margin-top: var(--space-4);
     padding: var(--space-2) var(--space-4);
   }
-}
 
-.navbar__item--cta-mobile {
-  display: none;
+  .navbar__close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: var(--space-4);
+    inset-inline-end: var(--space-4);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .navbar__close-btn:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+  }
 }
 
 

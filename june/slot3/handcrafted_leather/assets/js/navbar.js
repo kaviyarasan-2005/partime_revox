@@ -73,6 +73,11 @@
       overlay.addEventListener('click', closeMenu);
     }
 
+    var navClose = document.getElementById('navClose');
+    if (navClose) {
+      navClose.addEventListener('click', closeMenu);
+    }
+
     /* Close menu on Escape */
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMenu();
