@@ -17,6 +17,31 @@
   <script src="../assets/js/theme.js"></script>
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    .newsletter-card {
+      background: var(--bg-card);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--sp-10);
+    }
+    
+    @media (max-width: 575px) {
+      .newsletter-card {
+        padding: var(--sp-6) var(--sp-4) !important;
+      }
+      .newsletter-card form {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .newsletter-card form input {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .newsletter-card form button {
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -313,8 +338,8 @@
   <!-- Newsletter CTA -->
   <section class="section">
     <div class="container">
-      <div class="card card-body text-center fade-up" style="background: var(--bg-card); max-width: 800px; margin: 0 auto; padding: var(--sp-10);">
-        <span class="section-tag section-tag-rose">Join the Journal</span>
+      <div class="card card-body text-center fade-up newsletter-card">
+        <span class="section-tag section-tag-rose" style="font-size: 0.85rem; font-weight: 700; display: inline-block; padding: 6px 18px; background: var(--color-rose-glow); color: var(--color-rose-dark); border-radius: var(--radius-full); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: var(--sp-3);">Join the Journal</span>
         <h2 class="mb-3">Subscribe to Our Studio Dispatches</h2>
         <p class="text-muted mb-6" style="margin-bottom: 2rem;">Receive early access to seasonal jewelry collections, upcoming workshop enrollments, and exclusive botanical styling tips directly in your inbox.</p>
         <form class="flex-center" style="gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
