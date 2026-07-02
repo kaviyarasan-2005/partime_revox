@@ -1086,6 +1086,22 @@
   opacity: 0.12;
 }
 
+.page-hero.hero-service::before {
+  background-image: url('../img/hero_service.png');
+}
+
+.page-hero.hero-pricing::before {
+  background-image: url('../img/hero_pricing.png');
+}
+
+.page-hero.hero-blog::before {
+  background-image: url('../img/hero_blog.png');
+}
+
+.page-hero.hero-contact::before {
+  background-image: url('../img/hero_contact.png');
+}
+
 .page-hero::after {
   content: '';
   position: absolute;
