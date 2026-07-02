@@ -820,6 +820,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 576px) {
+  .cta-banner {
+    padding: var(--sp-7) var(--sp-5);
+  }
+}
+
 .cta-banner::before {
   content: '';
   position: absolute;
@@ -852,6 +858,21 @@
   z-index: 1;
 }
 
+@media (max-width: 480px) {
+  .cta-banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-3);
+  }
+  .cta-banner-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: var(--text-sm);
+  }
+}
+
 /* ============================================================
    STATS SECTION
    ============================================================ */
@@ -881,6 +902,26 @@
   .stats-divider { display: none; }
 }
 
+/* Added responsive adjustments for larger and smaller screens */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: var(--sp-5) var(--sp-6);
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+}
+
+
+
+
 /* ============================================================
    TEAM CARD
    ============================================================ */
@@ -900,7 +941,8 @@
 }
 
 .team-card-image {
-  height: 260px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -909,6 +951,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform var(--transition-slow);
 }
 
@@ -1358,4 +1401,19 @@
   font-size: var(--text-base);
   margin-bottom: var(--sp-1);
   color: var(--text-primary);
+}
+
+/* Team Card Social Icons - Light mode improvement */
+.team-card-social .social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ceramic-blue);
+  transition: all var(--transition-base);
+  text-decoration: none;
 }

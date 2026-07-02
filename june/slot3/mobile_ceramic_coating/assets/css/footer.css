@@ -113,15 +113,29 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(248,250,252,0.70);
+  color: var(--color-ceramic-blue);
   transition: all var(--transition-base);
   text-decoration: none;
 }
+
+@media (prefers-color-scheme: light) {
+  .social-link {
+    background: rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.10);
+    color: var(--color-ceramic-blue);
+  }
+  .social-link:hover {
+    background: var(--color-ceramic-blue);
+    border-color: var(--color-ceramic-blue);
+    color: #fff;
+  }
+}
+
 
 .social-link:hover {
   background: var(--color-ceramic-blue);

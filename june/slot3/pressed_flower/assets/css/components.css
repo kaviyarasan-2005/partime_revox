@@ -1086,6 +1086,26 @@
   opacity: 0.12;
 }
 
+.page-hero.hero-service::before {
+  background-image: url('../img/hero_service.png');
+}
+
+.page-hero.hero-pricing::before {
+  background-image: url('../img/hero_pricing.png');
+}
+
+.page-hero.hero-blog::before {
+  background-image: url('../img/hero_blog.png');
+}
+
+.page-hero.hero-contact::before {
+  background-image: url('../img/hero_contact.png');
+}
+
+.page-hero.hero-gallery::before {
+  background-image: url('../img/hero_gallery.png');
+}
+
 .page-hero::after {
   content: '';
   position: absolute;
@@ -1349,8 +1369,8 @@
 
 .chart-bar-fill.sage { background: linear-gradient(90deg, var(--color-sage), var(--color-sage-dark)); }
 .chart-bar-fill.rose { background: linear-gradient(90deg, var(--color-rose), var(--color-rose-dark)); }
-.chart-bar-fill.gold { background: linear-gradient(90deg, var(--color-gold), #D4B86A); }
-.chart-bar-fill.earth { background: linear-gradient(90deg, var(--color-earth), #8B7B6E); }
+.chart-bar-fill.gold { background: linear-gradient(90deg, var(--color-gold), var(--color-rose-light)); }
+.chart-bar-fill.earth { background: linear-gradient(90deg, var(--color-earth), var(--border-color)); }
 
 .chart-bar-value {
   font-size: var(--text-xs);

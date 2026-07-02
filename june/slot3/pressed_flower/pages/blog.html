@@ -17,6 +17,31 @@
   <script src="../assets/js/theme.js"></script>
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    .newsletter-card {
+      background: var(--bg-card);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--sp-10);
+    }
+    
+    @media (max-width: 575px) {
+      .newsletter-card {
+        padding: var(--sp-6) var(--sp-4) !important;
+      }
+      .newsletter-card form {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .newsletter-card form input {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .newsletter-card form button {
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -63,6 +88,9 @@
         </li>
         <li class="nav-item">
           <a href="blog.html" class="nav-link active">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="gallery.html" class="nav-link">Gallery</a>
         </li>
         <li class="nav-item">
           <a href="contact.html" class="nav-link">Contact</a>
@@ -123,13 +151,14 @@
         <a href="pricing.html" class="mobile-nav-link">Pricing</a>
         <a href="blog.html" class="mobile-nav-link active">Blog</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="gallery.html" class="mobile-nav-link">Gallery</a>
       </div>
 
       </div>
   </nav>
 
   <!-- Page Hero (Header) -->
-  <section class="page-hero">
+  <section class="page-hero hero-blog">
     <div class="page-hero-content container fade-up">
       <div class="breadcrumb">
         <a href="../index.html">Home</a>
@@ -309,8 +338,8 @@
   <!-- Newsletter CTA -->
   <section class="section">
     <div class="container">
-      <div class="card card-body text-center fade-up" style="background: var(--bg-card); max-width: 800px; margin: 0 auto; padding: var(--sp-10);">
-        <span class="section-tag section-tag-rose">Join the Journal</span>
+      <div class="card card-body text-center fade-up newsletter-card">
+        <span class="section-tag section-tag-rose" style="font-size: 0.85rem; font-weight: 700; display: inline-block; padding: 6px 18px; background: var(--color-rose-glow); color: var(--color-rose-dark); border-radius: var(--radius-full); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: var(--sp-3);">Join the Journal</span>
         <h2 class="mb-3">Subscribe to Our Studio Dispatches</h2>
         <p class="text-muted mb-6" style="margin-bottom: 2rem;">Receive early access to seasonal jewelry collections, upcoming workshop enrollments, and exclusive botanical styling tips directly in your inbox.</p>
         <form class="flex-center" style="gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
@@ -330,7 +359,8 @@
             <div class="footer-logo-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                <path d="M12 6a6 6 0 0 0-6 6c0 2.22 .9 4.22 2.36 5.66L12 12z"></path>
+                <path d="M12 6a6 6 0 0 0-6 6c0 2.22.9 4.22 2.36 5.66L12 12l3.64 5.66A6 6 0 0 0 18 12a6 6 0 0 0-6-6z"></path>
+                <circle cx="12" cy="12" r="1.5"></circle>
               </svg>
             </div>
             <div class="footer-brand-name">
