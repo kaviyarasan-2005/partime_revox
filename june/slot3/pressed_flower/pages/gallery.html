@@ -55,12 +55,24 @@
     }
     
     .gallery-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       background: var(--bg-card);
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow-sm);
       transition: transform var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+    }
+
+    .gallery-grid .gallery-item:first-child {
+      grid-column: auto;
+      grid-row: auto;
+    }
+
+    .gallery-grid .gallery-item:first-child img {
+      min-height: unset;
     }
     
     .gallery-item:hover {
@@ -87,6 +99,9 @@
     
     .gallery-item-body {
       padding: var(--sp-4);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
     
     .gallery-item-tag {
@@ -330,18 +345,7 @@
       
       <!-- Gallery Grid -->
       <div class="gallery-grid fade-up">
-        <!-- Item 1: Pendant -->
-        <div class="gallery-item" data-category="pendants">
-          <div class="gallery-item-img">
-            <img src="../assets/img/jewelry_pendant.png" alt="Fern & Baby's Breath Pendant">
-          </div>
-          <div class="gallery-item-body">
-            <span class="gallery-item-tag">Pendants</span>
-            <h4 class="gallery-item-title">Fern & Baby's Breath Pendant</h4>
-            <p class="gallery-item-desc">Hand-bent sterling silver bezel locking light green ferns and baby's breath blossoms.</p>
-          </div>
-        </div>
-        
+
         <!-- Item 2: Ring -->
         <div class="gallery-item" data-category="rings">
           <div class="gallery-item-img">
@@ -488,43 +492,7 @@
     </div>
   </section>
 
-  <!-- SECTION 5: Customer Wall of Love -->
-  <section class="section bg-secondary">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-tag section-tag-rose">Shared Moments</span>
-        <h2>Our Pieces in the Wild</h2>
-        <p>A collection of photos shared by our beautiful patrons wearing their custom botanical ornaments.</p>
-      </div>
-      
-      <div class="wall-grid fade-up">
-        <div class="wall-item">
-          <img src="../assets/img/portrait_female_1.png" alt="Customer Wearing Bangle">
-          <div class="wall-overlay">
-            <span class="wall-text">"My bridal rose necklace brings me joy daily!" - Sarah</span>
-          </div>
-        </div>
-        <div class="wall-item">
-          <img src="../assets/img/portrait_female_2.png" alt="Customer Displaying Ring">
-          <div class="wall-overlay">
-            <span class="wall-text">"The detail inside the resin dome is breathtaking." - Emily</span>
-          </div>
-        </div>
-        <div class="wall-item">
-          <img src="../assets/img/portrait_male_1.png" alt="Artisan wearing ring">
-          <div class="wall-overlay">
-            <span class="wall-text">"A piece of raw forest captured on my finger." - Marcus</span>
-          </div>
-        </div>
-        <div class="wall-item">
-          <img src="../assets/img/about_team_clara.png" alt="Customer viewing frame">
-          <div class="wall-overlay">
-            <span class="wall-text">"Perfect floating display for my graduation flowers." - Jessica</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- SECTION 6: Artisan Craftsmanship Details -->
   <section class="section">
@@ -584,7 +552,8 @@
             <div class="footer-logo-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                <path d="M12 6a6 6 0 0 0-6 6c0 2.22 .9 4.22 2.36 5.66L12 12z"></path>
+                <path d="M12 6a6 6 0 0 0-6 6c0 2.22.9 4.22 2.36 5.66L12 12l3.64 5.66A6 6 0 0 0 18 12a6 6 0 0 0-6-6z"></path>
+                <circle cx="12" cy="12" r="1.5"></circle>
               </svg>
             </div>
             <div class="footer-brand-name">
