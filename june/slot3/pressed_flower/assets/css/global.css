@@ -21,13 +21,13 @@
   --color-rose-light:    #E8C5CC;
   --color-rose-glow:     rgba(216, 167, 177, 0.2);
   --color-earth:         #6B5B4E;
-  --color-gold:          #C4A35A;
+  --color-gold:          var(--color-rose);
 
   /* Semantic Colors */
-  --color-success:       #6B9B5E;
-  --color-warning:       #D4A843;
-  --color-danger:        #C75C5C;
-  --color-info:          #6B8FB5;
+  --color-success:       var(--color-sage-dark);
+  --color-warning:       var(--color-rose-light);
+  --color-danger:        var(--color-rose-dark);
+  --color-info:          var(--color-sage-light);
 
   /* Light Theme */
   --bg-primary:          #F8F5F0;
@@ -333,9 +333,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 .badge-sage    { background: var(--color-sage-glow); color: var(--color-sage-dark); }
 .badge-rose    { background: var(--color-rose-glow); color: var(--color-rose-dark); }
-.badge-success { background: rgba(107,155,94,0.15); color: var(--color-success); }
-.badge-warning { background: rgba(212,168,67,0.15); color: var(--color-warning); }
-.badge-danger  { background: rgba(199,92,92,0.15);  color: var(--color-danger); }
+.badge-success { background: var(--color-sage-glow); color: var(--color-success); }
+.badge-warning { background: var(--color-rose-glow); color: var(--color-warning); }
+.badge-danger  { background: var(--color-rose-glow);  color: var(--color-danger); }
 .badge-dark    { background: var(--color-earth);     color: var(--color-ivory); }
 
 /* ============================================================
