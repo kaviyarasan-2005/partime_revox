@@ -1102,6 +1102,10 @@
   background-image: url('../img/hero_contact.png');
 }
 
+.page-hero.hero-gallery::before {
+  background-image: url('../img/hero_gallery.png');
+}
+
 .page-hero::after {
   content: '';
   position: absolute;
